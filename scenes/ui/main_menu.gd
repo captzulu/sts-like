@@ -2,6 +2,11 @@ class_name MainMenu
 extends CanvasLayer
 
 var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
+
+func _ready() -> void:
+	%SpiderCavernButton.pressed.connect(_on_spider_cavern_pressed)
+	%CyclopMountainButton.pressed.connect(_on_cyclop_mountain_button_pressed)
+	%UndeadLairButton.pressed.connect(_on_undead_lair_button_pressed)
 	
 func _on_spider_cavern_pressed() -> void:
 	Globals.current_location = Globals.LOCATION_SPIDER
