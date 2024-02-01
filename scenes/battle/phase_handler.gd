@@ -11,7 +11,6 @@ func _ready() -> void:
 	Events.player_turn_ended.connect(_on_player_turn_ended)
 	Events.player_hand_discarded.connect(_on_player_hand_discarded)
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
-	Events.enemy_death.connect(_on_enemy_death)
 	
 func _on_player_hand_drawn() -> void:
 	current_phase = Phase.PLAY
@@ -25,7 +24,7 @@ func _on_player_hand_discarded() -> void:
 func _on_enemy_turn_ended() -> void:
 	current_phase = Phase.DRAW
 	
-func _on_enemy_death(enemy : Enemy) -> void:
+func enemy_death(enemy : Enemy) -> void:
 	if current_phase == Phase.ENEMY_TURN:
 		Events.enemy_action_completed.emit(enemy)
 		

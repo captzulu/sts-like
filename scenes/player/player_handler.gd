@@ -9,8 +9,10 @@ const HAND_DISCARD_INTERVAL : float = 0.25
 var character : CharacterStats
 var player : Player 
 var hand_being_discarded : bool = false
+var enemy_killed_this_turn : int = 0
 
 func _ready() -> void:
+	Events.player_turn_ended.connect(end_turn)
 	Events.card_played.connect(_on_card_played)
 
 func start_battle(char_stats : CharacterStats) -> void:
@@ -21,13 +23,15 @@ func start_battle(char_stats : CharacterStats) -> void:
 	start_turn()
 	
 func start_turn() -> void:
+	if enemy_killed_this_turn > 1:
+		player.heal_from_combos(enemy_killed_this_turn)
+	enemy_killed_this_turn = 0
 	Events.player_turn_started.emit()
 	character.block = 0
 	character.reset_mana()
 	draw_cards(character.cards_per_turn)
 	
 func end_turn() -> void:
-	print("end turn : player")
 	hand.disable_hand()
 	discard_cards()
 

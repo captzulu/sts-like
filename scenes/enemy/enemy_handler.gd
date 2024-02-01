@@ -6,7 +6,6 @@ var enemy_count : int = 0
 
 func _ready() -> void:
 	Events.enemy_action_completed.connect(_on_enemy_action_completed)
-	Events.enemy_death.connect(_on_enemy_death)
 	child_entered_tree.connect(_on_child_entered_tree)
 
 func reset_enemy_actions() -> void:
@@ -34,7 +33,7 @@ func _on_enemy_action_completed(enemy : Enemy) -> void:
 func no_more_enemy() -> bool:
 	return enemy_count == 0
 	
-func _on_enemy_death(_enemy : Enemy) -> void:
+func enemy_death() -> void:
 	if enemy_count > 0:
 		enemy_count -= 1
 
