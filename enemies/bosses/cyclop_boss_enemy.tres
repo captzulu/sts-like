@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b1i7vqx4fbani"]
+
+[ext_resource type="PackedScene" uid="uid://ebck8twnk7k6" path="res://enemies/bosses/cyclop_boss/cyclop_boss_enemy_ai.tscn" id="1_mv62n"]
+[ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://art/original_art/tile_0109.png" id="2_muv81"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_kpe3e"]
+
+[resource]
+script = ExtResource("3_kpe3e")
+ai = ExtResource("1_mv62n")
+identifier = "cyclop_boss"
+is_boss = true
+max_health = 40
+art = ExtResource("2_muv81")

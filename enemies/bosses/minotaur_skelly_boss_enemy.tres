@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://cp6k2dlpfu06c"]
+
+[ext_resource type="PackedScene" uid="uid://bxbqbiksyi4lh" path="res://enemies/bosses/minotaur_skelly_boss/minotaur_skelly_boss_enemy_ai.tscn" id="1_pfa1b"]
+[ext_resource type="Texture2D" uid="uid://bdsd10tlwnruw" path="res://art/minotaur_skelly.png" id="2_vmjg7"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_qqnm0"]
+
+[resource]
+script = ExtResource("3_qqnm0")
+ai = ExtResource("1_pfa1b")
+identifier = "minotaur_skelly_boss"
+is_boss = true
+max_health = 45
+art = ExtResource("2_vmjg7")

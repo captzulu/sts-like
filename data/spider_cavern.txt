@@ -1,0 +1,7 @@
+id;mob_1;mob_2;mob_3;mob_4;mob_5
+0;crab;crab;;;
+1;crab;crab;bat;;
+2;bat;bat;bat;;
+3;spider;bat;bat;spider;
+4;spider;spider;spider;bat;bat
+5;spider_boss;;;;

@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cajrb0quyr18e"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_ow6tv"]
+[ext_resource type="Script" path="res://enemies/bosses/spider_boss/spider_boss_block_attack_action.gd" id="2_kkskb"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="3_656o0"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_bxoxd"]
+[ext_resource type="Script" path="res://enemies/bosses/spider_boss/spider_boss_mega_attack_action.gd" id="3_hituv"]
+
+[node name="SpiderBossEnemyAi" type="Node"]
+script = ExtResource("1_ow6tv")
+
+[node name="SpiderBossBlockAttackAction" type="Node" parent="."]
+script = ExtResource("2_kkskb")
+sound = ExtResource("3_656o0")
+type = 1
+chance_weight = 1.0
+
+[node name="SpiderBossMegaAttackAction" type="Node" parent="."]
+script = ExtResource("3_hituv")
+turn_threshold = 3
+sound = ExtResource("3_bxoxd")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://djhsxq1phowkp"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_efk67"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/original_art/tile_0087.png" id="1_qqupy"]
+[ext_resource type="PackedScene" uid="uid://02381nc0lj5f" path="res://scenes/ui/stats_ui.tscn" id="2_fr555"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/original_art/pixel_rpg.ttf" id="4_d6b2d"]
+[ext_resource type="Script" path="res://scenes/player/floating_text_ui.gd" id="5_x6w81"]
+[ext_resource type="PackedScene" uid="uid://b1xgrhkvg5e67" path="res://scenes/ui/StatusesBar.tscn" id="6_6p7h8"]
+
+[sub_resource type="Theme" id="Theme_ljyvw"]
+default_font = ExtResource("4_d6b2d")
+Label/colors/font_color = Color(0, 0.658824, 0, 1)
+Label/colors/font_outline_color = Color(0.0196078, 0.0196078, 0, 0.490196)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 3
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 6
+Label/fonts/font = ExtResource("4_d6b2d")
+Label/styles/normal = null
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_efk67")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qqupy")
+
+[node name="StatsUi" parent="." instance=ExtResource("2_fr555")]
+offset_left = -44.5
+offset_top = 7.0
+offset_right = 45.5
+offset_bottom = 23.0
+
+[node name="OverheadFloatingText" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -30.0
+offset_top = -27.0
+offset_right = 30.0
+theme = SubResource("Theme_ljyvw")
+text = "test long text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_x6w81")
+
+[node name="StatusesBar" parent="." instance=ExtResource("6_6p7h8")]
+offset_left = -35.0
+offset_top = 24.0
+offset_right = 36.0
+offset_bottom = 32.0

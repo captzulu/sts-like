@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://mp60lf0hkju"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_cep0l"]
+[ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="1_h2vao"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_cep0l")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("1_h2vao")
+
+[node name="SpiderCavernButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 35.0
+offset_right = 243.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 12
+text = "Spider Cavern"
+
+[node name="CyclopMountainButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 35.0
+offset_right = 585.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 12
+text = "Cyclop Mountain"
+
+[node name="UndeadLairButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 123.0
+offset_right = 414.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 12
+text = "Undead Lair
+"
+
+[connection signal="pressed" from="Panel/SpiderCavernButton" to="." method="_on_spider_cavern_pressed"]
+[connection signal="pressed" from="Panel/CyclopMountainButton" to="." method="_on_cyclop_mountain_button_pressed"]
+[connection signal="pressed" from="Panel/UndeadLairButton" to="." method="_on_undead_lair_button_pressed"]

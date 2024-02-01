@@ -1,0 +1,3 @@
+id;mob_1;mob_2;mob_3;mob_4;mob_5
+0;skeleton;skeleton;;;
+1;minotaur_skelly_boss;;;;

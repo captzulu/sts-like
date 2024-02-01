@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b87mpb33dg13v"]
+
+[ext_resource type="PackedScene" uid="uid://buh1b4whjkkuu" path="res://enemies/mobs/skeleton/skeleton_enemy_ai.tscn" id="1_44ay5"]
+[ext_resource type="Texture2D" uid="uid://dgrjexhd563we" path="res://art/skeleton.png" id="2_ltj84"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_gchrx"]
+
+[resource]
+script = ExtResource("3_gchrx")
+ai = ExtResource("1_44ay5")
+identifier = "skeleton"
+is_boss = false
+max_health = 10
+art = ExtResource("2_ltj84")
+art_scaling = 1.0

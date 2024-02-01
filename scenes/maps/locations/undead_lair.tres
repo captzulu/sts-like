@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://dlblcjyscaykm"]
+
+[ext_resource type="Script" path="res://resources/location.gd" id="1_q1l5x"]
+[ext_resource type="PackedScene" uid="uid://bwvxucng5h8ec" path="res://scenes/maps/tilemaps/undead_lair_map.tscn" id="2_u7x1p"]
+
+[resource]
+script = ExtResource("1_q1l5x")
+identifier = "undead_lair"
+display_name = "Undead Lair"
+tilemap = ExtResource("2_u7x1p")

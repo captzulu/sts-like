@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwx0cy1u82wyj"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_jfh2c"]
+[ext_resource type="Script" path="res://enemies/mobs/crab/crab_attack_action.gd" id="2_28hul"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_khoup"]
+[ext_resource type="Script" path="res://enemies/mobs/crab/crab_block_action.gd" id="6_nk2kk"]
+[ext_resource type="Script" path="res://enemies/mobs/crab/crab_mega_attack_action.gd" id="7_7on3i"]
+[ext_resource type="Script" path="res://enemies/mobs/crab/crab_mega_block_action.gd" id="9_1kpq6"]
+
+[node name="CrabEnemyAi" type="Node"]
+script = ExtResource("1_jfh2c")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_28hul")
+sound = ExtResource("3_khoup")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("6_nk2kk")
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("9_1kpq6")
+
+[node name="MegaAttackAction" type="Node" parent="."]
+script = ExtResource("7_7on3i")
+sound = ExtResource("3_khoup")

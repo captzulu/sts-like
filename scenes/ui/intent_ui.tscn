@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://wdx0jcyi451k"]
+
+[ext_resource type="Script" path="res://scenes/ui/intent_ui.gd" id="1_lymud"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/original_art/tile_0102.png" id="2_h6pqj"]
+
+[node name="IntentUi" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 14.0
+grow_horizontal = 2
+theme_override_constants/separation = -4
+alignment = 1
+script = ExtResource("1_lymud")
+
+[node name="Intent" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Icon" type="TextureRect" parent="Intent"]
+layout_mode = 2
+texture = ExtResource("2_h6pqj")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Intent"]
+layout_mode = 2
+alignment = 1
+
+[node name="Number" type="RichTextLabel" parent="Intent/VBoxContainer"]
+custom_minimum_size = Vector2(16, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "6x2"
+
+[node name="Intent2" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Icon" type="TextureRect" parent="Intent2"]
+layout_mode = 2
+texture = ExtResource("2_h6pqj")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Intent2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Number" type="RichTextLabel" parent="Intent2/VBoxContainer"]
+custom_minimum_size = Vector2(16, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]6x2[/center]"

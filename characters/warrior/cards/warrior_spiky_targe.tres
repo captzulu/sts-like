@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c05f6sayw44jl"]
+
+[ext_resource type="Texture2D" uid="uid://5aqbs4juj2na" path="res://art/original_art/spike.png" id="1_w3p1b"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_spiky_targe.gd" id="2_krsy3"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="3_vltrb"]
+
+[resource]
+script = ExtResource("2_krsy3")
+spikes = 3
+block = 3
+id = "warrior_spiky_targe"
+type = 1
+target = 0
+cost = 1
+icon = ExtResource("1_w3p1b")
+tooltip_text = "Gain [color=\"0044ff\"]3[/color] block and 3 spikes."
+sound = ExtResource("3_vltrb")

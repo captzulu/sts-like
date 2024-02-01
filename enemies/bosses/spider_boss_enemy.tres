@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b0lxo3bj13qgr"]
+
+[ext_resource type="PackedScene" uid="uid://cajrb0quyr18e" path="res://enemies/bosses/spider_boss/spider_boss_enemy_ai.tscn" id="1_cmoqk"]
+[ext_resource type="Texture2D" uid="uid://ukld5o613i0a" path="res://art/original_art/tile_0122.png" id="2_dq4ji"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_tys6o"]
+
+[resource]
+script = ExtResource("3_tys6o")
+ai = ExtResource("1_cmoqk")
+identifier = "spider_boss"
+is_boss = true
+max_health = 40
+art = ExtResource("2_dq4ji")
