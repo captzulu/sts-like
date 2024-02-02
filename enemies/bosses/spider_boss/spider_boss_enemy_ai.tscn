@@ -11,11 +11,11 @@ script = ExtResource("1_ow6tv")
 
 [node name="SpiderBossBlockAttackAction" type="Node" parent="."]
 script = ExtResource("2_kkskb")
+damage = 5
 sound = ExtResource("3_656o0")
 type = 1
 chance_weight = 1.0
 
 [node name="SpiderBossMegaAttackAction" type="Node" parent="."]
 script = ExtResource("3_hituv")
-turn_threshold = 3
 sound = ExtResource("3_bxoxd")

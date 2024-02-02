@@ -8,5 +8,6 @@
 script = ExtResource("3_i2p2g")
 ai = ExtResource("1_dy1bf")
 identifier = "spider"
-max_health = 10
+is_boss = false
+max_health = 14
 art = ExtResource("2_qmeru")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_camtn"]
 [ext_resource type="Script" path="res://enemies/mobs/spider/spider_block_attack_action.gd" id="2_sg86i"]
 [ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="3_gnvxr"]
-[ext_resource type="Script" path="res://enemies/mobs/spider/spider_mega_attack_action.gd" id="4_12lrg"]
+[ext_resource type="Script" path="res://enemies/mobs/spider/spider_poison_attack_action.gd" id="4_12lrg"]
 [ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="5_ogq6q"]
 
 [node name="SpiderEnemyAi" type="Node"]
@@ -11,13 +11,12 @@ script = ExtResource("1_camtn")
 
 [node name="SpiderBlockAttackAction" type="Node" parent="."]
 script = ExtResource("2_sg86i")
-block = 4
-damage = 4
+block = 6
+damage = 3
 sound = ExtResource("3_gnvxr")
 type = 1
 chance_weight = 1.0
 
-[node name="SpiderMegaAttackAction" type="Node" parent="."]
+[node name="SpiderPoisonAttackAction" type="Node" parent="."]
 script = ExtResource("4_12lrg")
-damage = 10
 sound = ExtResource("5_ogq6q")
