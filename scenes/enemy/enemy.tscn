@@ -16,8 +16,10 @@ script = ExtResource("1_7ge3k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lnf2f")
+offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_wawtc")
 
 [node name="Arrow" type="Sprite2D" parent="."]
@@ -28,21 +30,23 @@ texture = ExtResource("3_srnj7")
 
 [node name="StatsUi" parent="." instance=ExtResource("3_40jfj")]
 offset_left = -29.0
-offset_top = 8.0
+offset_top = -2.5
 offset_right = 25.0
-offset_bottom = 24.0
+offset_bottom = 13.5
 scale = Vector2(1.01257, 1)
 theme_override_constants/separation = 1
 
 [node name="IntentUi" parent="." instance=ExtResource("5_cvdml")]
-offset_top = -28.0
-offset_bottom = -14.0
+offset_left = -17.5
+offset_top = -32.5
+offset_right = 22.5
+offset_bottom = -18.5
 
 [node name="StatusesBar" parent="." instance=ExtResource("6_c0ptl")]
 offset_left = -35.0
-offset_top = 24.0
+offset_top = 15.0
 offset_right = 36.0
-offset_bottom = 32.0
+offset_bottom = 23.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

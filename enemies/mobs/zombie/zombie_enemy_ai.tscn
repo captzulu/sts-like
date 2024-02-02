@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3ceeose6u4e"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_i3tvi"]
+[ext_resource type="Script" path="res://enemies/mobs/zombie/zombie_attack_action.gd" id="2_yqumi"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_5h7kv"]
+
+[node name="ZombieEnemyAi" type="Node"]
+script = ExtResource("1_i3tvi")
+
+[node name="ZombieAttackAction" type="Node" parent="."]
+script = ExtResource("2_yqumi")
+sound = ExtResource("3_5h7kv")
+type = 1
+chance_weight = 1.0

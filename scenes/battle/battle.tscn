@@ -47,19 +47,19 @@ script = ExtResource("10_re72a")
 
 [node name="BossMarker" type="Marker2D" parent="EnemySpawner"]
 unique_name_in_owner = true
-position = Vector2(485.531, 243.732)
+position = Vector2(479.181, 242.715)
 
 [node name="Marker1" type="Marker2D" parent="EnemySpawner"]
-position = Vector2(428.316, 160.017)
+position = Vector2(421.966, 159)
 
 [node name="Marker2" type="Marker2D" parent="EnemySpawner"]
-position = Vector2(552.861, 161.631)
+position = Vector2(546.511, 160.614)
 
 [node name="Marker3" type="Marker2D" parent="EnemySpawner"]
-position = Vector2(372.35, 243.312)
+position = Vector2(366, 242.295)
 
 [node name="Marker4" type="Marker2D" parent="EnemySpawner"]
-position = Vector2(609, 243)
+position = Vector2(602.65, 241.983)
 
 [node name="Player" parent="." instance=ExtResource("3_4tia0")]
 position = Vector2(91.3067, 194.164)

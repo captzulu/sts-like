@@ -4,6 +4,7 @@ extends Stats
 @export var ai : PackedScene
 @export var identifier : String
 @export var is_boss : bool
+@export var scale : Vector2 = Vector2(1, 1)
 
 func create_instance(health_variance : float = 0) -> Resource:
 	var instance : Stats = self.duplicate() as Stats

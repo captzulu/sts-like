@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://cn23qflbsfwwc"]
+
+[ext_resource type="PackedScene" uid="uid://dd3ceeose6u4e" path="res://enemies/mobs/zombie/zombie_enemy_ai.tscn" id="1_pxull"]
+[ext_resource type="Texture2D" uid="uid://ddx783ysrdga8" path="res://art/zombie.png" id="2_k6h22"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_hajj8"]
+
+[resource]
+script = ExtResource("3_hajj8")
+ai = ExtResource("1_pxull")
+identifier = "zombie"
+is_boss = false
+scale = Vector2(1.6, 1.6)
+max_health = 11
+art = ExtResource("2_k6h22")
