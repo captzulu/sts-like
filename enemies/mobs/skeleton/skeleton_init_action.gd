@@ -11,8 +11,3 @@ func perform_action() -> void:
 		return
 	
 	effects[0].execute([enemy])
-	
-	get_tree().create_timer(0.6, false).timeout.connect(
-		func() -> void:
-			Events.enemy_action_completed.emit(enemy)
-	)
