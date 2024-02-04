@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="1_g4inn"]
 [ext_resource type="Script" path="res://scenes/ui/tooltip.gd" id="2_1a5rj"]
-[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/original_art/tile_0119.png" id="3_hp7pe"]
+[ext_resource type="Texture2D" uid="uid://b638ve11xkrwi" path="res://art/original_art/tile_0119.png" id="3_hp7pe"]
 
 [node name="Tooltip" type="PanelContainer"]
 anchors_preset = 5

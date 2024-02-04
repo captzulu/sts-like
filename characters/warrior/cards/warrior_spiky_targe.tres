@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c05f6sayw44jl"]
 
-[ext_resource type="Texture2D" uid="uid://5aqbs4juj2na" path="res://art/original_art/spike.png" id="1_w3p1b"]
+[ext_resource type="Texture2D" uid="uid://d37ie4etdqbbk" path="res://art/original_art/spike.png" id="1_w3p1b"]
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_spiky_targe.gd" id="2_krsy3"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="3_vltrb"]
+[ext_resource type="AudioStream" uid="uid://brdecd1cnmuq5" path="res://art/original_art/block.ogg" id="3_vltrb"]
 
 [resource]
 script = ExtResource("2_krsy3")

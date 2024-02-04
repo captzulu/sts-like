@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="1_q3wy6"]
 [ext_resource type="Script" path="res://scenes/ui/statsUi.gd" id="2_dru51"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/original_art/tile_0102.png" id="2_koog2"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://art/original_art/heart.png" id="3_yuvh0"]
+[ext_resource type="Texture2D" uid="uid://c3nwqmaq043kw" path="res://art/original_art/tile_0102.png" id="2_koog2"]
+[ext_resource type="Texture2D" uid="uid://cibtivciubemc" path="res://art/original_art/heart.png" id="3_yuvh0"]
 
 [node name="StatsUi" type="HBoxContainer"]
 anchors_preset = 5

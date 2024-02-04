@@ -11,8 +11,11 @@ func _ready() -> void:
 	for child in get_children():
 		var enemy_action = child as EnemyAction
 		enemy_action.enemy = enemy
-		actions.append(enemy_action)
 		enemy_action.setup_effects()
+		if enemy_action.type == EnemyAction.Type.ON_INIT:
+			enemy_action.perform_action()
+		else:
+			actions.append(enemy_action)
 		
 	target = get_tree().get_first_node_in_group("player")
 	setup_chances()

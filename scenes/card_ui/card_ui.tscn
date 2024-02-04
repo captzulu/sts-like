@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_sate_machine.gd" id="3_1n5hv"]
 [ext_resource type="StyleBox" uid="uid://b5mk3udrax0mq" path="res://scenes/card_ui/card_base_style_box.tres" id="3_hgd3c"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_rabkq"]
-[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/original_art/tile_0104.png" id="4_sh0k7"]
+[ext_resource type="Texture2D" uid="uid://bi5g44d6t7xuq" path="res://art/original_art/tile_0104.png" id="4_sh0k7"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_kdrp0"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_8k0sr"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_released_state.gd" id="7_keyew"]

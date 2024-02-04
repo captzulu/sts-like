@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://buh1b4whjkkuu"]
+[gd_scene load_steps=7 format=3 uid="uid://buh1b4whjkkuu"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_llact"]
 [ext_resource type="Script" path="res://enemies/mobs/skeleton/skeleton_attack_action.gd" id="2_vm1op"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_sndek"]
+[ext_resource type="AudioStream" uid="uid://c6vuq54kssd7x" path="res://art/original_art/enemy_attack.ogg" id="3_sndek"]
+[ext_resource type="Script" path="res://enemies/mobs/skeleton/skeleton_init_action.gd" id="4_qvw1c"]
 [ext_resource type="Script" path="res://enemies/mobs/skeleton/skeleton_block_action.gd" id="4_x460n"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="5_0spdk"]
+[ext_resource type="AudioStream" uid="uid://bvqucemdcw646" path="res://art/original_art/enemy_block.ogg" id="5_0spdk"]
 
 [node name="SkeletonEnemyAi" type="Node"]
 script = ExtResource("1_llact")
@@ -14,6 +15,12 @@ script = ExtResource("2_vm1op")
 sound = ExtResource("3_sndek")
 type = 1
 chance_weight = 3.0
+
+[node name="SkeletonInitAction" type="Node" parent="."]
+script = ExtResource("4_qvw1c")
+sound = ExtResource("5_0spdk")
+type = 2
+chance_weight = 1.0
 
 [node name="SkeletonBlockAction" type="Node" parent="."]
 script = ExtResource("4_x460n")

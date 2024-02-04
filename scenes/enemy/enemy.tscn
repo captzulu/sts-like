@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://codux7uwyk6wa"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_7ge3k"]
-[ext_resource type="Texture2D" uid="uid://dgrjexhd563we" path="res://art/skeleton.png" id="2_lnf2f"]
+[ext_resource type="Texture2D" uid="uid://c17mxedf4gvnr" path="res://art/skeleton.png" id="2_lnf2f"]
 [ext_resource type="PackedScene" uid="uid://02381nc0lj5f" path="res://scenes/ui/stats_ui.tscn" id="3_40jfj"]
-[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/original_art/arrow.png" id="3_srnj7"]
+[ext_resource type="Texture2D" uid="uid://dvl1f1lbqdiih" path="res://art/original_art/arrow.png" id="3_srnj7"]
 [ext_resource type="PackedScene" uid="uid://wdx0jcyi451k" path="res://scenes/ui/intent_ui.tscn" id="5_cvdml"]
 [ext_resource type="PackedScene" uid="uid://b1xgrhkvg5e67" path="res://scenes/ui/StatusesBar.tscn" id="6_c0ptl"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://djhsxq1phowkp"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_efk67"]
-[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/original_art/tile_0087.png" id="1_qqupy"]
+[ext_resource type="Texture2D" uid="uid://58ecbvadmtbl" path="res://art/original_art/tile_0087.png" id="1_qqupy"]
 [ext_resource type="PackedScene" uid="uid://02381nc0lj5f" path="res://scenes/ui/stats_ui.tscn" id="2_fr555"]
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/original_art/pixel_rpg.ttf" id="4_d6b2d"]
+[ext_resource type="FontFile" uid="uid://51auwrw3babw" path="res://art/original_art/pixel_rpg.ttf" id="4_d6b2d"]
 [ext_resource type="Script" path="res://scenes/player/floating_text_ui.gd" id="5_x6w81"]
 [ext_resource type="PackedScene" uid="uid://b1xgrhkvg5e67" path="res://scenes/ui/StatusesBar.tscn" id="6_6p7h8"]
 

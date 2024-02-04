@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://di5u7ih45euoo"]
 
-[ext_resource type="Texture2D" uid="uid://bk46vtk0uw1yp" path="res://art/original_art/poison_dagger.png" id="1_1wert"]
+[ext_resource type="Texture2D" uid="uid://k6gc30udegy0" path="res://art/original_art/poison_dagger.png" id="1_1wert"]
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_poison_strike.gd" id="2_ywfka"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_ge41h"]
+[ext_resource type="AudioStream" uid="uid://dxyof2jawsfsh" path="res://art/original_art/slash.ogg" id="3_ge41h"]
 
 [resource]
 script = ExtResource("2_ywfka")

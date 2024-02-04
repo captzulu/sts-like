@@ -13,8 +13,11 @@ process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -320.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_x5h5y")
 script = ExtResource("1_s4ljf")
 
@@ -25,21 +28,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = -65.0
+offset_left = -84.5
+offset_top = -67.5
+offset_right = 83.5
+offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Victorious !"
 label_settings = SubResource("LabelSettings_27nne")
+horizontal_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 16)
+custom_minimum_size = Vector2(65, 22)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -47,7 +52,7 @@ text = "Awesome !"
 
 [node name="RestartButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 16)
+custom_minimum_size = Vector2(65, 22)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

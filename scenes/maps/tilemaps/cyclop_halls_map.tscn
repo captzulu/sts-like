@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://d2y6ahlmtvw5o"]
 
-[ext_resource type="Texture2D" uid="uid://bsfyw1v3rhvnt" path="res://art/Minifantasy_DwarvenKingdom_Assets/Tileset/Tileset.png" id="1_abhsq"]
-[ext_resource type="Texture2D" uid="uid://ps3ijuitj82o" path="res://art/spiderwebs.png" id="1_iqt7w"]
-[ext_resource type="Texture2D" uid="uid://bkvyvcn4oqqm0" path="res://art/Minifantasy_DwarvenKingdom_Assets/Props/Decoration/Props.png" id="2_fy41j"]
+[ext_resource type="Texture2D" uid="uid://cghb8wne1yks3" path="res://art/Minifantasy_DwarvenKingdom_Assets/Tileset/Tileset.png" id="1_abhsq"]
+[ext_resource type="Texture2D" uid="uid://d3ljjpi3f4q4u" path="res://art/spiderwebs.png" id="1_iqt7w"]
+[ext_resource type="Texture2D" uid="uid://dl8hgqg0fcj5w" path="res://art/Minifantasy_DwarvenKingdom_Assets/Props/Decoration/Props.png" id="2_fy41j"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_m4ssm"]
 tile_data = PackedInt32Array(0, 1638401, 17, 65536, 1638401, 18, 131072, 1638401, 19, 1, 1703937, 17, 65537, 1703937, 18, 131073, 1703937, 19, 2, 1769473, 17, 65538, 1769473, 18, 131074, 1769473, 19, 3, 1835009, 17, 65539, 1835009, 18, 131075, 1835009, 19, 4, 1900545, 17, 65540, 1900545, 18, 131076, 1900545, 19, 5, 1966081, 17, 65541, 1966081, 18, 131077, 1966081, 19, 6, 2031617, 17, 65542, 2031617, 18, 131078, 2031617, 19)

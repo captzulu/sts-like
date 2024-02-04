@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c14ahvcjegv0c"]
 
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_triple_strike.gd" id="1_fx42y"]
-[ext_resource type="Texture2D" uid="uid://k00aseafrbss" path="res://art/original_art/triple_strike.png" id="1_wgofj"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_guaau"]
+[ext_resource type="Texture2D" uid="uid://dehx7f2hhkvuh" path="res://art/original_art/triple_strike.png" id="1_wgofj"]
+[ext_resource type="AudioStream" uid="uid://dxyof2jawsfsh" path="res://art/original_art/slash.ogg" id="3_guaau"]
 
 [resource]
 script = ExtResource("1_fx42y")

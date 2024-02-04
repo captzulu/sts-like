@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://dlb3x3i4ywsim"]
 
 [ext_resource type="PackedScene" uid="uid://dwx0cy1u82wyj" path="res://enemies/mobs/crab/crab_enemy_ai.tscn" id="1_25ngx"]
-[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/original_art/tile_0110.png" id="1_084mf"]
+[ext_resource type="Texture2D" uid="uid://cdivtuv5fcc85" path="res://art/original_art/tile_0110.png" id="1_084mf"]
 [ext_resource type="Script" path="res://resources/enemy_stats.gd" id="1_d21vc"]
 
 [resource]
 script = ExtResource("1_d21vc")
 ai = ExtResource("1_25ngx")
 identifier = "crab"
+is_boss = false
+scale = Vector2(1, 1)
 max_health = 10
 art = ExtResource("1_084mf")
