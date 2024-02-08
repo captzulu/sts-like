@@ -97,6 +97,16 @@ func take_damage(damage : int, ignore_block : bool = false) -> void:
 				death(initial_health, initial_block, damage)
 	)
 
+func heal(amount : int) -> bool:
+	if stats.health + amount > stats.max_health:
+		amount -= (stats.health + amount - stats.max_health)
+		
+	if amount <= 0:
+		return false
+
+	stats.heal(amount)
+	return true
+
 func add_status(status : Status) -> void:
 	stats.add_status(status)
 	statuses_bar.refresh_bar(stats.statuses_dict)
