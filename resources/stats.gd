@@ -24,6 +24,10 @@ func add_status(status : Status) -> void:
 	else:
 		statuses_dict[status.identifier] = status
 
+func decrease_status(status, decrease_by : int) -> void:
+	if statuses_dict.has(status.identifier):
+		statuses_dict[status.identifier].stacks -= decrease_by
+
 func get_status_count(status) -> int:
 	if statuses_dict.has(status.identifier):
 		return statuses_dict[status.identifier].stacks
@@ -37,6 +41,9 @@ func take_damage(damage : int, ignore_block : bool = false) -> void:
 	if not ignore_block:
 		damage = clampi(damage - block, 0, damage)
 		self.block = clampi(block - initial_damage, 0, block)
+	if get_status_count(Undying) > 0 and self.health - damage < 1:
+		damage = clampi(damage, 0, self.health - 1)
+		decrease_status(Undying, 1)
 	self.health -= damage
 
 func heal(amount : int) -> void:
