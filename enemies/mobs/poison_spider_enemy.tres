@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://c2pp7sn24sh38"]
+
+[ext_resource type="PackedScene" uid="uid://b5k8s0jwmj38d" path="res://enemies/mobs/poison_spider/poison_spider_enemy_ai.tscn" id="1_2jvrx"]
+[ext_resource type="Texture2D" uid="uid://by4ik2qx6n0no" path="res://art/poison_spider.png" id="2_01xxe"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_63hfk"]
+
+[resource]
+script = ExtResource("3_63hfk")
+ai = ExtResource("1_2jvrx")
+identifier = "poison_spider"
+is_boss = false
+scale = Vector2(1, 1)
+max_health = 10
+art = ExtResource("2_01xxe")

@@ -1,7 +1,7 @@
 id;mob_1;mob_2;mob_3;mob_4;mob_5
-0;crab;crab;;;
-1;crab;crab;bat;;
-2;bat;bat;bat;;
-3;spider;bat;bat;spider;
-4;spider;spider;spider;bat;bat
+0;bat;bat;;;
+1;spider;bat;bat;;
+2;poison_spider;spider;bat;;
+3;poison_spider;spider;spider;bat;
+4;spider;poison_spider;poison_spider;spider;bat
 5;spider_boss;;;;

@@ -10,5 +10,5 @@ ai = ExtResource("1_dy1bf")
 identifier = "spider"
 is_boss = false
 scale = Vector2(1, 1)
-max_health = 14
+max_health = 12
 art = ExtResource("2_qmeru")

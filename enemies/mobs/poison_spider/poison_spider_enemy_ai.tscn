@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5k8s0jwmj38d"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_f3p5x"]
+[ext_resource type="Script" path="res://enemies/mobs/spider/spider_web_attack_action.gd" id="2_8di7a"]
+[ext_resource type="AudioStream" uid="uid://bvqucemdcw646" path="res://art/original_art/enemy_block.ogg" id="3_xbdpt"]
+[ext_resource type="Script" path="res://enemies/mobs/spider/spider_block_attack_action.gd" id="4_ub3mt"]
+[ext_resource type="AudioStream" uid="uid://c6vuq54kssd7x" path="res://art/original_art/enemy_attack.ogg" id="5_0dcw5"]
+
+[node name="PoisonSpiderEnemyAi" type="Node"]
+script = ExtResource("1_f3p5x")
+
+[node name="PoisonSpiderWebAttackAction" type="Node" parent="."]
+script = ExtResource("2_8di7a")
+restrained = 2
+damage = 3
+sound = ExtResource("3_xbdpt")
+type = 1
+chance_weight = 1.0
+
+[node name="PoisonSpiderPoisonAttackAction" type="Node" parent="."]
+script = ExtResource("4_ub3mt")
+sound = ExtResource("5_0dcw5")
