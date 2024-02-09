@@ -1,7 +1,7 @@
 class_name DamageEffect
 extends Effect
 
-var amount := 0 
+var amount : int = 0 
 
 func _init(amount_in : int, sound_in : AudioStream, originator_in : Node = null) -> void:
 	amount = amount_in
@@ -12,7 +12,12 @@ func execute(targets : Array[Node]) -> void:
 	for target in targets:
 		if not target is Enemy and not target is Player:
 			continue
-		target.take_damage(amount)
+
+		var damage : int = amount
+		if originator.stats.get_status_count(Restrained) > 0:
+			damage = floor(damage * 0.75)
+
+		target.take_damage(damage)
 		Events.damage_effect.emit(originator, target)
 	SfxPlayer.play(sound)
 	
