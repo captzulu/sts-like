@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqim2cg3ecsif"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_cewir"]
+[ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_attack_action.gd" id="2_60hhd"]
+[ext_resource type="AudioStream" uid="uid://c17muo3a4t68b" path="res://art/original_art/axe.ogg" id="3_xoukv"]
+[ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_mega_attack_action.gd" id="4_mxjv0"]
+
+[node name="CyclopMagiEnemyAi" type="Node"]
+script = ExtResource("1_cewir")
+
+[node name="CyclopMagiAttackAction" type="Node" parent="."]
+script = ExtResource("2_60hhd")
+sound = ExtResource("3_xoukv")
+type = 1
+chance_weight = 1.0
+
+[node name="CyclopMagiMegaAttackAction" type="Node" parent="."]
+script = ExtResource("4_mxjv0")
+damage = 12
+sound = ExtResource("3_xoukv")
