@@ -11,6 +11,7 @@ enum Type {CONDITIONAL, CHANCE_BASED, ON_INIT}
 
 var enemy : Enemy
 var target : Node2D
+var allies : Array
 var effects : Array[Effect]
 var execution_number : int = 1
 var execution_interval : float = 0.35

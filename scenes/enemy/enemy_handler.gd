@@ -10,10 +10,14 @@ func _ready() -> void:
 
 func reset_enemy_actions() -> void:
 	var enemy : Enemy
-	for child in get_children():
+	var enemies : Array = get_children()
+	for child in enemies:
+		var allies = enemies.duplicate()
+		allies.erase(child)
 		enemy = child as Enemy
 		enemy.current_action = null
 		enemy.update_action()
+		enemy.current_action.allies = allies
 		
 func start_turn() -> void:
 	if get_child_count() == 0:
