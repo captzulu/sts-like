@@ -17,4 +17,4 @@ func generate_tooltip() -> String:
 		turn. Then decreases by 1." % str(stacks)
 
 func _on_player_turn_started() -> void:
-	stacks = stacks - round(stacks / 3)
+	decrease_stacks(round(stacks / 3))

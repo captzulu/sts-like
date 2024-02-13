@@ -1,7 +1,6 @@
 class_name EnemyActionPicker
 extends Node
 
-
 @onready var total_weight : float = 0.0
 var actions : Array[EnemyAction]
 var enemy : Enemy
@@ -9,7 +8,7 @@ var target : Node2D : set = _set_target
 
 func _ready() -> void:
 	for child in get_children():
-		var enemy_action = child as EnemyAction
+		var enemy_action : EnemyAction = child as EnemyAction
 		enemy_action.enemy = enemy
 		enemy_action.setup_effects()
 		if enemy_action.type == EnemyAction.Type.ON_INIT:

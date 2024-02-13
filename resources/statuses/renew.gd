@@ -18,4 +18,4 @@ func generate_tooltip() -> String:
 
 func _on_player_turn_started() -> void:
 	is_on.stats.heal(stacks)
-	stacks -= 1
+	decrease_stacks(1)

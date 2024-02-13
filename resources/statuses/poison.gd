@@ -18,4 +18,4 @@ func generate_tooltip() -> String:
 
 func _on_player_turn_ended() -> void:
 	is_on.take_damage(stacks, true)
-	stacks -= 1
+	decrease_stacks(1)

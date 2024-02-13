@@ -22,9 +22,11 @@ func spawn_wave() -> void:
 	wave_index += 1
 	var i : int = 0
 	for enemy in get_wave_enemies():
-		enemy_node = (boss_enemy_scene if is_on_last_wave() else enemy_scene).instantiate() as Enemy
+		
+		enemy_node = (boss_enemy_scene if enemy.is_boss else enemy_scene).instantiate() as Enemy
 		enemy_node.stats = enemy
 		enemy_handler.add_child(enemy_node)
+		enemy_node.add_to_group("enemies")
 		enemy_node.position = spawn_nodes[i].position
 		i += 1
 	

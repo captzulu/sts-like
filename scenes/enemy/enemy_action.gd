@@ -11,7 +11,6 @@ enum Type {CONDITIONAL, CHANCE_BASED, ON_INIT}
 
 var enemy : Enemy
 var target : Node2D
-var allies : Array
 var effects : Array[Effect]
 var execution_number : int = 1
 var execution_interval : float = 0.35
@@ -44,4 +43,7 @@ func makes_contact() -> bool:
 			return true
 
 	return false
+	
+func calculate_health_percent(stats : Stats) -> int:
+	return floor((stats.health / stats.max_health) * 100)
 		

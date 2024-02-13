@@ -1,6 +1,6 @@
 extends Node
 
-signal confirmation
+signal remove_status(status_id : String)
 
 #region Card-related events
 signal card_drag_started(card_ui: CardUi) 

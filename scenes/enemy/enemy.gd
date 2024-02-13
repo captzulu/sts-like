@@ -12,6 +12,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://art/original_art/white_sprite_mate
 @onready var intent_ui : IntentUi = $IntentUi as IntentUi
 @onready var statuses_bar : StatusesBar = $StatusesBar as StatusesBar
 
+var enemy_handler : EnemyHandler
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
 var last_action: EnemyAction
@@ -73,9 +74,9 @@ func update_action() -> void:
 		current_action = enemy_action_picker.get_action()
 		return
 	
-	var new_consitional_action := enemy_action_picker.get_first_conditional_action()
-	if new_consitional_action and current_action != new_consitional_action:
-		current_action = new_consitional_action
+	var new_conditional_action := enemy_action_picker.get_first_conditional_action()
+	if new_conditional_action and current_action != new_conditional_action:
+		current_action = new_conditional_action
 	
 func take_damage(damage : int, ignore_block : bool = false) -> void:
 	if stats.health <= 0:
