@@ -12,5 +12,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_1wert")
-tooltip_text = "Deal [color=\"ebc807\"]4[/color] damage to target and inflict [color=\"62c223\"]5[/color] poison."
+tooltip_text_template = "Deal [color=\"ebc807\"]4[/color] damage to target and inflict [color=\"62c223\"]5[/color] poison."
 sound = ExtResource("3_ge41h")

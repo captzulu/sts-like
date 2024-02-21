@@ -13,5 +13,5 @@ type = 1
 target = 0
 cost = 1
 icon = ExtResource("1_w3p1b")
-tooltip_text = "Gain [color=\"0044ff\"]3[/color] block and 3 spikes."
+tooltip_text_template = "Gain [color=\"0044ff\"]3[/color] block and 3 spikes."
 sound = ExtResource("3_vltrb")

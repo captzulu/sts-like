@@ -12,5 +12,5 @@ type = 0
 target = 2
 cost = 2
 icon = ExtResource("1_wgofj")
-tooltip_text = "[center]Deal [color=\"ebc807\"]6[/color] damage to a random enemy 3 times.[/center]"
+tooltip_text_template = "[center]Deal [color=\"ebc807\"]6[/color] damage to a random enemy 3 times.[/center]"
 sound = ExtResource("3_guaau")
