@@ -17,6 +17,11 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 var animation_playing : bool = false
 var has_no_animation : bool = true
+var tooltip_text : String = ""
+var effects_backup : Dictionary
+
+func _ready() -> void:
+	effects_backup = self.effects
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -50,3 +55,7 @@ func play(targets : Array[Node], player: Player) -> void:
 
 func apply_effects(_targets : Array[Node], _player : Player) -> void:
 	pass
+	
+func compute_tooltip():
+	tooltip_text = tooltip_text_template.format(self.effects)
+	

@@ -1,10 +1,12 @@
 extends Card
 
-@export var damage : int = 6
+@export var effects : Dictionary = {
+	"damage" : 6
+}
 
 func apply_effects(targets : Array[Node], player : Player) -> void:
 	has_no_animation = false
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, player)
+	var damage_effect : DamageEffect = DamageEffect.new(effects["damage"], sound, player)
 	var target : Node
 	var tree : SceneTree = targets[0].get_tree()
 	for i in range(3):

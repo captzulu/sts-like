@@ -3,6 +3,7 @@ extends Status
 
 var type : Type = Type.DEBUFF
 const identifier = "Restrained"
+const damage_multiplier : float = 0.75
 
 static func get_identifier() -> String:
 	return identifier

@@ -6,11 +6,13 @@
 
 [resource]
 script = ExtResource("2_8h22d")
-damage = 6
+effects = {
+"damage": 6
+}
 id = "warrior_axe_attack"
 type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_ntx6l")
-tooltip_text_template = "Deal [color=\"ebc807\"]6[/color] damage to target."
+tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage to target."
 sound = ExtResource("3_co2lg")

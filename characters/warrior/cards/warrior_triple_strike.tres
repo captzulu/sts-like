@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_fx42y")
-damage = 6
+effects = {}
 id = "warrior_triple_strike"
 type = 0
 target = 2
@@ -14,3 +14,4 @@ cost = 2
 icon = ExtResource("1_wgofj")
 tooltip_text_template = "[center]Deal [color=\"ebc807\"]6[/color] damage to a random enemy 3 times.[/center]"
 sound = ExtResource("3_guaau")
+effects = {}

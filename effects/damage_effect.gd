@@ -15,10 +15,10 @@ func execute(targets : Array[Node]) -> void:
 
 		var damage : int = amount
 		if originator.stats.get_status_count(Restrained) > 0:
-			damage = floor(damage * 0.75)
+			damage = floor(damage * Restrained.damage_multiplier)
 			
 		if originator.stats.get_status_count(Enrage) > 0:
-			damage = floor(damage * 1.5)
+			damage = floor(damage * Enrage.damage_multiplier)
 
 		target.take_damage(damage)
 		Events.damage_effect.emit(originator, target)

@@ -6,6 +6,9 @@
 
 [resource]
 script = ExtResource("2_o2ny3")
+effects = {
+"block": 5
+}
 id = "warrior_block"
 type = 1
 target = 0
