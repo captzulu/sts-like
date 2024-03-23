@@ -37,7 +37,8 @@ func end_turn() -> void:
 
 func draw_card() -> void:
 	reshuffle_deck_from_discard()
-	hand.add_card(character.draw_pile.draw_card())
+	var card : Card = character.draw_pile.draw_card()
+	hand.add_card(card)
 	reshuffle_deck_from_discard()
 	
 func draw_cards(amount : int) -> void:
