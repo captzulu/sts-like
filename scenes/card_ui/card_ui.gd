@@ -22,6 +22,8 @@ var parent : Control
 var tween : Tween
 var playable : bool = true : set = _set_playable
 var disabled : bool = false
+var effects : Dictionary
+var text_tooltip : String = ""
 
 func _ready() -> void:
 	Events.card_aim_started.connect(_on_card_drag_or_aiming_started)
@@ -58,6 +60,7 @@ func _set_card(value: Card) -> void:
 		await ready
 		
 	card = value
+	self.effects = card.effects.duplicate(true)
 	cost.text = str(card.cost)
 	icon.texture = card.icon
 
@@ -92,3 +95,6 @@ func _on_card_drag_or_aiming_ended(_used_card: CardUi) -> void:
 	
 func _on_char_stats_changed() -> void:
 	self.playable = player.stats.can_play_card(card)
+	
+func compute_tooltip():
+	text_tooltip = card.tooltip_text_template.format(self.effects)
