@@ -64,3 +64,13 @@ func create_instance() -> Resource:
 	instance.block = 0
 	instance.statuses_dict = {}
 	return instance
+
+func current_damage_modifier() -> float:
+	var damage_modifier : int = 0
+	if get_status_count(Restrained) > 0:
+		damage_modifier += Restrained.damage_multiplier
+	
+	if get_status_count(Enrage) > 0:
+		damage_modifier += Enrage.damage_multiplier
+	
+	return damage_modifier / 100.0 + 1

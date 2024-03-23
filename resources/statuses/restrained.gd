@@ -3,11 +3,11 @@ extends Status
 
 var type : Type = Type.DEBUFF
 const identifier = "Restrained"
-const damage_multiplier : float = 0.75
+const damage_multiplier : int = -33
 
 static func get_identifier() -> String:
 	return identifier
-
+	
 func _init(amount : int) -> void:
 	stacks = amount
 	icon = preload("res://art/restrained.png")

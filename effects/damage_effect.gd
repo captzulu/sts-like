@@ -13,12 +13,8 @@ func execute(targets : Array[Node]) -> void:
 		if not target is Enemy and not target is Player:
 			continue
 
-		var damage : int = amount
-		if originator.stats.get_status_count(Restrained) > 0:
-			damage = floor(damage * Restrained.damage_multiplier)
-			
-		if originator.stats.get_status_count(Enrage) > 0:
-			damage = floor(damage * Enrage.damage_multiplier)
+		var damage_multiplier : float = originator.stats.current_damage_modifier()
+		var damage : int = roundi(amount * damage_multiplier)
 
 		target.take_damage(damage)
 		Events.damage_effect.emit(originator, target)

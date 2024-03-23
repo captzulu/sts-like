@@ -3,7 +3,7 @@ extends Status
 
 var type : Type = Type.BUFF
 const identifier = "Enrage"
-const damage_multiplier : float = 0.75
+const damage_multiplier : int = 25
 
 static func get_identifier() -> String:
 	return identifier
