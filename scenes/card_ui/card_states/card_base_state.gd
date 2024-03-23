@@ -25,8 +25,8 @@ func on_mouse_entered() -> void:
 		return
 	
 	_change_style_box(card_ui.HOVER_STYLEBOX)
-	card_ui.card.compute_tooltip()
-	Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.card.tooltip_text)
+	card_ui.compute_tooltip()
+	Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.text_tooltip)
 
 func on_mouse_exited() -> void:
 	if not card_ui.playable or card_ui.disabled:
