@@ -6,12 +6,14 @@
 
 [resource]
 script = ExtResource("2_krsy3")
-spikes = 3
-block = 3
+effects = {
+"block": 3,
+"spikes": 3
+}
 id = "warrior_spiky_targe"
 type = 1
 target = 0
 cost = 1
 icon = ExtResource("1_w3p1b")
-tooltip_text_template = "Gain [color=\"0044ff\"]3[/color] block and 3 spikes."
+tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block and {spikes} spikes."
 sound = ExtResource("3_vltrb")

@@ -6,11 +6,14 @@
 
 [resource]
 script = ExtResource("2_ywfka")
-damage = 4
+effects = {
+"damage": 4,
+"poison": 5
+}
 id = "warrior_deep_cut"
 type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_1wert")
-tooltip_text_template = "Deal [color=\"ebc807\"]4[/color] damage to target and inflict [color=\"62c223\"]5[/color] poison."
+tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage to target and inflict [color=\"62c223\"]{poison}[/color] poison."
 sound = ExtResource("3_ge41h")
