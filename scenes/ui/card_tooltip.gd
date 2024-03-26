@@ -1,4 +1,4 @@
-class_name Tooltip
+class_name CardTooltip
 extends PanelContainer
 
 @export var fade_seconds : float = 0.2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcmjphuomhe6h"]
+[gd_scene load_steps=22 format=3 uid="uid://bcmjphuomhe6h"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2edvm"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_lcvwo"]
@@ -12,10 +12,12 @@
 [ext_resource type="Script" path="res://scenes/battle/phase_handler.gd" id="10_myi75"]
 [ext_resource type="Script" path="res://scenes/battle/enemy_spawner.gd" id="10_re72a"]
 [ext_resource type="PackedScene" uid="uid://buqnqtiff8xqx" path="res://scenes/ui/mana_ui.tscn" id="11_emvk8"]
-[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/tooltip.tscn" id="12_c3hnr"]
+[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="12_c3hnr"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_1pofa"]
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="15_5feck"]
+[ext_resource type="Script" path="res://scenes/ui/card_tooltip.gd" id="15_6vwxo"]
 [ext_resource type="Script" path="res://scenes/battle/wave_ui.gd" id="15_h1yqg"]
+[ext_resource type="PackedScene" uid="uid://cmx8gdq30637a" path="res://scenes/ui/status_tooltip.tscn" id="16_okjuq"]
 [ext_resource type="PackedScene" uid="uid://rg4pt1re2naq" path="res://scenes/ui/battle_over_panel.tscn" id="17_rhkdk"]
 [ext_resource type="PackedScene" uid="uid://dw2irt8ra85pb" path="res://scenes/ui/battle_menu.tscn" id="18_ofb17"]
 
@@ -101,12 +103,24 @@ offset_bottom = -24.0
 scale = Vector2(2, 2)
 char_stats = ExtResource("4_ni5ra")
 
-[node name="Tooltip" parent="BattleUi" instance=ExtResource("12_c3hnr")]
+[node name="CardTooltip" parent="BattleUi" instance=ExtResource("12_c3hnr")]
 offset_left = -110.0
 offset_top = 10.0
 offset_right = 0.0
 offset_bottom = 44.0
 scale = Vector2(2, 2)
+
+[node name="StatusTooltip" parent="BattleUi" instance=ExtResource("16_okjuq")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 266.0
+offset_top = 320.0
+offset_right = 374.0
+offset_bottom = 352.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("15_6vwxo")
 
 [node name="EndTurnButton" type="Button" parent="BattleUi"]
 unique_name_in_owner = true
