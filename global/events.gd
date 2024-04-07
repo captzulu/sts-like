@@ -9,7 +9,11 @@ signal card_aim_started(card_ui: CardUi)
 signal card_aim_ended(card_ui: CardUi)
 signal card_played(card: Card)
 signal card_play_animation_finished(card: Card)
-signal card_tooltip_requested(card: Card)
+#endregion
+
+#region Tooltips-related events
+signal card_tooltip_requested(icon : Texture, text : String)
+signal status_tooltip_requested(icon : Texture, text : String, position : Vector2)
 signal hide_tooltip_requested
 #endregion
 
