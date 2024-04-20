@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djhsxq1phowkp"]
+[gd_scene load_steps=9 format=3 uid="uid://djhsxq1phowkp"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_efk67"]
 [ext_resource type="Texture2D" uid="uid://58ecbvadmtbl" path="res://art/original_art/tile_0087.png" id="1_qqupy"]
@@ -21,17 +21,31 @@ Label/font_sizes/font_size = 6
 Label/fonts/font = ExtResource("4_d6b2d")
 Label/styles/normal = null
 
-[node name="Player" type="Node2D" groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftin7"]
+size = Vector2(45, 41)
+
+[node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_efk67")
+
+[node name="StatsUi" parent="." instance=ExtResource("2_fr555")]
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 7.0
+offset_bottom = 23.0
+grow_vertical = 2
+
+[node name="StatusesBar" parent="." instance=ExtResource("6_6p7h8")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.5
+offset_top = 23.0
+offset_right = 35.5
+offset_bottom = 31.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qqupy")
-
-[node name="StatsUi" parent="." instance=ExtResource("2_fr555")]
-offset_left = -44.5
-offset_top = 7.0
-offset_right = 45.5
-offset_bottom = 23.0
 
 [node name="OverheadFloatingText" type="Label" parent="."]
 unique_name_in_owner = true
@@ -46,8 +60,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("5_x6w81")
 
-[node name="StatusesBar" parent="." instance=ExtResource("6_6p7h8")]
-offset_left = -35.0
-offset_top = 24.0
-offset_right = 36.0
-offset_bottom = 32.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 11.5)
+shape = SubResource("RectangleShape2D_ftin7")

@@ -1,18 +1,20 @@
 class_name Player
-extends Node2D
+extends Area2D
 
 const WHITE_SPRITE_MATERIAL := preload("res://art/original_art/white_sprite_material.tres")
 
 @export var stats : CharacterStats : set = set_character_stats
 
 @onready var sprite_2d : Sprite2D = $Sprite2D
-@onready var stats_ui : StatsUi = $StatsUi as StatsUi
 @onready var overhead_floating_text : Label = %OverheadFloatingText as FloatingTextUi
+@onready var stats_ui : StatsUi = $StatsUi as StatsUi
 @onready var statuses_bar : StatusesBar = $StatusesBar as StatusesBar
 
 func _ready() -> void:
 	Events.enemy_death_exact_hp.connect(_on_enemy_death_exact_hp)
 	Events.enemy_death_before_turn.connect(_on_enemy_death_first_turn)
+	self.mouse_entered.connect(_on_mouse_entered)
+	self.mouse_exited.connect(_on_mouse_exited)
 
 func set_character_stats(value : CharacterStats) -> void:
 	stats = value as CharacterStats
@@ -89,3 +91,9 @@ func get_spikes() -> int:
 		return 0
 	else:
 		return stats.statuses_dict[Spike.identifier].stacks
+
+func _on_mouse_entered() -> void:
+	Events.status_tooltip_requested.emit(stats.statuses_dict)
+
+func _on_mouse_exited() -> void:
+	Events.hide_tooltip_requested.emit()

@@ -2,14 +2,15 @@ class_name Renew
 extends Status
 
 var type : Type = Type.BUFF
-const identifier = "Renew"
+const identifier : String = "Renew"
+const icon_path : String = "res://art/renew.png"
 
 static func get_identifier() -> String:
 	return identifier
 
 func _init(amount : int) -> void:
 	stacks = amount
-	icon = preload("res://art/renew.png")
+	icon = preload(icon_path)
 	Events.player_turn_started.connect(_on_player_turn_started)
 
 func generate_tooltip() -> String:

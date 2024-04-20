@@ -13,7 +13,7 @@ signal card_play_animation_finished(card: Card)
 
 #region Tooltips-related events
 signal card_tooltip_requested(icon : Texture, text : String)
-signal status_tooltip_requested(icon : Texture, text : String, position : Vector2)
+signal status_tooltip_requested(statuses : Dictionary)
 signal hide_tooltip_requested
 #endregion
 

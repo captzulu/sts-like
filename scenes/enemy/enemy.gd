@@ -17,6 +17,10 @@ var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
 var last_action: EnemyAction
 var turn_alive : int = 0
+
+func _ready() -> void:
+	self.mouse_entered.connect(_on_mouse_entered)
+	self.mouse_exited.connect(_on_mouse_exited)
 	
 func set_current_action(value : EnemyAction) -> void:
 	current_action = value
@@ -126,6 +130,12 @@ func _on_area_entered(_area: Area2D) -> void:
 func _on_area_exited(_area: Area2D) -> void:
 	arrow.hide()
 	
+func _on_mouse_entered() -> void:
+	Events.status_tooltip_requested.emit(stats.statuses_dict)
+
+func _on_mouse_exited() -> void:
+	Events.hide_tooltip_requested.emit()
+
 func get_spikes() -> int:
 	if not stats.statuses_dict.has(Spike.identifier):
 		return 0

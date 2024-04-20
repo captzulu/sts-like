@@ -3,7 +3,6 @@ extends PanelContainer
 
 @export var fade_seconds : float = 0.2
 
-@onready var tooltip_icon : TextureRect = %TooltipIcon
 @onready var tooltip_text_label : RichTextLabel = %TooltipText
 
 var tween: Tween
@@ -21,24 +20,23 @@ func show_card_tooltip(icon : Texture, text : String) -> void:
 	is_visible = true
 	if tween:
 		tween.kill()
-
-	global_position = Vector2(210, 10)
-	size = Vector2(110, 34)
-	tooltip_icon.texture = icon
-	tooltip_text_label.text = text 
+	
+	tooltip_text_label.text = "[font_size=12][table=2][cell][img=32]%s[/img][/cell][cell]%s[/cell][/table][/font_size]" % [icon.resource_path, text] 
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_callback(show)
 	tween.tween_property(self, "modulate", Color.WHITE, fade_seconds)
 	
-func show_status_tooltip(icon : Texture, text : String, position : Vector2) -> void:
+func show_status_tooltip(statuses : Dictionary) -> void:
+	if statuses.size() == 0:
+		return
 	is_visible = true
 	if tween:
 		tween.kill()
-
-	global_position = position
-	size = Vector2(54, 16)
-	tooltip_icon.texture = icon
-	tooltip_text_label.text = text 
+		
+	var tooltip_test : String = "[font_size=6][table=2]"
+	for status in statuses.values():
+		tooltip_test += "[cell][img=16]%s[/img][/cell][cell]%s[/cell]" % [status.icon_path, status.generate_tooltip()]
+	tooltip_text_label.text = tooltip_test + "[/table][/font_size]"	
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_callback(show)
 	tween.tween_property(self, "modulate", Color.WHITE, fade_seconds)

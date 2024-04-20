@@ -3,6 +3,7 @@ extends Status
 
 var type : Type = Type.BUFF
 const identifier = "Enrage"
+const icon_path : String = "res://art/enrage.png"
 const damage_multiplier : int = 25
 
 static func get_identifier() -> String:
@@ -10,7 +11,7 @@ static func get_identifier() -> String:
 
 func _init(amount : int) -> void:
 	stacks = amount
-	icon = preload("res://art/enrage.png")
+	icon = preload(icon_path)
 	Events.player_turn_started.connect(_on_player_turn_started)
 
 func generate_tooltip() -> String:

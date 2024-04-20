@@ -3,6 +3,7 @@ extends Status
 
 var type : Type = Type.DEBUFF
 const identifier = "Restrained"
+const icon_path : String = "res://art/restrained.png"
 const damage_multiplier : int = -33
 
 static func get_identifier() -> String:
@@ -10,7 +11,7 @@ static func get_identifier() -> String:
 	
 func _init(amount : int) -> void:
 	stacks = amount
-	icon = preload("res://art/restrained.png")
+	icon = preload(icon_path)
 	Events.player_turn_ended.connect(_on_player_turn_ended)
 
 func generate_tooltip() -> String:
