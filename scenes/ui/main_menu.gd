@@ -4,6 +4,8 @@ extends CanvasLayer
 var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
 
 func _ready() -> void:
+	var new_char = load("res://characters/warrior/warrior.tres")
+	Globals.char_stats = new_char.create_instance()
 	%SpiderCavernButton.pressed.connect(_on_spider_cavern_pressed)
 	%CyclopMountainButton.pressed.connect(_on_cyclop_mountain_button_pressed)
 	%UndeadLairButton.pressed.connect(_on_undead_lair_button_pressed)

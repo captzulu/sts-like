@@ -14,8 +14,8 @@ func _init(amount : int) -> void:
 	Events.player_turn_started.connect(_on_player_turn_started)
 
 func generate_tooltip() -> String:
-	return "Take [color=\"62c223\"]%s[/color] damage at the end of the player's 
-		turn. Then decreases by 1." % str(stacks)
+	var template : String = "Gain [color=\"" + Globals.TOOLTIP_BLOCK_TEXT_COLOR + "\"]%s[/color] block at the start of the player's turn. Then decreases by [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]1[/color]."
+	return template % str(stacks)
 
 func _on_player_turn_started() -> void:
 	is_on.stats.block += stacks

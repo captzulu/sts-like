@@ -41,6 +41,10 @@ window/stretch/mode="viewport"
 
 export/convert_text_resources_to_binary=false
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

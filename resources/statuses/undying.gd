@@ -13,5 +13,4 @@ func _init(amount : int) -> void:
 	icon = preload(icon_path)
 
 func generate_tooltip() -> String:
-	return "Take [color=\"62c223\"]%s[/color] damage at the end of the player's 
-		turn. Then decreases by 1." % str(stacks)
+	return "Cannot be killed for the next [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]%s[/color] turns." % str(stacks)
