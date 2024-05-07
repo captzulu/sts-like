@@ -22,7 +22,7 @@ func add_to(target : Node) -> void:
 func decrease_stacks(decrease_by : int) -> void:
 	stacks -= decrease_by
 	if stacks <= 0:
-		Events.remove_status.emit(Status.get_identifier())
+		is_on.stats.remove_status(self.get_identifier())
 
 func update_ui(value : int) -> void:
 	stacks = value
