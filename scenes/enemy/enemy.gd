@@ -24,8 +24,6 @@ func _ready() -> void:
 	
 func set_current_action(value : EnemyAction) -> void:
 	current_action = value
-	if current_action:
-		intent_ui.update_intent(current_action.generate_intents())
 
 func set_enemy_stats(value: EnemyStats) -> void:
 	stats = value.create_instance(0.10) as EnemyStats
@@ -76,11 +74,14 @@ func update_action() -> void:
 	
 	if not current_action:
 		current_action = enemy_action_picker.get_action()
+		intent_ui.update_intent(current_action.generate_intents())
 		return
 	
 	var new_conditional_action := enemy_action_picker.get_first_conditional_action()
 	if new_conditional_action and current_action != new_conditional_action:
 		current_action = new_conditional_action
+	
+	intent_ui.update_intent(current_action.generate_intents())
 	
 func take_damage(damage : int, ignore_block : bool = false) -> void:
 	if stats.health <= 0:
