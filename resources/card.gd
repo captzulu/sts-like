@@ -5,7 +5,7 @@ enum Type {ATTACK, SKILL, POWER}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")
-@export var id : String
+@export var identifier : String
 @export var type : Type
 @export var target : Target
 @export var cost : int
