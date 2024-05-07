@@ -3,7 +3,7 @@ extends EnemyAction
 @export var damage : int = 40
 
 func setup_effects() -> void:
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound)
+	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
 	effects.append(damage_effect)
 
 func is_performable() -> bool:

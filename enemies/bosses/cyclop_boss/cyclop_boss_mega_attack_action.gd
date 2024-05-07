@@ -10,7 +10,7 @@ func is_performable() -> bool:
 	return true
 
 func setup_effects() -> void:
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound)
+	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
 	effects.append(damage_effect)
 
 func perform_action() -> void:

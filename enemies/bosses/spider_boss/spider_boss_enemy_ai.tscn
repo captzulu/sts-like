@@ -18,4 +18,6 @@ chance_weight = 1.0
 
 [node name="SpiderBossMegaAttackAction" type="Node" parent="."]
 script = ExtResource("3_hituv")
+poison = 5
+on_turn = 1
 sound = ExtResource("3_bxoxd")

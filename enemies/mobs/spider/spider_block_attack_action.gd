@@ -8,7 +8,7 @@ func setup_effects() -> void:
 	block_effect.amount = block
 	block_effect.sound = sound
 	effects.append(block_effect)
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound)
+	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
 	effects.append(damage_effect)
 
 func perform_action() -> void:
