@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c14ahvcjegv0c"]
+
+[ext_resource type="Texture2D" uid="uid://k00aseafrbss" path="res://art/original_art/triple_strike.png" id="1_jq3kb"]
+[ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_triple_strike.gd" id="2_ye0ry"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_xh5mu"]
+
+[resource]
+script = ExtResource("2_ye0ry")
+effects = {
+"damage": 6
+}
+identifier = "warrior_triple_strike"
+type = 0
+target = 2
+cost = 2
+icon = ExtResource("1_jq3kb")
+tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage to a random enemy [color=\"ebc807\"]3[/color] times.[/center]"
+sound = ExtResource("3_xh5mu")

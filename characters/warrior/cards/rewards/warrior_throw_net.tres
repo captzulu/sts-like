@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://8yxiec75f1fl"]
+
+[ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/original_art/tile_0130.png" id="1_jlcic"]
+[ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_throw_net.gd" id="2_txe0b"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_1cgfn"]
+
+[resource]
+script = ExtResource("2_txe0b")
+effects = {
+"damage": 3,
+"restrained": 2
+}
+identifier = "warrior_throw_net"
+type = 0
+target = 2
+cost = 1
+icon = ExtResource("1_jlcic")
+tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] and restrain all ennemies for [color=\"fcba03\"]{restrained}[/color].[/center]"
+sound = ExtResource("3_1cgfn")
