@@ -8,3 +8,5 @@ script = ExtResource("1_1c6y2")
 identifier = "spider_cavern"
 display_name = "Spider Cavern"
 tilemap = ExtResource("2_f6qrn")
+completed = false
+unlocked = true

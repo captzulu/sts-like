@@ -8,3 +8,5 @@ script = ExtResource("1_q1l5x")
 identifier = "undead_lair"
 display_name = "Undead Lair"
 tilemap = ExtResource("2_u7x1p")
+completed = false
+unlocked = true

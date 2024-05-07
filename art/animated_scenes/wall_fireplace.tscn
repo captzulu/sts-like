@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://c1cir1d2a5gs2"]
+
+[ext_resource type="Texture2D" uid="uid://buxqqp82oi4fk" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Props/Ilumination/WallFireplace/WallFireplace.png" id="1_dhtxq"]
+[ext_resource type="Texture2D" uid="uid://k551sxp3vol6" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Props/Ilumination/WallFireplace/WallFireplaceLight.png" id="2_npiov"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_givpr"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm7lg"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8cey"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g6ey"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vecgg"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u72if"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n08s5"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0vac"]
+atlas = ExtResource("1_dhtxq")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwmjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_givpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm7lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8cey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g6ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vecgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u72if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n08s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0vac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw2m1"]
+atlas = ExtResource("2_npiov")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k3co"]
+atlas = ExtResource("2_npiov")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pley"]
+atlas = ExtResource("2_npiov")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnamq"]
+atlas = ExtResource("2_npiov")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdvaa"]
+atlas = ExtResource("2_npiov")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnl0h"]
+atlas = ExtResource("2_npiov")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anouc"]
+atlas = ExtResource("2_npiov")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfxlv"]
+atlas = ExtResource("2_npiov")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khybj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw2m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k3co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pley")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnamq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdvaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnl0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anouc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfxlv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WallFireplace" type="Node2D"]
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(232, 104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cwmjh")
+autoplay = "default"
+frame_progress = 0.922687
+
+[node name="Light" type="AnimatedSprite2D" parent="."]
+position = Vector2(232, 104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_khybj")
+autoplay = "default"
+frame_progress = 0.624584

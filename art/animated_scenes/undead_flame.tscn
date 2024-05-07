@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://bvbghdenkc2kj"]
+
+[ext_resource type="Texture2D" uid="uid://b5xqvvm747lyk" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Props/UndeadFlame/UndeadFlame.png" id="1_dlx8p"]
+[ext_resource type="Texture2D" uid="uid://cjteyi4ukptuj" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Props/UndeadFlame/UndeadFlameGlow.png" id="2_x8qrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg715"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ma76"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m14pi"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r7r2"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ggvj"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr0it"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsfv0"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0ofr"]
+atlas = ExtResource("1_dlx8p")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7tsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg715")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ma76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m14pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r7r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ggvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr0it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsfv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0ofr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqq33"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3r0n"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vacwl"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ivv"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gjiu"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsy83"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64iq4"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idwp4"]
+atlas = ExtResource("2_x8qrn")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1qtg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqq33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3r0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vacwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0ivv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gjiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsy83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64iq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idwp4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="UndeadFlame" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_r7tsn")
+autoplay = "default"
+
+[node name="Glow" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_f1qtg")
+autoplay = "default"
