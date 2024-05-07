@@ -1,11 +1,16 @@
 extends Node
 
-var current_location : Location = LOCATION_SPIDER
-var cards : Dictionary
+var reward_cards : Dictionary
 var char_stats : CharacterStats
 const LOCATION_SPIDER : Location = preload("res://scenes/maps/locations/spider_cavern.tres")
 const LOCATION_CYCLOP : Location = preload("res://scenes/maps/locations/cyclop_halls.tres")
 const LOCATION_UNDEAD : Location = preload("res://scenes/maps/locations/undead_lair.tres")
+const MAP_ORDER : Array = [
+	LOCATION_SPIDER,
+	LOCATION_CYCLOP,
+	LOCATION_UNDEAD
+]
+var current_location : Location = LOCATION_SPIDER
 const TOOLTIP_HIGHLIGHT_TEXT_COLOR : String = "fcba03"
 const TOOLTIP_SPIKE_TEXT_COLOR : String = "3d4445"
 const TOOLTIP_POISON_TEXT_COLOR : String = "62c223"
