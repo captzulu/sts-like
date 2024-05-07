@@ -3,10 +3,10 @@ extends Node
 signal remove_status(status_id : String)
 
 #region Card-related events
-signal card_drag_started(card_ui: CardUi) 
-signal card_drag_ended(card_ui: CardUi)
-signal card_aim_started(card_ui: CardUi)
-signal card_aim_ended(card_ui: CardUi)
+signal card_drag_started(card_ui: CardInHand) 
+signal card_drag_ended(card_ui: CardInHand)
+signal card_aim_started(card_ui: CardInHand)
+signal card_aim_ended(card_ui: CardInHand)
 signal card_played(card: Card)
 signal card_play_animation_finished(card: Card)
 #endregion
@@ -37,6 +37,11 @@ signal enemy_death_before_turn(enemy : Enemy)
 #region Battle-related events
 signal battle_over_screen_requested(text : String, type : BattleOverPanel.Type)
 signal wave_spawned(wave_number : int)
+#endregion
+
+#region card reward-related events
+signal request_card_reward()
+signal select_card_reward(card : CardAsReward)
 #endregion
 
 #region Effect-related events
