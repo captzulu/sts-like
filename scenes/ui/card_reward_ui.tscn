@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2j1frbcucm4d"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_reward_ui.gd" id="1_ml1ju"]
+[ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="2_wujc4"]
+[ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="3_gtpsx"]
+[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="4_541fp"]
+
+[node name="CardReward" type="CanvasLayer"]
+script = ExtResource("1_ml1ju")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(2, 2)
+theme = ExtResource("2_wujc4")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.5
+offset_top = 22.0
+offset_right = 0.5
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Pick a card as reward :"
+uppercase = true
+
+[node name="CardRewards" type="HBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -32.0
+offset_right = 112.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.5
+offset_top = -40.0
+offset_right = -47.5
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme = ExtResource("3_gtpsx")
+text = "Confirm
+"
+
+[node name="SkipButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 12)
+layout_mode = 2
+offset_left = 171.0
+offset_top = 140.0
+offset_right = 191.0
+offset_bottom = 152.0
+scale = Vector2(2, 2)
+theme = ExtResource("3_gtpsx")
+text = "Skip"
+
+[node name="CardTooltip" parent="." instance=ExtResource("4_541fp")]
+offset_left = 188.0
+offset_top = 11.0
+offset_right = 451.0
+offset_bottom = 76.0

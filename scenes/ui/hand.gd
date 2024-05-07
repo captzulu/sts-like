@@ -3,10 +3,10 @@ extends HBoxContainer
 
 @export var player : Player
 
-@onready var card_ui := preload("res://scenes/card_ui/card_ui.tscn")
+@onready var card_ui := preload("res://scenes/card_ui/card_in_hand.tscn")
 	
 func add_card(card : Card) -> void:
-	var new_card_ui : CardUi = card_ui.instantiate() as CardUi
+	var new_card_ui : CardInHand = card_ui.instantiate() as CardInHand
 	add_child(new_card_ui)
 	
 	new_card_ui.reparent_requested.connect(_on_card_ui_reparent_requested)

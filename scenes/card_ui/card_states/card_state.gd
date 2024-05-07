@@ -7,7 +7,7 @@ signal transition_requested(from: CardState, to: State)
 
 @export var state: State
 
-var card_ui: CardUi
+var card_ui: CardInHand
 
 func enter() -> void:
 	pass
@@ -26,6 +26,3 @@ func on_mouse_entered() -> void:
 
 func on_mouse_exited() -> void:
 	pass
-	
-func _change_style_box(_style_box: Resource) -> void:
-	card_ui.panel.set("theme_override_styles/panel", _style_box)

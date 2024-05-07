@@ -42,6 +42,7 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_6cdxb")
 Button/styles/hover = SubResource("StyleBoxFlat_6cdxb")
 Button/styles/normal = SubResource("StyleBoxFlat_h513e")
 Button/styles/pressed = SubResource("StyleBoxFlat_4xou3")

@@ -15,6 +15,7 @@ func _ready() -> void:
 	load_mobs_to_dict()
 	load_bosses_to_dict()
 	wave_max = DataModule.data[Globals.current_location.identifier].size()
+	#wave_max = 2
 
 func spawn_wave() -> void:
 	var spawn_nodes : Array[Node] = get_children()
@@ -45,7 +46,7 @@ func is_on_last_wave() -> bool:
 	return wave_index == wave_max
 	
 func load_mobs_to_dict() -> void:
-	DataModule.FILE_MANAGER.load_directory_resources_to_dict(enemies, mobs_directory)
+	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(mobs_directory))
 
 func load_bosses_to_dict() -> void:
-	DataModule.FILE_MANAGER.load_directory_resources_to_dict(enemies, boss_directory)
+	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(boss_directory))

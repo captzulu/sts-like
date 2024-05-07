@@ -5,7 +5,7 @@ const ARC_POINTS : int = 8
 @onready var area_2d : Area2D = $Area2D
 @onready var card_arc : Line2D = $CanvasLayer/cardArc
 
-var current_card : CardUi
+var current_card : CardInHand
 var targeting : bool = false
 
 func _ready() -> void:
@@ -38,7 +38,7 @@ func _get_points() -> Array:
 func ease_out_cubic(number : float) -> float:
 	return 1.0 - pow(1.0 - number, 3.0)
 	
-func _on_card_aim_started(card: CardUi) -> void:
+func _on_card_aim_started(card: CardInHand) -> void:
 	if not card.card.is_single_targeted():
 		return
 	
@@ -47,7 +47,7 @@ func _on_card_aim_started(card: CardUi) -> void:
 	area_2d.monitorable = true
 	current_card = card
 
-func _on_card_aim_ended(_card: CardUi) -> void:
+func _on_card_aim_ended(_card: CardInHand) -> void:
 	targeting = false
 	card_arc.clear_points()
 	area_2d.position = Vector2.ZERO

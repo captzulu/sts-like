@@ -7,7 +7,7 @@ func enter() -> void:
 	if card_ui.tween and card_ui.tween.is_running():
 		card_ui.tween.kill()
 		
-	_change_style_box(card_ui.BASE_STYLEBOX)
+	card_ui.change_style_box(card_ui.BASE_STYLEBOX)
 	card_ui.reparent_requested.emit(card_ui)
 	card_ui.pivot_offset = Vector2.ZERO
 	
@@ -24,12 +24,9 @@ func on_mouse_entered() -> void:
 	if not card_ui.playable or card_ui.disabled:
 		return
 	
-	_change_style_box(card_ui.HOVER_STYLEBOX)
-	card_ui.compute_tooltip()
-	Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.text_tooltip)
+	card_ui.show_tooltip()
 
 func on_mouse_exited() -> void:
 	if not card_ui.playable or card_ui.disabled:
 		return
-	_change_style_box(card_ui.BASE_STYLEBOX)
-	Events.hide_tooltip_requested.emit()
+	card_ui.hide_tooltip()
