@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2edvm"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_lcvwo"]
-[ext_resource type="AudioStream" uid="uid://dv1n5wdt03lw3" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
+[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
 [ext_resource type="PackedScene" uid="uid://djhsxq1phowkp" path="res://scenes/player/player.tscn" id="3_4tia0"]
 [ext_resource type="PackedScene" uid="uid://cmbgumsmqa86g" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_xnl3n"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_b44c5"]
@@ -26,8 +26,6 @@ size = Vector2(320, 137)
 script = ExtResource("1_2edvm")
 char_stats = ExtResource("4_ni5ra")
 music = ExtResource("3_3iuh0")
-
-[node name="Map" type="Node2D" parent="."]
 
 [node name="CardDropArea" type="Area2D" parent="."]
 scale = Vector2(2, 2)
@@ -75,6 +73,8 @@ hand = NodePath("../BattleUi/Hand")
 
 [node name="PhaseHandler" type="Node" parent="."]
 script = ExtResource("10_myi75")
+
+[node name="Map" type="Node2D" parent="."]
 
 [node name="BattleUi" type="CanvasLayer" parent="." groups=["ui_layer"]]
 script = ExtResource("7_py620")
@@ -127,7 +127,6 @@ offset_bottom = -19.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2, 2)
-theme = ExtResource("15_5feck")
 text = "End Turn"
 
 [node name="MenuButton" type="Button" parent="BattleUi"]
@@ -141,7 +140,6 @@ offset_right = -30.0
 offset_bottom = 19.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
-theme = ExtResource("15_5feck")
 text = "Menu
 "
 
