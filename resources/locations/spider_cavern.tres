@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://c6f7xj65oj27g"]
+
+[ext_resource type="Script" path="res://resources/location.gd" id="1_ytk5p"]
+[ext_resource type="PackedScene" uid="uid://dxpg1ee2sim27" path="res://scenes/maps/tilemaps/spider_cavern_map.tscn" id="2_b753g"]
+
+[resource]
+script = ExtResource("1_ytk5p")
+identifier = "spider_cavern"
+display_name = "Spider Cavern"
+tilemap = ExtResource("2_b753g")
+completed = false
+unlocked = true
