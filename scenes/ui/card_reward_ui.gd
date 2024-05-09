@@ -6,6 +6,7 @@ extends CanvasLayer
 
 func _ready():
 	%ConfirmButton.pressed.connect(get_reward)
+	%ConfirmButton.disabled = true
 	%SkipButton.pressed.connect(back_to_main_menu)
 	setup_rewards()
 	Events.select_card_reward.connect(select_reward)
@@ -26,6 +27,7 @@ func select_reward(card_selected : CardAsReward) -> void:
 		card.unselect()
 	
 	card_selected.select()
+	%ConfirmButton.disabled = false
 	
 func get_reward() -> void:
 	var card_reward = %CardRewards.get_children().filter(func(card): return card.selected == true)
