@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mp60lf0hkju"]
+[gd_scene load_steps=4 format=3 uid="uid://mp60lf0hkju"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_cep0l"]
 [ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="1_h2vao"]
+[ext_resource type="Script" path="res://scenes/saver_loader.gd" id="3_wfc7a"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_cep0l")
@@ -45,3 +46,35 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 6
 text = "Undead Lair
 "
+
+[node name="VBoxContainer2" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 95.5
+offset_top = 107.0
+offset_right = 245.5
+offset_bottom = 122.0
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="SaveButton" type="Button" parent="Panel/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+text = "Save
+"
+
+[node name="LoadButton" type="Button" parent="Panel/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 6
+disabled = true
+text = "Load
+"
+
+[node name="SaverLoader" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_wfc7a")
