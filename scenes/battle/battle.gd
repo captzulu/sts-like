@@ -67,11 +67,14 @@ func _on_enemy_death(enemy : Enemy) -> void:
 	enemy_handler.enemy_death()
 	player_handler.enemy_killed_this_turn += 1
 	phase_handler.enemy_death(enemy)
-	if enemy_handler.no_more_enemy():
-		if enemy_spawner.is_on_last_wave():
-			end_map()
-		else:
-			spawn_wave()
+	
+	if enemy_handler.no_more_enemy() == false:
+		return
+
+	if enemy_spawner.is_on_last_wave():
+		end_map()
+	else:
+		spawn_wave()
 	
 func _on_damage_effect_used(originator : Node, target : Node) -> void:
 	if target.get_spikes() > 0: 
