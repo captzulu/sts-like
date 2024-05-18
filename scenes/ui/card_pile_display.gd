@@ -5,9 +5,6 @@ extends Panel
 @onready var title_label : Label = %TitleLabel
 @onready var card_ui : PackedScene = preload("res://scenes/card_ui/card_as_reward.tscn")
 
-var card_pile : CardPile
-var title : String
-
 func _ready() -> void:
 	%CloseButton.pressed.connect(hide)
 
@@ -29,6 +26,6 @@ func remove_cards_from_ui() -> void:
 		card_ui.queue_free()
 
 func close() -> void:
+	title_label.text = ""
 	remove_cards_from_ui()
 	self.hide()
-	queue_free()

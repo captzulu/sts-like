@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcmjphuomhe6h"]
+[gd_scene load_steps=21 format=3 uid="uid://bcmjphuomhe6h"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2edvm"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_lcvwo"]
-[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
+[ext_resource type="AudioStream" uid="uid://dv1n5wdt03lw3" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
 [ext_resource type="PackedScene" uid="uid://djhsxq1phowkp" path="res://scenes/player/player.tscn" id="3_4tia0"]
 [ext_resource type="PackedScene" uid="uid://cmbgumsmqa86g" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_xnl3n"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_b44c5"]
@@ -12,10 +12,11 @@
 [ext_resource type="Script" path="res://scenes/battle/phase_handler.gd" id="10_myi75"]
 [ext_resource type="Script" path="res://scenes/battle/enemy_spawner.gd" id="10_re72a"]
 [ext_resource type="PackedScene" uid="uid://buqnqtiff8xqx" path="res://scenes/ui/mana_ui.tscn" id="11_emvk8"]
-[ext_resource type="PackedScene" path="res://scenes/ui/card_tooltip.tscn" id="12_c3hnr"]
+[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="12_c3hnr"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_1pofa"]
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="15_5feck"]
 [ext_resource type="Script" path="res://scenes/battle/wave_ui.gd" id="15_h1yqg"]
+[ext_resource type="PackedScene" uid="uid://ctpn4sdlu8mdk" path="res://scenes/ui/card_pile_display.tscn" id="16_ukeni"]
 [ext_resource type="PackedScene" uid="uid://rg4pt1re2naq" path="res://scenes/ui/battle_over_panel.tscn" id="17_rhkdk"]
 [ext_resource type="PackedScene" uid="uid://dw2irt8ra85pb" path="res://scenes/ui/battle_menu.tscn" id="18_ofb17"]
 
@@ -159,6 +160,19 @@ grow_vertical = 0
 scale = Vector2(2, 2)
 text = "Draw"
 
+[node name="SeeDiscardPileButton" type="Button" parent="BattleUi"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = -33.0
+offset_right = 92.0
+offset_bottom = -19.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "Discard"
+
 [node name="WaveUi" type="Node" parent="BattleUi"]
 script = ExtResource("15_h1yqg")
 
@@ -180,6 +194,10 @@ offset_top = 2.93759
 offset_right = 43.464
 offset_bottom = 8.93759
 text = "Wave 3/10"
+
+[node name="CardPileDisplay" parent="BattleUi" instance=ExtResource("16_ukeni")]
+unique_name_in_owner = true
+visible = false
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2

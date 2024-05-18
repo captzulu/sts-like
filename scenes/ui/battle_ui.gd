@@ -8,13 +8,15 @@ extends CanvasLayer
 @onready var wave_ui : WaveUi = $WaveUi as WaveUi
 @onready var end_turn_button : Button = %EndTurnButton
 @onready var see_draw_pile : Button = %SeeDrawPileButton
-@onready var card_pile_scene : PackedScene = preload("res://scenes/ui/card_pile_display.tscn")
+@onready var see_discard_pile : Button = %SeeDiscardPileButton
+@onready var card_pile_display : CardPileDisplay = %CardPileDisplay as CardPileDisplay
 
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_draw)
 	Events.wave_spawned.connect(_on_wave_spawned)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
 	see_draw_pile.pressed.connect(display_draw_pile)
+	see_discard_pile.pressed.connect(display_discard_pile)
 	Events.card_played.connect(_on_card_played)
 	Events.card_play_animation_finished.connect(_on_card_animation_finished)
 
@@ -42,6 +44,7 @@ func _on_card_animation_finished(_card: Card) -> void:
 	end_turn_button.disabled = false
 
 func display_draw_pile() -> void:
-	var card_pile_display : CardPileDisplay = card_pile_scene.instantiate()
-	add_child(card_pile_display)
 	card_pile_display.open(char_stats.draw_pile, "Draw pile :")
+	
+func display_discard_pile() -> void:
+	card_pile_display.open(char_stats.discard, "Discard pile :")
