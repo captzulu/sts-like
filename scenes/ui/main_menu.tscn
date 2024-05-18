@@ -13,37 +13,42 @@ offset_bottom = 180.0
 scale = Vector2(2, 2)
 theme = ExtResource("1_h2vao")
 
-[node name="VBoxContainer" type="GridContainer" parent="Panel"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 34.5
 offset_right = 311.0
 offset_bottom = 63.5
-theme_override_constants/h_separation = 8
-columns = 3
+theme_override_constants/separation = 14
+alignment = 1
 
 [node name="SpiderCavernButton" type="Button" parent="Panel/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 6
 text = "Spider Cavern"
 
 [node name="CyclopMountainButton" type="Button" parent="Panel/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 6
+disabled = true
 text = "Cyclop Mountain"
 
 [node name="UndeadLairButton" type="Button" parent="Panel/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 6
+disabled = true
 text = "Undead Lair
 "
 
