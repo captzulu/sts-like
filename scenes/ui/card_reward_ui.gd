@@ -40,7 +40,8 @@ func back_to_main_menu() -> void:
 		card.queue_free()
 	Globals.current_location.completed = true
 	var map_index = Globals.MAP_ORDER.find(Globals.current_location)
-	Globals.MAP_ORDER[map_index + 1].unlocked = true
+	if Globals.MAP_ORDER.size() > map_index + 1:
+		Globals.MAP_ORDER[map_index + 1].unlocked = true
 	Globals.current_location = null
 
 	get_tree().change_scene_to_packed(main_menu)
