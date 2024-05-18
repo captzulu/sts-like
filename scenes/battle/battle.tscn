@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cmbgumsmqa86g" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_xnl3n"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_b44c5"]
 [ext_resource type="Resource" uid="uid://wc6gu505m3i2" path="res://characters/warrior/warrior.tres" id="4_ni5ra"]
-[ext_resource type="Script" path="res://scenes/ui/BattleUi.gd" id="7_py620"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_60ljq"]
+[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="10_2nn4b"]
 [ext_resource type="Script" path="res://scenes/battle/phase_handler.gd" id="10_myi75"]
 [ext_resource type="Script" path="res://scenes/battle/enemy_spawner.gd" id="10_re72a"]
 [ext_resource type="PackedScene" uid="uid://buqnqtiff8xqx" path="res://scenes/ui/mana_ui.tscn" id="11_emvk8"]
-[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="12_c3hnr"]
+[ext_resource type="PackedScene" path="res://scenes/ui/card_tooltip.tscn" id="12_c3hnr"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_1pofa"]
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="15_5feck"]
 [ext_resource type="Script" path="res://scenes/battle/wave_ui.gd" id="15_h1yqg"]
@@ -77,7 +77,7 @@ script = ExtResource("10_myi75")
 [node name="Map" type="Node2D" parent="."]
 
 [node name="BattleUi" type="CanvasLayer" parent="." groups=["ui_layer"]]
-script = ExtResource("7_py620")
+script = ExtResource("10_2nn4b")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUi" node_paths=PackedStringArray("player")]
 anchors_preset = 7
@@ -96,12 +96,15 @@ script = ExtResource("2_lcvwo")
 player = NodePath("../../Player")
 
 [node name="ManaUi" parent="BattleUi" instance=ExtResource("11_emvk8")]
-offset_top = -42.0
-offset_bottom = -24.0
+offset_left = 6.0
+offset_top = -73.0
+offset_right = 24.0
+offset_bottom = -55.0
 scale = Vector2(2, 2)
 char_stats = ExtResource("4_ni5ra")
 
 [node name="Tooltip" parent="BattleUi" instance=ExtResource("12_c3hnr")]
+z_index = 5
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -142,6 +145,19 @@ grow_horizontal = 0
 scale = Vector2(2, 2)
 text = "Menu
 "
+
+[node name="SeeDrawPileButton" type="Button" parent="BattleUi"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -33.0
+offset_right = 30.0
+offset_bottom = -19.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "Draw"
 
 [node name="WaveUi" type="Node" parent="BattleUi"]
 script = ExtResource("15_h1yqg")

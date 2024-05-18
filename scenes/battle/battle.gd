@@ -18,7 +18,7 @@ func _ready() -> void:
 	var new_stats : CharacterStats = Globals.char_stats.create_instance()
 	player.stats = new_stats
 	player_handler.player = player
-	battle_ui.char_stats = new_stats
+	battle_ui.char_stats = player.stats
 	$BattleUi/WaveUi/WaveProgressBar.max_value = enemy_spawner.wave_max
 	
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
@@ -35,7 +35,7 @@ func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
 	spawn_wave()
-	player_handler.start_battle(player.stats)
+	player_handler.start_battle()
 
 func set_map() -> void:
 	if self.get_child_count() > 0:

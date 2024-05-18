@@ -7,27 +7,25 @@ extends CanvasLayer
 @onready var mana_ui : ManaUi = $ManaUi as ManaUi
 @onready var wave_ui : WaveUi = $WaveUi as WaveUi
 @onready var end_turn_button : Button = %EndTurnButton
-@onready var draw_pile_display : CardPileDisplay = %DrawPileDisplay
 @onready var see_draw_pile : Button = %SeeDrawPileButton
+@onready var card_pile_scene : PackedScene = preload("res://scenes/ui/card_pile_display.tscn")
 
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_draw)
 	Events.wave_spawned.connect(_on_wave_spawned)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
-	see_draw_pile.pressed.connect(draw_pile_display.show)
+	see_draw_pile.pressed.connect(display_draw_pile)
 	Events.card_played.connect(_on_card_played)
 	Events.card_play_animation_finished.connect(_on_card_animation_finished)
 
 func _set_char_stats(value : CharacterStats) -> void:
 	char_stats = value
 	mana_ui.char_stats = char_stats
-	draw_pile_display.card_pile = char_stats.draw_pile
 	
 func set_wave_max(max_value : int) -> void:
 	wave_ui.wave_progress_bar.max_value = max_value
 
 func _on_player_hand_draw() -> void:
-	draw_pile_display.card_pile = char_stats.draw_pile
 	end_turn_button.disabled = false
 
 func _on_end_turn_button_pressed() -> void:
@@ -42,3 +40,8 @@ func _on_card_played(_card: Card) -> void:
 
 func _on_card_animation_finished(_card: Card) -> void:
 	end_turn_button.disabled = false
+
+func display_draw_pile() -> void:
+	var card_pile_display : CardPileDisplay = card_pile_scene.instantiate()
+	add_child(card_pile_display)
+	card_pile_display.open(char_stats.draw_pile, "Draw pile :")
