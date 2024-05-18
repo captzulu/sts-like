@@ -15,5 +15,5 @@ type = 1
 target = 0
 cost = 3
 icon = ExtResource("1_rfg5c")
-tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block and [color=\"ebc807\"]{enrage}[/color] spikes."
+tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block and [color=\"ebc807\"]{enrage}[/color] enrage stacks."
 sound = ExtResource("3_hbvuw")
