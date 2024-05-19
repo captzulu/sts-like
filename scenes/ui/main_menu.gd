@@ -2,12 +2,15 @@ class_name MainMenu
 extends CanvasLayer
 
 @onready var saver_loader : SaverLoader = %SaverLoader
+@onready var card_pile_display : CardPileDisplay = %CardPileDisplay as CardPileDisplay
+@onready var see_deck_button : Button = %SeeDeckPileButton
 
 var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
 
 func _ready() -> void:
 	%SaveButton.pressed.connect(saver_loader.save_game)
 	%LoadButton.pressed.connect(saver_loader.load_game)
+	see_deck_button.pressed.connect(card_pile_display.open.bind(Globals.char_stats.starting_deck, "Deck :"))
 	%SpiderCavernButton.pressed.connect(_on_spider_cavern_pressed)
 	%CyclopMountainButton.pressed.connect(_on_cyclop_mountain_button_pressed)
 	%UndeadLairButton.pressed.connect(_on_undead_lair_button_pressed)

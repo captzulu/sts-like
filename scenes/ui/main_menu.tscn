@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://mp60lf0hkju"]
+[gd_scene load_steps=6 format=3 uid="uid://mp60lf0hkju"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_cep0l"]
 [ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="1_h2vao"]
+[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="3_3pgpu"]
 [ext_resource type="Script" path="res://scenes/saver_loader.gd" id="3_wfc7a"]
+[ext_resource type="PackedScene" uid="uid://ctpn4sdlu8mdk" path="res://scenes/ui/card_pile_display.tscn" id="4_pwhnk"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_cep0l")
@@ -52,14 +54,12 @@ disabled = true
 text = "Undead Lair
 "
 
-[node name="VBoxContainer2" type="GridContainer" parent="Panel"]
+[node name="VBoxContainer2" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 95.5
 offset_top = 107.0
 offset_right = 245.5
 offset_bottom = 122.0
-theme_override_constants/h_separation = 8
-columns = 2
 
 [node name="SaveButton" type="Button" parent="Panel/VBoxContainer2"]
 unique_name_in_owner = true
@@ -80,6 +80,36 @@ disabled = true
 text = "Load
 "
 
+[node name="SeeDeckPileButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -18.0
+offset_right = 31.0
+offset_bottom = -6.0
+grow_vertical = 0
+text = "Deck"
+
+[node name="CardTooltip" parent="Panel" instance=ExtResource("3_3pgpu")]
+z_index = 5
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 6.0
+offset_right = 55.0
+offset_bottom = 66.0
+grow_horizontal = 2
+scale = Vector2(1, 1)
+
 [node name="SaverLoader" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_wfc7a")
+
+[node name="CardPileDisplay" parent="." instance=ExtResource("4_pwhnk")]
+unique_name_in_owner = true
+visible = false
