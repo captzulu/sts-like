@@ -10,7 +10,7 @@ var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
 func _ready() -> void:
 	%SaveButton.pressed.connect(saver_loader.save_game)
 	%LoadButton.pressed.connect(saver_loader.load_game)
-	see_deck_button.pressed.connect(card_pile_display.open.bind(Globals.char_stats.starting_deck, "Deck :"))
+	see_deck_button.pressed.connect(open_deck_display)
 	%SpiderCavernButton.pressed.connect(_on_spider_cavern_pressed)
 	%CyclopMountainButton.pressed.connect(_on_cyclop_mountain_button_pressed)
 	%UndeadLairButton.pressed.connect(_on_undead_lair_button_pressed)
@@ -37,5 +37,8 @@ func check_unlock_buttons() -> void:
 	%SpiderCavernButton.disabled = ! Globals.LOCATION_SPIDER.unlocked
 	%CyclopMountainButton.disabled = ! Globals.LOCATION_CYCLOP.unlocked
 	%UndeadLairButton.disabled = ! Globals.LOCATION_UNDEAD.unlocked
+	
+func open_deck_display() -> void:
+	card_pile_display.open(Globals.char_stats.starting_deck, "Deck :")
 
 
