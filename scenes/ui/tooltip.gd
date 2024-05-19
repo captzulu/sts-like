@@ -21,7 +21,7 @@ func show_card_tooltip(icon : Texture, text : String) -> void:
 	if tween:
 		tween.kill()
 	
-	tooltip_text_label.text = "[font_size=12][table=2][cell][img=32]%s[/img][/cell][cell]%s[/cell][/table][/font_size]" % [icon.resource_path, text] 
+	tooltip_text_label.text = "[font_size=6][table=2][cell][img=16]%s[/img][/cell][cell]%s[/cell][/table][/font_size]" % [icon.resource_path, text] 
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_callback(show)
 	tween.tween_property(self, "modulate", Color.WHITE, fade_seconds)
