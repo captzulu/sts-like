@@ -19,7 +19,11 @@ func save_game() -> void:
 	ResourceSaver.save(saved_game, save_file_path)
 	
 func load_game() -> void:
-	var saved_game : SavedGame = load(save_file_path) as SavedGame
+	var saved_game : SavedGame = SafeResourceLoader.load(save_file_path) as SavedGame
+	
+	if saved_game == null:
+		print("Saved game was unsafe!")
+		return
 	
 	Globals.LOCATION_SPIDER.unlocked = saved_game.location_spider_unlocked
 	Globals.LOCATION_SPIDER.completed = saved_game.location_spider_completed
