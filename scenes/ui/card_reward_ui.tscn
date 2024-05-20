@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ui/card_reward_ui.gd" id="1_ml1ju"]
 [ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="2_wujc4"]
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="3_gtpsx"]
-[ext_resource type="PackedScene" path="res://scenes/ui/card_tooltip.tscn" id="4_541fp"]
+[ext_resource type="PackedScene" uid="uid://c3pwji2525lua" path="res://scenes/ui/card_tooltip.tscn" id="4_541fp"]
 
 [node name="CardReward" type="CanvasLayer"]
 script = ExtResource("1_ml1ju")
@@ -79,5 +79,5 @@ text = "Skip"
 [node name="CardTooltip" parent="." instance=ExtResource("4_541fp")]
 offset_left = 188.0
 offset_top = 11.0
-offset_right = 451.0
-offset_bottom = 76.0
+offset_right = 311.0
+offset_bottom = 66.0

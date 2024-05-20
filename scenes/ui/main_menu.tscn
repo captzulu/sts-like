@@ -102,7 +102,7 @@ anchor_right = 0.5
 offset_left = -55.0
 offset_top = 6.0
 offset_right = 55.0
-offset_bottom = 66.0
+offset_bottom = 61.0
 grow_horizontal = 2
 scale = Vector2(1, 1)
 
