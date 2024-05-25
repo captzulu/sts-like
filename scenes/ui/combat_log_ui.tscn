@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq0vx0kv400cx"]
+
+[ext_resource type="Script" path="res://scenes/ui/combat_log_ui.gd" id="1_kto2y"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 60.0
+
+[node name="box" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 0
+color = Color(0.305882, 0.305882, 0.305882, 0.596078)
+
+[node name="CombatLogUi" type="RichTextLabel" parent="box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+scroll_following = true
+script = ExtResource("1_kto2y")

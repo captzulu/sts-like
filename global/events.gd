@@ -37,6 +37,7 @@ signal enemy_death_before_turn(enemy : Enemy)
 #region Battle-related events
 signal battle_over_screen_requested(text : String, type : BattleOverPanel.Type)
 signal wave_spawned(wave_number : int)
+signal combat_log_updated(line_added : String)
 #endregion
 
 #region card reward-related events

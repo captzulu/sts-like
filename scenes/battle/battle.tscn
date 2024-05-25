@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcmjphuomhe6h"]
+[gd_scene load_steps=22 format=3 uid="uid://bcmjphuomhe6h"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2edvm"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_lcvwo"]
@@ -17,6 +17,7 @@
 [ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="15_5feck"]
 [ext_resource type="Script" path="res://scenes/battle/wave_ui.gd" id="15_h1yqg"]
 [ext_resource type="PackedScene" uid="uid://ctpn4sdlu8mdk" path="res://scenes/ui/card_pile_display.tscn" id="16_ukeni"]
+[ext_resource type="PackedScene" uid="uid://cq0vx0kv400cx" path="res://scenes/ui/combat_log_ui.tscn" id="17_bmxem"]
 [ext_resource type="PackedScene" uid="uid://rg4pt1re2naq" path="res://scenes/ui/battle_over_panel.tscn" id="17_rhkdk"]
 [ext_resource type="PackedScene" uid="uid://dw2irt8ra85pb" path="res://scenes/ui/battle_menu.tscn" id="18_ofb17"]
 
@@ -198,6 +199,13 @@ text = "Wave 3/10"
 [node name="CardPileDisplay" parent="BattleUi" instance=ExtResource("16_ukeni")]
 unique_name_in_owner = true
 visible = false
+
+[node name="CombatLogUi" parent="BattleUi" instance=ExtResource("17_bmxem")]
+offset_left = 6.0
+offset_top = 34.0
+offset_right = 106.0
+offset_bottom = 94.0
+scale = Vector2(2, 2)
 
 [node name="RedFlash" type="CanvasLayer" parent="."]
 layer = 2
