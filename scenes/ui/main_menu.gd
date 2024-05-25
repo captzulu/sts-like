@@ -15,8 +15,7 @@ func _ready() -> void:
 	%CyclopMountainButton.pressed.connect(_on_cyclop_mountain_button_pressed)
 	%UndeadLairButton.pressed.connect(_on_undead_lair_button_pressed)
 	saver_loader.game_loaded.connect(check_unlock_buttons)
-	if saver_loader.save_file_exists():
-		check_unlock_buttons()
+	check_unlock_buttons()
 	
 func _on_spider_cavern_pressed() -> void:
 	enter_map(Globals.LOCATION_SPIDER)
@@ -33,7 +32,8 @@ func enter_map(new_map : Location) -> void:
 		get_tree().change_scene_to_packed(battle)
 		
 func check_unlock_buttons() -> void: 
-	%LoadButton.disabled = false
+	if saver_loader.save_file_exists():
+		%LoadButton.disabled = false
 	%SpiderCavernButton.disabled = ! Globals.LOCATION_SPIDER.unlocked
 	%CyclopMountainButton.disabled = ! Globals.LOCATION_CYCLOP.unlocked
 	%UndeadLairButton.disabled = ! Globals.LOCATION_UNDEAD.unlocked
