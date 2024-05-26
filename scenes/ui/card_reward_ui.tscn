@@ -44,35 +44,36 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="ConfirmButton" type="Button" parent="Panel"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -87.5
-offset_top = -40.0
-offset_right = -46.5
-offset_bottom = -28.0
+offset_left = -51.5
+offset_top = -24.0
+offset_right = 51.5
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(2, 2)
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("3_gtpsx")
 text = "Confirm
 "
 
-[node name="SkipButton" type="Button" parent="Panel"]
+[node name="SkipButton" type="Button" parent="Panel/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 12)
 layout_mode = 2
-offset_left = 171.0
-offset_top = 140.0
-offset_right = 191.0
-offset_bottom = 152.0
-scale = Vector2(2, 2)
+size_flags_horizontal = 3
 theme = ExtResource("3_gtpsx")
 text = "Skip"
 

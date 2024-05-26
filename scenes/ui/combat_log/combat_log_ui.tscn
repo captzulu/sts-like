@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq0vx0kv400cx"]
+
+[ext_resource type="StyleBox" uid="uid://dfwb1j3ld7t1b" path="res://scenes/ui/combat_log/combat_log_hover.tres" id="1_gjdiu"]
+[ext_resource type="StyleBox" uid="uid://bqekqjpnm8cn4" path="res://scenes/ui/combat_log/combat_log.tres" id="2_k1ov7"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/original_art/pixel_rpg.ttf" id="3_xnws7"]
+[ext_resource type="Script" path="res://scenes/ui/combat_log/combat_log_ui.gd" id="4_t38e4"]
+
+[sub_resource type="Theme" id="Theme_5j64y"]
+default_font = ExtResource("3_xnws7")
+default_font_size = 12
+PanelContainer/styles/hover = ExtResource("1_gjdiu")
+PanelContainer/styles/panel = ExtResource("2_k1ov7")
+
+[node name="CombatLogUi" type="PanelContainer"]
+offset_right = 212.0
+offset_bottom = 132.0
+mouse_filter = 1
+theme = SubResource("Theme_5j64y")
+script = ExtResource("4_t38e4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="CombatLogText" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+scroll_following = true
