@@ -99,10 +99,13 @@ func add_status(status : Status) -> void:
 	statuses_bar.refresh_bar(stats.statuses_dict)
 		
 func get_spikes() -> int:
-	if not stats.statuses_dict.has(Spike.get_identifier()):
+	return get_status_stacks(Spike.get_identifier())
+
+func get_status_stacks(status_identifier : String) -> int:
+	if not stats.statuses_dict.has(status_identifier):
 		return 0
 	else:
-		return stats.statuses_dict[Spike.identifier].stacks
+		return stats.statuses_dict[status_identifier].stacks
 
 func _on_mouse_entered() -> void:
 	Events.status_tooltip_requested.emit(stats.statuses_dict)
