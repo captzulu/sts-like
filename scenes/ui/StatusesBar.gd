@@ -16,4 +16,4 @@ func refresh_bar(statuses_dict : Dictionary) -> void:
 			child.queue_free()
 
 	for status_name : String in statuses_dict:
-		add_status(statuses_dict[status_name])
+		self.add_status(statuses_dict[status_name])

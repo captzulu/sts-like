@@ -10,4 +10,4 @@ func apply_effects(targets : Array[Node], player : Player) -> void:
 	block_effect.sound = sound
 	block_effect.execute(targets)
 	
-	player.add_status(Spike.new(effects["spikes"]))
+	Spike.new(effects["spikes"]).add_to(player)
