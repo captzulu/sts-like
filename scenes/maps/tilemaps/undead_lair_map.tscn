@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bwvxucng5h8ec"]
 
-[ext_resource type="Texture2D" uid="uid://dguo3236llibx" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Tileset/Buildings/TileasetAndPremadeZiggurats.png" id="1_k2cjm"]
-[ext_resource type="Texture2D" uid="uid://bjdb75futsx3k" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Props/Props.png" id="2_y2yyf"]
+[ext_resource type="Texture2D" uid="uid://dguo3236llibx" path="res://art/minifantasy/tilesets/tileset_necropolis.png" id="1_k2cjm"]
+[ext_resource type="Texture2D" uid="uid://bjdb75futsx3k" path="res://art/minifantasy/tilesets/props_necropolis.png" id="2_y2yyf"]
 [ext_resource type="PackedScene" uid="uid://bvbghdenkc2kj" path="res://art/animated_scenes/undead_flame.tscn" id="3_jh5by"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_m4ssm"]
