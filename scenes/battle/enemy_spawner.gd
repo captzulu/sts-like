@@ -36,7 +36,7 @@ func spawn_wave() -> void:
 func get_wave_enemies() -> Array[EnemyStats]:
 	var wave_enemies : Array[EnemyStats] = []
 	var wave_data : Dictionary = DataModule.data[Globals.current_location.identifier][wave_index - 1]
-	for field : String in wave_data:
+	for field in wave_data:
 		var val : String = str(wave_data[field])
 		if val != "id" and val.length() > 1 and val in enemies.keys():
 			wave_enemies.append(enemies[val])
