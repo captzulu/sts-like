@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_lalsm"]
 [ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_attack_action.gd" id="2_0n3rq"]
-[ext_resource type="AudioStream" uid="uid://c17muo3a4t68b" path="res://art/original_art/axe.ogg" id="3_hwav1"]
+[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_hwav1"]
 [ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_mega_attack_action.gd" id="4_i7b8f"]
 
 [node name="CyclopEnemyAi" type="Node"]
@@ -17,5 +17,4 @@ chance_weight = 1.0
 [node name="CyclopMegaAttackAction" type="Node" parent="."]
 script = ExtResource("4_i7b8f")
 damage = 12
-hp_threshold = 7
 sound = ExtResource("3_hwav1")

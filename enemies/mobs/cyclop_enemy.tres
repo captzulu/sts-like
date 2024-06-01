@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://bfre4aav7ycmi"]
 
 [ext_resource type="PackedScene" uid="uid://dgbytld1u8ytl" path="res://enemies/mobs/cyclop/cyclop_enemy_ai.tscn" id="1_hxmee"]
-[ext_resource type="Texture2D" uid="uid://d2ipds2sijq33" path="res://art/original_art/tile_0109.png" id="2_vkjjv"]
+[ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://art/original_art/tile_0109.png" id="2_vkjjv"]
 [ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_fam13"]
 
 [resource]
@@ -10,5 +10,5 @@ ai = ExtResource("1_hxmee")
 identifier = "cyclop"
 is_boss = false
 scale = Vector2(1, 1)
-max_health = 16
+max_health = 15
 art = ExtResource("2_vkjjv")
