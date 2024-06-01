@@ -17,7 +17,7 @@ static func compile_data_files() -> void:
 static func build_data_dict(dict : Dictionary) -> void:
 	var dict_names : Array = dict.keys()
 	
-	for name : String in dict_names:
+	for name in dict_names:
 		for file in DirAccess.get_files_at(CONSTANTS.PATH_DATA_FOLDER):
 			if file.contains(name) and file.ends_with(CONSTANTS.FORMAT_ENCODED_DATA_FILE):
 				var encoded_data : String = FILE_MANAGER.load_text_file(CONSTANTS.PATH_DATA_FOLDER + file)
@@ -53,7 +53,7 @@ static func parse_csv(all_csv_lines : PackedStringArray) -> Dictionary:
 	
 static func process_headers(all_headers : PackedStringArray) -> Array:
 	var processed_headers : Array = []
-	for header : String in all_headers:
+	for header in all_headers:
 		processed_headers.append(parse_cell(header))
 	return processed_headers
 					

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://c1cir1d2a5gs2"]
 
-[ext_resource type="Texture2D" uid="uid://buxqqp82oi4fk" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Props/Ilumination/WallFireplace/WallFireplace.png" id="1_dhtxq"]
-[ext_resource type="Texture2D" uid="uid://k551sxp3vol6" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Props/Ilumination/WallFireplace/WallFireplaceLight.png" id="2_npiov"]
+[ext_resource type="Texture2D" uid="uid://bgljtg4clj841" path="res://art/minifantasy/animated_props/WallFireplace.png" id="1_dhtxq"]
+[ext_resource type="Texture2D" uid="uid://d0ik7vl8qp6rx" path="res://art/minifantasy/animated_props/WallFireplaceLight.png" id="2_npiov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_givpr"]
 atlas = ExtResource("1_dhtxq")

@@ -38,7 +38,7 @@ static func load_directory_resources_to_dict(directory : String) -> Dictionary:
 	var dict : Dictionary
 	directory = directory if directory.ends_with("/") else directory + "/"
 	var resources : Array = DataModule.FILE_MANAGER.get_files_in_folder(directory)
-	for resource : String in resources:
+	for resource in resources:
 		var resource_loaded : Resource = load(resource)
 		dict[resource_loaded.identifier] = resource_loaded
 	return dict

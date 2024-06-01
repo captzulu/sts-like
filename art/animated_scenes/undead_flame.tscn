@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bvbghdenkc2kj"]
 
-[ext_resource type="Texture2D" uid="uid://b5xqvvm747lyk" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Props/UndeadFlame/UndeadFlame.png" id="1_dlx8p"]
-[ext_resource type="Texture2D" uid="uid://cjteyi4ukptuj" path="res://art/assets_librairies/Minifantasy_Necropolis_Assets/Props/UndeadFlame/UndeadFlameGlow.png" id="2_x8qrn"]
+[ext_resource type="Texture2D" uid="uid://eqnlmc561p50" path="res://art/minifantasy/animated_props/UndeadFlame.png" id="1_dlx8p"]
+[ext_resource type="Texture2D" uid="uid://dmntphlxtmdou" path="res://art/minifantasy/animated_props/UndeadFlameGlow.png" id="2_x8qrn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jg715"]
 atlas = ExtResource("1_dlx8p")

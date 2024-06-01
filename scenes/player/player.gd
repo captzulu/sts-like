@@ -18,6 +18,7 @@ func _ready() -> void:
 	self.mouse_entered.connect(_on_mouse_entered)
 	self.mouse_exited.connect(_on_mouse_exited)
 	combat_log = CombatLog.new()
+	add_child(combat_log)
 
 func set_character_stats(value : CharacterStats) -> void:
 	stats = value as CharacterStats
@@ -74,7 +75,7 @@ func heal_from_combos(combo_number : int) -> void:
 	if heal(healing_amount):
 		var reason : String = "Kill Combo %s" % combo_number
 		combat_log.log_heal(healing_amount, reason)
-		var floating_text : String = reason + "\n! + %s HP" % [combo_number, healing_amount]
+		var floating_text : String = reason + "\n! + %s HP" % healing_amount
 		overhead_floating_text.create_label(floating_text)
 
 func _on_enemy_death_exact_hp(_enemy : Enemy) -> void:
@@ -98,10 +99,13 @@ func add_status(status : Status) -> void:
 	statuses_bar.refresh_bar(stats.statuses_dict)
 		
 func get_spikes() -> int:
-	if not stats.statuses_dict.has(Spike.get_identifier()):
+	return get_status_stacks(Spike.get_identifier())
+
+func get_status_stacks(status_identifier : String) -> int:
+	if not stats.statuses_dict.has(status_identifier):
 		return 0
 	else:
-		return stats.statuses_dict[Spike.identifier].stacks
+		return stats.statuses_dict[status_identifier].stacks
 
 func _on_mouse_entered() -> void:
 	Events.status_tooltip_requested.emit(stats.statuses_dict)

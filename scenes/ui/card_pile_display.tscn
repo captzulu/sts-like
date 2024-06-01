@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctpn4sdlu8mdk"]
 
-[ext_resource type="StyleBox" uid="uid://bbqdqgeffrhn5" path="res://scenes/ui/transparent_box.tres" id="1_a5uyv"]
+[ext_resource type="StyleBox" uid="uid://bbqdqgeffrhn5" path="res://scenes/ui/card_pile_display_overlay.tres" id="1_laut6"]
 [ext_resource type="Script" path="res://scenes/ui/card_pile_display.gd" id="1_q6mrl"]
 
 [node name="CardPileDisplay" type="Panel"]
 z_index = 4
 offset_right = 640.0
 offset_bottom = 360.0
-theme_override_styles/panel = ExtResource("1_a5uyv")
+theme_override_styles/panel = ExtResource("1_laut6")
 script = ExtResource("1_q6mrl")
 
 [node name="CardsContainer" type="FlowContainer" parent="."]

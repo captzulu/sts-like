@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2y6ahlmtvw5o"]
 
 [ext_resource type="Texture2D" uid="uid://ps3ijuitj82o" path="res://art/spiderwebs.png" id="1_iqt7w"]
-[ext_resource type="Texture2D" uid="uid://bsfyw1v3rhvnt" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Tileset/Tileset.png" id="2_4ga72"]
-[ext_resource type="Texture2D" uid="uid://bkvyvcn4oqqm0" path="res://art/assets_librairies/Minifantasy_DwarvenKingdom_Assets/Props/Decoration/Props.png" id="3_bf8ae"]
+[ext_resource type="Texture2D" uid="uid://bsfyw1v3rhvnt" path="res://art/minifantasy/tilesets/tileset_dwarven_kingdom.png" id="2_4ga72"]
+[ext_resource type="Texture2D" uid="uid://bkvyvcn4oqqm0" path="res://art/minifantasy/tilesets/props_dwarven_kingdom.png" id="3_bf8ae"]
 [ext_resource type="PackedScene" uid="uid://c1cir1d2a5gs2" path="res://art/animated_scenes/wall_fireplace.tscn" id="4_v8ej7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_m4ssm"]

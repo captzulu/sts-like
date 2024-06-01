@@ -12,7 +12,7 @@ func execute(targets : Array[Node]) -> void:
 	for target in targets:
 		if not target is Enemy and not target is Player:
 			continue
-		target.add_status(Charge.new(amount))
+		Charge.new(amount).add_to(target)
 	SfxPlayer.play(sound)
 	
 func pick_icon_for_intent() -> Texture:

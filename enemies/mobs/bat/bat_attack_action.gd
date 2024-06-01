@@ -29,6 +29,5 @@ func perform_action() -> void:
 	tween.finished.connect(
 		func() -> void:
 			Events.enemy_action_completed.emit(enemy)
-			print("Events.enemy_action_completed")
 	)
 
