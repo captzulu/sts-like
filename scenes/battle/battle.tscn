@@ -176,8 +176,8 @@ visible = false
 [node name="CombatLogUi" parent="BattleUi" instance=ExtResource("17_ff2p0")]
 offset_left = 6.0
 offset_top = 34.0
-offset_right = 218.0
-offset_bottom = 166.0
+offset_right = 206.0
+offset_bottom = 154.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BattleUi"]
 anchors_preset = 2
