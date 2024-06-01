@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1xgrhkvg5e67" path="res://scenes/ui/StatusesBar.tscn" id="6_r3541"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wawtc"]
-size = Vector2(49, 48)
+size = Vector2(41, 44.5)
 
 [node name="BossEnemy" type="Area2D" groups=["enemies"]]
 scale = Vector2(2, 2)
@@ -21,7 +21,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_0y1rl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -23)
+position = Vector2(0, -21.25)
 shape = SubResource("RectangleShape2D_wawtc")
 
 [node name="Arrow" type="Sprite2D" parent="."]
