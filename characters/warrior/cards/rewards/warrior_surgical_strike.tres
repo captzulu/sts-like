@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://r3v4fqt3vh4q"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_surgical_strike.gd" id="1_a81xl"]
+[ext_resource type="Texture2D" uid="uid://ryghtovn6e07" path="res://art/original_art/tile_0119.png" id="1_b8erw"]
+[ext_resource type="AudioStream" uid="uid://b5m0lwcy47slo" path="res://art/original_art/axe.ogg" id="3_bkbl6"]
+
+[resource]
+script = ExtResource("1_a81xl")
+effects = {
+"damage": 20
+}
+identifier = "warrior_surgical_strike"
+type = 0
+target = 1
+cost = 2
+icon = ExtResource("1_b8erw")
+tooltip_text_template = "Executes a target for up to [color=\"ebc807\"]{damage}[/color] damage. Deals the exact amount of damage required to kill."
+sound = ExtResource("3_bkbl6")
