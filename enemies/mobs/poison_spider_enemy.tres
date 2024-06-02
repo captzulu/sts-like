@@ -10,5 +10,5 @@ ai = ExtResource("1_2jvrx")
 identifier = "poison_spider"
 is_boss = false
 scale = Vector2(1, 1)
-max_health = 9
+max_health_difficulty = Array[int]([9, 12, 16])
 art = ExtResource("2_01xxe")

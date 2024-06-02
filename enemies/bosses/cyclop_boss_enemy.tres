@@ -9,5 +9,6 @@ script = ExtResource("3_kpe3e")
 ai = ExtResource("1_mv62n")
 identifier = "cyclop_boss"
 is_boss = true
-max_health = 40
+scale = Vector2(1, 1)
+max_health_difficulty = Array[int]([40, 55, 75])
 art = ExtResource("2_muv81")

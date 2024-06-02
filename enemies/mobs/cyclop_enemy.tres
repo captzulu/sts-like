@@ -10,5 +10,5 @@ ai = ExtResource("1_hxmee")
 identifier = "cyclop"
 is_boss = false
 scale = Vector2(1, 1)
-max_health = 15
+max_health_difficulty = Array[int]([15, 20, 30])
 art = ExtResource("2_vkjjv")

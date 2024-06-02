@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://8ojmrkxqbxnf"]
 
-[ext_resource type="Texture2D" uid="uid://hbqeo7opfmrv" path="res://art/original_art/tile_0120.png" id="1_pp2gb"]
+[ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://art/original_art/tile_0120.png" id="1_pp2gb"]
 [ext_resource type="PackedScene" uid="uid://bj1lc6g3lrid7" path="res://enemies/mobs/bat/bat_enemy_ai.tscn" id="1_xeabj"]
 [ext_resource type="Script" path="res://resources/enemy_stats.gd" id="3_okuqw"]
 
@@ -10,5 +10,5 @@ ai = ExtResource("1_xeabj")
 identifier = "bat"
 is_boss = false
 scale = Vector2(1, 1)
-max_health = 8
+max_health_difficulty = Array[int]([8, 10, 14])
 art = ExtResource("1_pp2gb")
