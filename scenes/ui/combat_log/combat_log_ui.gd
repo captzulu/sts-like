@@ -33,10 +33,8 @@ func on_expand_click() -> void:
 	resize_window()
 
 func resize_window() -> void:
-	print("is_collapsed : " + str(is_collapsed))
 	if is_collapsed:
 		self.size.y = FULL_HEIGHT
 	else:
 		self.size.y = COLLAPSED_HEIGHT
-	print("size y : " + str(self.size.y))
 	
