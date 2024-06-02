@@ -9,7 +9,7 @@ script = ExtResource("2_trtc6")
 effects = {
 "damage": 6
 }
-identifier = ""
+identifier = "warrior_slash"
 type = 0
 target = 2
 cost = 2

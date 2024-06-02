@@ -9,10 +9,10 @@ script = ExtResource("1_k815q")
 effects = {
 "damage": 24
 }
-identifier = ""
+identifier = "warrior_measured_strike"
 type = 0
 target = 2
 cost = 2
 icon = ExtResource("1_r0fv7")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage divided to all enemies.[/center]"
+tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage divided between all enemies.[/center]"
 sound = ExtResource("3_k3qvf")

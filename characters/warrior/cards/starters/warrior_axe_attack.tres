@@ -9,7 +9,7 @@ script = ExtResource("2_8h22d")
 effects = {
 "damage": 6
 }
-identifier = ""
+identifier = "warrior_axe_attack"
 type = 0
 target = 1
 cost = 1

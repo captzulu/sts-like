@@ -9,10 +9,10 @@ script = ExtResource("1_a81xl")
 effects = {
 "damage": 20
 }
-identifier = ""
+identifier = "warrior_surgical_strike"
 type = 0
 target = 1
-cost = 1
+cost = 2
 icon = ExtResource("1_b8erw")
-tooltip_text_template = "Execute a target for up to [color=\"ebc807\"]{damage}[/color] damage. Deals the exact amount of damage required to kill."
+tooltip_text_template = "Executes a target for up to [color=\"ebc807\"]{damage}[/color] damage. Deals the exact amount of damage required to kill."
 sound = ExtResource("3_bkbl6")
