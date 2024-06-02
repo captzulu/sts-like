@@ -26,7 +26,8 @@ func set_current_action(value : EnemyAction) -> void:
 	current_action = value
 
 func set_enemy_stats(value: EnemyStats) -> void:
-	stats = value.create_instance(0.10) as EnemyStats
+	var difficulty : int = Globals.current_location.unlocked_level - 1
+	stats = value.create_instance(difficulty, 0.10) as EnemyStats
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)

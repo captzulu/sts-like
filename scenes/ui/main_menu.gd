@@ -27,16 +27,16 @@ func _on_undead_lair_button_pressed() -> void:
 	enter_map(Globals.LOCATION_UNDEAD)
 
 func enter_map(new_map : Location) -> void:
-	if new_map.unlocked == true:
+	if new_map.unlocked_level > 0:
 		Globals.current_location = new_map
 		get_tree().change_scene_to_packed(battle)
 		
 func check_unlock_buttons() -> void: 
 	if saver_loader.save_file_exists():
 		%LoadButton.disabled = false
-	%SpiderCavernButton.disabled = ! Globals.LOCATION_SPIDER.unlocked
-	%CyclopMountainButton.disabled = ! Globals.LOCATION_CYCLOP.unlocked
-	%UndeadLairButton.disabled = ! Globals.LOCATION_UNDEAD.unlocked
+	%SpiderCavernButton.disabled = Globals.LOCATION_SPIDER.unlocked == 0
+	%CyclopMountainButton.disabled = Globals.LOCATION_CYCLOP.unlocked == 0
+	%UndeadLairButton.disabled = Globals.LOCATION_UNDEAD.unlocked == 0
 	
 func open_deck_display() -> void:
 	card_pile_display.open(Globals.char_stats.starting_deck, "Deck :")

@@ -38,10 +38,13 @@ func get_reward() -> void:
 func back_to_main_menu() -> void:
 	for card in %CardRewards.get_children():
 		card.queue_free()
-	Globals.current_location.completed = true
-	var map_index = Globals.MAP_ORDER.find(Globals.current_location)
-	if Globals.MAP_ORDER.size() > map_index + 1:
-		Globals.MAP_ORDER[map_index + 1].unlocked = true
+	Globals.current_location.completed_level += 1
+	Globals.current_location.unlocked_level += 1
+	print(Globals.current_location.identifier + " : unlocked lvl " + str(Globals.current_location.unlocked_level))
+	var map_index : int = Globals.MAP_ORDER.find(Globals.current_location)
+	var next_location : Location = Globals.MAP_ORDER[map_index + 1]
+	if Globals.MAP_ORDER.size() > map_index + 1 and next_location.unlocked_level == 0:
+		next_location.unlocked_level = 1
 	Globals.current_location = null
 
 	get_tree().change_scene_to_packed(main_menu)
