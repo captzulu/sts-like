@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bqr8nx8r5c16s"]
+
+[ext_resource type="Shader" path="res://scenes/ui/main_menu/difficulty_button_grayscale.gdshader" id="1_01bk0"]
+
+[resource]
+shader = ExtResource("1_01bk0")
