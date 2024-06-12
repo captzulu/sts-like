@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var main_menu : PackedScene = preload("res://scenes/ui/main_menu.tscn")
+@onready var main_menu : PackedScene = preload("res://scenes/ui/main_menu/main_menu.tscn")
 @onready var card_ui : PackedScene = preload("res://scenes/card_ui/card_as_reward.tscn")
 @onready var card_rewards_container : HBoxContainer = %CardRewards
 
