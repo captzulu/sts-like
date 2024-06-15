@@ -11,7 +11,7 @@ func _ready() -> void:
 func reset_enemy_actions() -> void:
 	var enemy : Enemy
 	var enemies : Array = get_children()
-	for child in enemies:
+	for child : Node in enemies:
 		enemy = child as Enemy
 		enemy.current_action = null
 		enemy.update_action()
