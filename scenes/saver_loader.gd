@@ -3,8 +3,6 @@ extends Node
 
 const save_file_path : String = "user://savegame.tres"
 
-signal game_loaded
-
 func save_game() -> void:
 	var saved_game : SavedGame = SavedGame.new()
 	saved_game.location_spider_unlocked_level = Globals.LOCATION_SPIDER.unlocked_level
@@ -19,6 +17,8 @@ func save_game() -> void:
 	ResourceSaver.save(saved_game, save_file_path)
 	
 func load_game() -> void:
+	if ! save_file_exists():
+		return
 	var saved_game : SavedGame = SafeResourceLoader.load(save_file_path) as SavedGame
 	
 	if saved_game == null:
@@ -33,7 +33,16 @@ func load_game() -> void:
 	Globals.LOCATION_UNDEAD.completed_level = saved_game.location_undead_completed_level
 
 	Globals.char_stats.starting_deck = saved_game.current_deck
-	game_loaded.emit()
+	
+func delete_save() -> void:
+	if save_file_exists():
+		DirAccess.remove_absolute(save_file_path)
+	Globals.LOCATION_SPIDER.unlocked_level = 1
+	Globals.LOCATION_SPIDER.completed_level = 0
+	Globals.LOCATION_CYCLOP.unlocked_level = 0
+	Globals.LOCATION_CYCLOP.completed_level = 0
+	Globals.LOCATION_UNDEAD.unlocked_level = 0
+	Globals.LOCATION_UNDEAD.completed_level = 0
 
 func save_file_exists() -> bool:
 	return ResourceLoader.exists(save_file_path)

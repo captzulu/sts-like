@@ -8,5 +8,5 @@ script = ExtResource("1_8ckju")
 identifier = "cyclop_halls"
 display_name = "Cyclop Halls"
 tilemap = ExtResource("2_tycxw")
-completed = false
-unlocked = false
+completed_level = 0
+unlocked_level = 0

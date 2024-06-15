@@ -10,15 +10,20 @@ var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
 var location_ui_scene : PackedScene = preload("res://scenes/ui/main_menu/location_ui.tscn")
 
 func _ready() -> void:
-	create_locations()
-	%SaveButton.pressed.connect(saver_loader.save_game)
-	%LoadButton.pressed.connect(saver_loader.load_game)
+	saver_loader.save_game()
+	saver_loader.load_game()
+	reload_locations()
+	%NewRunButton.pressed.connect(abandon_run)
 	see_deck_button.pressed.connect(open_deck_display)
-	saver_loader.game_loaded.connect(reload_scene)
-	if saver_loader.save_file_exists():
-		%LoadButton.disabled = false
 	
-func reload_scene() -> void:
+func reload_locations() -> void:
+	for location in location_container.get_children():
+		location_container.remove_child(location)
+	create_locations()
+	%NewRunButton.disabled = ! saver_loader.save_file_exists()
+		
+func abandon_run() -> void:
+	saver_loader.delete_save()
 	get_tree().reload_current_scene()
 
 func enter_location() -> void:

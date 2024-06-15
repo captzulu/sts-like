@@ -15,7 +15,7 @@ func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
 
 func start_battle() -> void:
-	player.stats.draw_pile = player.stats.deck.duplicate(true)
+	player.stats.draw_pile = player.stats.starting_deck.duplicate(true)
 	player.stats.draw_pile.shuffle()
 	player.stats.discard = CardPile.new()
 	start_turn()
