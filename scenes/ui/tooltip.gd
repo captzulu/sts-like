@@ -33,10 +33,10 @@ func show_status_tooltip(statuses : Dictionary) -> void:
 	if tween:
 		tween.kill()
 		
-	var tooltip_text : String = "[font_size=6][table=2]"
+	var tooltip_bbcode_text : String = "[font_size=6][table=2]"
 	for status in statuses.values():
-		tooltip_text += "[cell][img=16]%s[/img][/cell][cell]%s[/cell]" % [status.icon_path, status.generate_tooltip()]
-	tooltip_text_label.text = tooltip_text + "[/table][/font_size]"	
+		tooltip_bbcode_text += "[cell][img=16]%s[/img][/cell][cell]%s[/cell]" % [status.icon_path, status.generate_tooltip()]
+	tooltip_text_label.text = tooltip_bbcode_text + "[/table][/font_size]"	
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_callback(show)
 	tween.tween_property(self, "modulate", Color.WHITE, fade_seconds)

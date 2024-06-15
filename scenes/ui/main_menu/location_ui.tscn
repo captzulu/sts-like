@@ -54,6 +54,7 @@ text = "Spider Cavern"
 [node name="CompletionOverlay" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = 6.0
 offset_top = 0.999999
 offset_right = 76.0

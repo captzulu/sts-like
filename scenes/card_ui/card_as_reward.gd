@@ -15,21 +15,21 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	self.hide_tooltip()
 
-func show_tooltip():
+func show_tooltip() -> void:
 	if ! self.selected:
 		change_style_box(HOVER_STYLEBOX)
 	compute_tooltip()
 	Events.card_tooltip_requested.emit(card.icon, text_tooltip)
 
-func hide_tooltip():
+func hide_tooltip() -> void:
 	if ! self.selected:
 		change_style_box(BASE_STYLEBOX)
 	Events.hide_tooltip_requested.emit()
 
-func select():
+func select() -> void:
 	self.selected = true
 	change_style_box(SELECTED_STYLEBOX)
 
-func unselect():
+func unselect() -> void:
 	self.selected = false
 	change_style_box(BASE_STYLEBOX)

@@ -13,7 +13,7 @@ func new_line(line : String) -> void:
 		first_line_in_turn = false
 	Events.combat_log_updated.emit(line)
 	
-func on_player_turn_start():
+func on_player_turn_start() -> void:
 	turn += 1
 	first_line_in_turn = true
 	

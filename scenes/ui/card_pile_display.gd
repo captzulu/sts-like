@@ -21,7 +21,7 @@ func add_cards_to_ui(card_pile : CardPile) -> void:
 		card_container.add_child(new_card_ui)
 
 func remove_cards_from_ui() -> void:
-	for card_ui in card_container.get_children():
+	for card_ui : Node in card_container.get_children():
 		card_container.remove_child(card_ui)
 		card_ui.queue_free()
 

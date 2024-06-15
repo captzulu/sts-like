@@ -3,10 +3,10 @@ extends HBoxContainer
 
 @export var player : Player
 
-@onready var card_ui := preload("res://scenes/card_ui/card_in_hand.tscn")
+@onready var card_ui_template := preload("res://scenes/card_ui/card_in_hand.tscn")
 	
 func add_card(card : Card) -> void:
-	var new_card_ui : CardInHand = card_ui.instantiate() as CardInHand
+	var new_card_ui : CardInHand = card_ui_template.instantiate() as CardInHand
 	add_child(new_card_ui)
 	
 	new_card_ui.reparent_requested.connect(_on_card_ui_reparent_requested)
@@ -29,7 +29,7 @@ func _on_card_ui_reparent_requested(child: CardUi) -> void:
 	move_child.call_deferred(child, new_index)
 	child.set_deferred('disabled', false)
 	
-func apply_status_modifiers_to_card_effects(card_ui) -> void:
+func apply_status_modifiers_to_card_effects(card_ui : CardUi) -> void:
 	var card : Card = card_ui.card
 	if not card.effects.has("damage"):
 		return

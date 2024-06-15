@@ -14,7 +14,7 @@ func _init(amount : int) -> void:
 	Events.player_turn_started.connect(_on_player_turn_started)
 
 func generate_tooltip() -> String:
-	var template = "Deal [color=\"" + Globals.TOOLTIP_SPIKE_TEXT_COLOR + "\"]%s[/color] damage to the enemy when attacked. Decreases by [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]1/3rd[/color] on turn end."
+	var template : String = "Deal [color=\"" + Globals.TOOLTIP_SPIKE_TEXT_COLOR + "\"]%s[/color] damage to the enemy when attacked. Decreases by [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]1/3rd[/color] on turn end."
 	return template % str(stacks)
 
 func _on_player_turn_started() -> void:

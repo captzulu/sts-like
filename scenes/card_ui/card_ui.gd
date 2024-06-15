@@ -22,15 +22,15 @@ func _set_card(value: Card) -> void:
 	cost.text = str(card.cost)
 	icon.texture = card.icon
 
-func compute_tooltip():
+func compute_tooltip() -> void:
 	text_tooltip = card.tooltip_text_template.format(self.effects)
 
-func show_tooltip():
+func show_tooltip() -> void:
 	change_style_box(HOVER_STYLEBOX)
 	compute_tooltip()
 	Events.card_tooltip_requested.emit(card.icon, text_tooltip)
 
-func hide_tooltip():
+func hide_tooltip() -> void:
 	change_style_box(BASE_STYLEBOX)
 	Events.hide_tooltip_requested.emit()
 

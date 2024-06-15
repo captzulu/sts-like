@@ -31,5 +31,5 @@ func _on_player_turn_started() -> void:
 		decrease_stacks(stacks)
 	hit_this_turn = false
 
-func _on_wave_spawned(_wave_number) -> void:
+func _on_wave_spawned(_wave_number : int) -> void:
 	hit_this_turn = true
