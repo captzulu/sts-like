@@ -10,8 +10,10 @@ var battle : PackedScene = preload("res://scenes/battle/battle.tscn")
 var location_ui_scene : PackedScene = preload("res://scenes/ui/main_menu/location_ui.tscn")
 
 func _ready() -> void:
+	if ! Globals.game_loaded:
+		saver_loader.load_game()
+		Globals.game_loaded = true
 	saver_loader.save_game()
-	saver_loader.load_game()
 	reload_locations()
 	%NewRunButton.pressed.connect(abandon_run)
 	see_deck_button.pressed.connect(open_deck_display)

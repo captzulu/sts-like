@@ -19,8 +19,8 @@ func save_game() -> void:
 func load_game() -> void:
 	if ! save_file_exists():
 		return
+
 	var saved_game : SavedGame = SafeResourceLoader.load(save_file_path) as SavedGame
-	
 	if saved_game == null:
 		print("Saved game was unsafe!")
 		return
@@ -43,6 +43,9 @@ func delete_save() -> void:
 	Globals.LOCATION_CYCLOP.completed_level = 0
 	Globals.LOCATION_UNDEAD.unlocked_level = 0
 	Globals.LOCATION_UNDEAD.completed_level = 0
+	
+	var char_stats : Stats = load(Globals.CHARACTER_PATH)
+	Globals.char_stats.starting_deck = char_stats.starting_deck.duplicate(true)
 
 func save_file_exists() -> bool:
 	return ResourceLoader.exists(save_file_path)

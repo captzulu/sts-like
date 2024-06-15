@@ -3,7 +3,9 @@ extends Node
 @export var reward_cards : Dictionary
 @export var char_stats : CharacterStats
 @export var current_location : Location = LOCATION_SPIDER
+@export var game_loaded : bool = false
 
+const CHARACTER_PATH : String = "res://characters/warrior/warrior.tres"
 const LOCATION_SPIDER : Location = preload("res://resources/locations/spider_cavern.tres")
 const LOCATION_CYCLOP : Location = preload("res://resources/locations/cyclop_halls.tres")
 const LOCATION_UNDEAD : Location = preload("res://resources/locations/undead_lair.tres")
