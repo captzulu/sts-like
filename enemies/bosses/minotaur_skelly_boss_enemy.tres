@@ -10,5 +10,5 @@ ai = ExtResource("1_pfa1b")
 identifier = "minotaur_skelly_boss"
 is_boss = true
 scale = Vector2(1, 1)
-max_health_difficulty = Array[int]([70, 85, 105])
+max_health_difficulty = Array[int]([75, 95, 115])
 art = ExtResource("2_vmjg7")

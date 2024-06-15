@@ -1,16 +1,10 @@
 extends EnemyAction
 
-@export var damage : int = 40
+@export var damage : int = 10
 
 func setup_effects() -> void:
 	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
 	effects.append(damage_effect)
-
-func is_performable() -> bool:
-	if not enemy or enemy.stats.get_status_count(Charge) < 3:
-		return false
-	
-	return true
 
 func perform_action() -> void:
 	if not enemy or not target:

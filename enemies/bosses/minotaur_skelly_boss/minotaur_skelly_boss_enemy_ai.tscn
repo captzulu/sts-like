@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxbqbiksyi4lh"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_35geb"]
-[ext_resource type="Script" path="res://enemies/bosses/minotaur_skelly_boss/minotaur_skelly_boss_charged_attack_action.gd" id="2_op5ve"]
-[ext_resource type="Script" path="res://enemies/bosses/minotaur_skelly_boss/minotaur_skelly_boss_charge_up_action.gd" id="4_w4yal"]
+[ext_resource type="Script" path="res://enemies/bosses/minotaur_skelly_boss/minotaur_skelly_boss_enrage_action.gd" id="2_b5axx"]
+[ext_resource type="Script" path="res://enemies/bosses/minotaur_skelly_boss/minotaur_skelly_boss_attack_action.gd" id="4_yt5m2"]
 [ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="5_1mqmk"]
 [ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="5_vuli7"]
 
 [node name="MinotaurSkellyBossEnemyAi" type="Node"]
 script = ExtResource("1_35geb")
 
-[node name="MinotaurSkellyChargedAttackAction" type="Node" parent="."]
-script = ExtResource("2_op5ve")
+[node name="MinotaurSkellyEnrageAction" type="Node" parent="."]
+script = ExtResource("2_b5axx")
 sound = ExtResource("5_vuli7")
 
-[node name="MinotaurSkellyChargeUpAction" type="Node" parent="."]
-script = ExtResource("4_w4yal")
+[node name="MinotaurSkellyAttackAction" type="Node" parent="."]
+script = ExtResource("4_yt5m2")
 sound = ExtResource("5_1mqmk")
 type = 1
 chance_weight = 1.0
