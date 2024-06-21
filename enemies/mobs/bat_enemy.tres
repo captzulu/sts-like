@@ -10,5 +10,5 @@ ai = ExtResource("1_xeabj")
 identifier = "bat"
 is_boss = false
 scale = Vector2(1, 1)
-max_health_difficulty = Array[int]([8, 10, 14])
+max_health_difficulty = Array[int]([8, 11, 12])
 art = ExtResource("1_pp2gb")

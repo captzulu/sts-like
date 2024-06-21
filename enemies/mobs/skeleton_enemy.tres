@@ -10,5 +10,5 @@ ai = ExtResource("1_44ay5")
 identifier = "skeleton"
 is_boss = false
 scale = Vector2(1.5, 1.5)
-max_health_difficulty = Array[int]([8, 10, 14])
+max_health_difficulty = Array[int]([9, 11, 15])
 art = ExtResource("2_ltj84")

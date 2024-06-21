@@ -10,5 +10,5 @@ ai = ExtResource("1_25ngx")
 identifier = "crab"
 is_boss = false
 scale = Vector2(1, 1)
-max_health_difficulty = Array[int]([12, 15, 19])
+max_health_difficulty = Array[int]([12, 14, 16])
 art = ExtResource("1_084mf")
