@@ -5,8 +5,6 @@ extends Card
 }
 
 func apply_effects(targets : Array[Node], _player : Player) -> void:
-	var block_effect : BlockEffect = BlockEffect.new()
-	block_effect.amount = effects["block"]
-	block_effect.sound = sound
+	var block_effect : BlockEffect = BlockEffect.new(effects["block"], sound)
 	block_effect.execute(targets)
 	
