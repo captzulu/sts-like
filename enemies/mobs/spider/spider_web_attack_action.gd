@@ -1,22 +1,21 @@
 extends EnemyAction
 
-@export var restrained : int = 4
-@export var damage : int = 4
-
+@export var effects_export : Dictionary = {
+	"restrained" : [1, 1, 1],
+	"damage" : [4, 5, 6]
+}
 var restrained_effect : RestrainedEffect
 var damage_effect : DamageEffect
 
 func setup_effects() -> void:
-	restrained_effect = RestrainedEffect.new(restrained, sound, enemy)
-	damage_effect = DamageEffect.new(damage, sound, enemy)
+	restrained_effect = RestrainedEffect.new(get_effect_value(effects_export["restrained"]), sound, enemy)
+	damage_effect = DamageEffect.new(get_effect_value(effects_export["damage"]), sound, enemy)
 	effects.append(restrained_effect)
 	effects.append(damage_effect)
 
 func perform_action() -> void:
 	if not enemy or not target:
 		return
-	
-	
 	
 	var tween : Tween = create_tween().set_trans(Tween.TRANS_QUINT)
 	var start : Vector2 = enemy.global_position

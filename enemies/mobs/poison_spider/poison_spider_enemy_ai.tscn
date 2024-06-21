@@ -11,14 +11,11 @@ script = ExtResource("1_f3p5x")
 
 [node name="PoisonSpiderWebAttackAction" type="Node" parent="."]
 script = ExtResource("2_8di7a")
-restrained = 1
-damage = 3
 sound = ExtResource("3_xbdpt")
 type = 1
 chance_weight = 1.0
 
 [node name="PoisonSpiderPoisonAttackAction" type="Node" parent="."]
 script = ExtResource("4_pqct1")
-poison = 3
 sound = ExtResource("5_0dcw5")
 identifier = "poison_spider_poison_attack_action"

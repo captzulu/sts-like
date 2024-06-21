@@ -1,21 +1,21 @@
 extends EnemyAction
 
-@export var block : int = 14
-@export var hp_threshold : int = 6
+@export var effects_export : Dictionary = {
+	"block" : [14, 16, 18],
+	"hp_threshold" : [6, 7, 8]
+}
 
 var already_used : bool = false
 
 func is_performable() -> bool:
-	if not enemy or already_used or enemy.stats.health > hp_threshold:
+	if not enemy or already_used or enemy.stats.health > effects_export["hp_threshold"]:
 		return false
 	
 	already_used = true
 	return true
 	
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new()
-	block_effect.amount = block
-	block_effect.sound = sound
+	var block_effect := BlockEffect.new(effects_export["block"], sound)
 	effects.append(block_effect)
 	
 func perform_action() -> void:

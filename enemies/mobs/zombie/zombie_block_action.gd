@@ -1,11 +1,11 @@
 extends EnemyAction
 
-@export var block : int = 6
+@export var effects_export : Dictionary = {
+	"block" : [6, 8, 10]
+}
 
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new()
-	block_effect.amount = block
-	block_effect.sound = sound
+	var block_effect := BlockEffect.new(get_effect_value(effects_export["block"]), sound)
 	effects.append(block_effect)
 
 func perform_action() -> void:

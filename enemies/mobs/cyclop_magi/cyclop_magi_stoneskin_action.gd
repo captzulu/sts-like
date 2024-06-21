@@ -1,9 +1,12 @@
 extends EnemyAction
 
 @export var stoneskin : int = 4
+@export var effects_export : Dictionary = {
+	"stoneskin" : 6
+}
 
 func setup_effects() -> void:
-	var stoneskin_effect : StoneskinEffect = StoneskinEffect.new(stoneskin, sound, enemy)
+	var stoneskin_effect : StoneskinEffect = StoneskinEffect.new(effects_export["stoneskin"], sound, enemy)
 	effects.append(stoneskin_effect)
 
 func perform_action() -> void:
@@ -23,7 +26,7 @@ func perform_action() -> void:
 
 	var target_array : Array[Node] = [target]
 	
-	var stoneskin_effect := effects[0]
+	var stoneskin_effect : StoneskinEffect = effects[0]
 	stoneskin_effect.execute(target_array)
 	
 	Events.enemy_action_completed.emit(enemy)

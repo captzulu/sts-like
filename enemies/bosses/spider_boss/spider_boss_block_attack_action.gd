@@ -1,14 +1,14 @@
 extends EnemyAction
 
-@export var block : int = 9
-@export var damage : int = 6
+@export var effects_export : Dictionary = {
+	"block" : 9,
+	"damage" : 6
+}
 
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new()
-	block_effect.amount = block
-	block_effect.sound = sound
+	var block_effect := BlockEffect.new(effects_export["block"], sound)
 	effects.append(block_effect)
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
+	var damage_effect : DamageEffect = DamageEffect.new(effects_export["damage"], sound, enemy)
 	effects.append(damage_effect)
 
 func perform_action() -> void:
@@ -25,7 +25,6 @@ func perform_action() -> void:
 	var target_array : Array[Node] = [target]
 	
 	var damage_effect : DamageEffect = effects[1]
-	damage_effect.originator = enemy
 	tween.tween_property(enemy, "global_position", end, 0.4)
 	tween.tween_callback(damage_effect.execute.bind(target_array))
 	tween.tween_interval(0.25)

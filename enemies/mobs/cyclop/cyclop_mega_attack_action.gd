@@ -1,16 +1,19 @@
 extends EnemyAction
 
-@export var damage : int = 20
-@export var hp_threshold : int = 6
+@export var effects_export : Dictionary = {
+	"damage" : [20, 22, 24],
+	"hp_threshold" : [8, 8, 8]
+}
+
 
 func is_performable() -> bool:
-	if not enemy or enemy.stats.health > hp_threshold:
+	if not enemy or enemy.stats.health > get_effect_value(effects_export["hp_threshold"]):
 		return false
 	
 	return true
 
 func setup_effects() -> void:
-	var damage_effect : DamageEffect = DamageEffect.new(damage, sound, enemy)
+	var damage_effect : DamageEffect = DamageEffect.new(get_effect_value(effects_export["damage"]), sound, enemy)
 	effects.append(damage_effect)
 
 func perform_action() -> void:
@@ -21,7 +24,7 @@ func perform_action() -> void:
 	var end : Vector2 = target.global_position + Vector2.RIGHT * 32
 	var target_array : Array[Node] = [target]
 	
-	var damage_effect := effects[0]
+	var damage_effect : DamageEffect = effects[0]
 	damage_effect.originator = enemy
 	tween.tween_property(enemy, "global_position", end, 0.4)
 	tween.tween_callback(damage_effect.execute.bind(target_array))

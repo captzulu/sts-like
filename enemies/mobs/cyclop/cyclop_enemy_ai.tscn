@@ -16,5 +16,4 @@ chance_weight = 1.0
 
 [node name="CyclopMegaAttackAction" type="Node" parent="."]
 script = ExtResource("4_i7b8f")
-damage = 12
 sound = ExtResource("3_hwav1")

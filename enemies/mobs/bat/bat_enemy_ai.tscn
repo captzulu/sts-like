@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj1lc6g3lrid7"]
+[gd_scene load_steps=5 format=3 uid="uid://bj1lc6g3lrid7"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_sfwd8"]
 [ext_resource type="Script" path="res://enemies/mobs/bat/bat_attack_action.gd" id="2_j17wy"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_0tlwa"]
 [ext_resource type="Script" path="res://enemies/mobs/bat/bat_block_action.gd" id="3_df1i4"]
 [ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="5_v4ott"]
 
@@ -11,9 +10,6 @@ script = ExtResource("1_sfwd8")
 
 [node name="BatAttackAction" type="Node" parent="."]
 script = ExtResource("2_j17wy")
-sound = ExtResource("3_0tlwa")
-type = 1
-chance_weight = 3.0
 
 [node name="BatBlockAction" type="Node" parent="."]
 script = ExtResource("3_df1i4")
