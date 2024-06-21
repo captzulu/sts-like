@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://il1lsiurqrgt"]
+[gd_scene load_steps=7 format=3 uid="uid://il1lsiurqrgt"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/location_ui.gd" id="1_14x18"]
 [ext_resource type="Material" uid="uid://bqr8nx8r5c16s" path="res://scenes/ui/main_menu/greyscale_shader_material.tres" id="2_fhabf"]
-[ext_resource type="Texture2D" uid="uid://bhm7hh3bmt41u" path="res://art/rune_easy.png" id="2_xg2ry"]
-[ext_resource type="Texture2D" uid="uid://b1q5myck0jquv" path="res://art/rune_medium.png" id="3_71cgu"]
-[ext_resource type="Texture2D" uid="uid://cs72sdyll77td" path="res://art/rune_hard.png" id="4_6agla"]
+[ext_resource type="Texture2D" uid="uid://c5a0rh8vrb8on" path="res://art/rune_easy.png" id="2_xg2ry"]
+[ext_resource type="Texture2D" uid="uid://cdsirnoib8dqk" path="res://art/rune_medium.png" id="3_71cgu"]
+[ext_resource type="Texture2D" uid="uid://dm025atmtyogu" path="res://art/rune_hard.png" id="4_6agla"]
+[ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="6_ydlcy"]
 
 [node name="LocationUi" type="Control"]
 custom_minimum_size = Vector2(70, 49)
@@ -23,8 +24,6 @@ offset_bottom = 49.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
 theme_override_constants/separation = 5
 
 [node name="EasyIcon" type="TextureRect" parent="LocationContainer/DifficultyIconContainer"]
@@ -45,10 +44,10 @@ texture = ExtResource("4_6agla")
 
 [node name="LocationButton" type="Button" parent="LocationContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 25)
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 6
+size_flags_horizontal = 4
+theme = ExtResource("6_ydlcy")
 text = "Spider Cavern"
 
 [node name="CompletionOverlay" type="Label" parent="."]
