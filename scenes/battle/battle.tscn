@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2edvm"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_lcvwo"]
-[ext_resource type="AudioStream" uid="uid://bhs3phxa51p3w" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
+[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/original_art/8_bit_iced_village_lofi.mp3" id="3_3iuh0"]
 [ext_resource type="PackedScene" uid="uid://djhsxq1phowkp" path="res://scenes/player/player.tscn" id="3_4tia0"]
 [ext_resource type="PackedScene" uid="uid://cmbgumsmqa86g" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_xnl3n"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="4_b44c5"]
