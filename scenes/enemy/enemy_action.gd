@@ -9,11 +9,12 @@ enum Type {CONDITIONAL, CHANCE_BASED, ON_INIT}
 @export_range(0.0, 10.0) var chance_weight : float = 0.0
 @onready var accumulated_weight : float = 0.0
 
+@export var effects : Array
 var enemy : Enemy
 var target : Node2D
-var effects : Array[Effect]
 var execution_number : int = 1
 var execution_interval : float = 0.35
+var difficulty : int
 
 func is_performable() -> bool:
 	return false
@@ -23,6 +24,9 @@ func perform_action() -> void:
 	
 func setup_effects() -> void:
 	pass
+	
+func get_effect_value(effect : Array) -> int:
+	return effect[difficulty]
 
 func generate_intents() -> Array[Intent]:
 	if effects.size() <= 0:

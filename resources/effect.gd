@@ -3,6 +3,7 @@ extends RefCounted
 
 var sound : AudioStream
 var originator : Node
+var difficulty : int
 
 func execute(_targets: Array[Node]) -> void:
 	pass

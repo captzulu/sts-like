@@ -5,11 +5,13 @@ extends Node
 var actions : Array[EnemyAction]
 var enemy : Enemy
 var target : Node2D : set = _set_target
+var difficulty : int
 
 func _ready() -> void:
 	for child in get_children():
 		var enemy_action : EnemyAction = child as EnemyAction
 		enemy_action.enemy = enemy
+		enemy_action.difficulty = difficulty
 		enemy_action.setup_effects()
 		if enemy_action.type == EnemyAction.Type.ON_INIT:
 			enemy_action.perform_action()

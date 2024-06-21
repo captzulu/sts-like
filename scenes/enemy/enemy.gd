@@ -17,6 +17,7 @@ var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
 var last_action: EnemyAction
 var turn_alive : int = 0
+var difficulty : int
 
 func _ready() -> void:
 	self.mouse_entered.connect(_on_mouse_entered)
@@ -26,7 +27,7 @@ func set_current_action(value : EnemyAction) -> void:
 	current_action = value
 
 func set_enemy_stats(value: EnemyStats) -> void:
-	var difficulty : int = Globals.current_location.unlocked_level - 1
+	difficulty = Globals.current_location.unlocked_level - 1
 	stats = value.create_instance(difficulty, 0.10) as EnemyStats
 	
 	if not stats.stats_changed.is_connected(update_stats):
@@ -41,6 +42,7 @@ func setup_ai() -> void:
 		
 	var new_action_picker : EnemyActionPicker = stats.ai.instantiate()
 	new_action_picker.enemy = self
+	new_action_picker.difficulty = difficulty
 	add_child(new_action_picker)
 	enemy_action_picker = new_action_picker
 	
