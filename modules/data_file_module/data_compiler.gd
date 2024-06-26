@@ -41,7 +41,7 @@ static func parse_csv(all_csv_lines : PackedStringArray) -> Dictionary:
 		if (first_char.begins_with("#") || first_char == CONSTANTS.DELIMITER || first_char == ""):
 			continue
 			
-		print(">PROCESSING VALID CSV STRING LINE : ", csv_line)
+		#print(">PROCESSING VALID CSV STRING LINE : ", csv_line)
 		var csv_splitted_data : PackedStringArray = csv_line.split(CONSTANTS.DELIMITER)
 		if !csv_headers_processed:
 			csv_line_headers = process_headers(csv_splitted_data)
@@ -73,5 +73,5 @@ static func add_entry(all_fields : PackedStringArray, headers : Array, stored_cs
 	stored_csv_dict[entry_id] = entry
 	
 static func parse_cell(cell_text : String) -> Variant:
-	cell_text = cell_text.replace('\r', '')
+	cell_text = cell_text.replace('\r', '').trim_suffix(" ")
 	return int(cell_text) if cell_text.is_valid_int() else cell_text
