@@ -5,7 +5,7 @@ extends EnemyAction
 }
 
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new(effects_export["block"], sound)
+	var block_effect := BlockEffect.new(get_effect_value(effects_export["block"]), sound)
 	effects.append(block_effect)
 
 func perform_action() -> void:

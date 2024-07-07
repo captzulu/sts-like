@@ -6,7 +6,7 @@ extends EnemyAction
 }
 
 func setup_effects() -> void:
-	var stoneskin_effect : StoneskinEffect = StoneskinEffect.new(effects_export["stoneskin"], sound, enemy)
+	var stoneskin_effect : StoneskinEffect = StoneskinEffect.new(get_effect_value(effects_export["stoneskin"]), sound, enemy)
 	effects.append(stoneskin_effect)
 
 func perform_action() -> void:

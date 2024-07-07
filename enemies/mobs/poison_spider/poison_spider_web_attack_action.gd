@@ -9,8 +9,8 @@ var restrained_effect : RestrainedEffect
 var damage_effect : DamageEffect
 
 func setup_effects() -> void:
-	restrained_effect = RestrainedEffect.new(effects_export["restrained"], sound, enemy)
-	damage_effect = DamageEffect.new(effects_export["damage"], sound, enemy)
+	restrained_effect = RestrainedEffect.new(get_effect_value(effects_export["restrained"]), sound, enemy)
+	damage_effect = DamageEffect.new(get_effect_value(effects_export["damage"]), sound, enemy)
 	effects.append(restrained_effect)
 	effects.append(damage_effect)
 

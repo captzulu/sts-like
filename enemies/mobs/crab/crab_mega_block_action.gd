@@ -8,14 +8,14 @@ extends EnemyAction
 var already_used : bool = false
 
 func is_performable() -> bool:
-	if not enemy or already_used or enemy.stats.health > effects_export["hp_threshold"]:
+	if not enemy or already_used or enemy.stats.health > get_effect_value(effects_export["hp_threshold"]):
 		return false
 	
 	already_used = true
 	return true
 	
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new(effects_export["block"], sound)
+	var block_effect := BlockEffect.new(get_effect_value(effects_export["block"]), sound)
 	effects.append(block_effect)
 	
 func perform_action() -> void:

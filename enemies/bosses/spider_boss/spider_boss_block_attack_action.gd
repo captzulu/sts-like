@@ -6,9 +6,9 @@ extends EnemyAction
 }
 
 func setup_effects() -> void:
-	var block_effect := BlockEffect.new(effects_export["block"], sound)
+	var block_effect := BlockEffect.new(get_effect_value(effects_export["block"]), sound)
 	effects.append(block_effect)
-	var damage_effect : DamageEffect = DamageEffect.new(effects_export["damage"], sound, enemy)
+	var damage_effect : DamageEffect = DamageEffect.new(get_effect_value(effects_export["damage"]), sound, enemy)
 	effects.append(damage_effect)
 
 func perform_action() -> void:

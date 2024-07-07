@@ -6,13 +6,13 @@ extends EnemyAction
 }
 
 func is_performable() -> bool:
-	if not enemy or enemy.turn_alive != effects_export["on_turn"]:
+	if not enemy or enemy.turn_alive != get_effect_value(effects_export["on_turn"]):
 		return false
 	
 	return true
 
 func setup_effects() -> void:
-	var poison_effect : PoisonEffect = PoisonEffect.new(effects_export["poison"], sound, enemy)
+	var poison_effect : PoisonEffect = PoisonEffect.new(get_effect_value(effects_export["poison"]), sound, enemy)
 	effects.append(poison_effect)
 
 func perform_action() -> void:

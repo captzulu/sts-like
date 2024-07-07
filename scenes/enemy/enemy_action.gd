@@ -25,7 +25,9 @@ func perform_action() -> void:
 func setup_effects() -> void:
 	pass
 	
-func get_effect_value(effect : Array) -> int:
+func get_effect_value(effect) -> int:
+	if typeof(effect) == TYPE_INT:
+		return effect
 	return effect[difficulty]
 
 func generate_intents() -> Array[Intent]:
