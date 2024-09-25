@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c7pgqopr20nqm"]
+
+[ext_resource type="Texture2D" uid="uid://psr6xk3k26oh" path="res://art/original_art/tile_0114.png" id="1_iayg0"]
+[ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_noxious_gas.gd" id="1_kyx2t"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="3_qf1bd"]
+
+[resource]
+script = ExtResource("1_kyx2t")
+effects = {}
+identifier = "warrior_noxious_gas"
+type = 1
+target = 2
+cost = 2
+icon = ExtResource("1_iayg0")
+tooltip_text_template = "Spread the highest poison value to all enemies and trigger poison."
+sound = ExtResource("3_qf1bd")
