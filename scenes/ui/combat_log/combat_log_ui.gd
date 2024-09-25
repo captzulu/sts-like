@@ -6,7 +6,7 @@ const HOVER_STYLEBOX := preload("res://scenes/ui/combat_log/combat_log_hover.tre
 const FULL_HEIGHT : int = 120
 const COLLAPSED_HEIGHT : int = 40
 
-@onready var expand_button = %ExpandButton
+@onready var expand_button : TextureButton = %ExpandButton
 @onready var is_collapsed : bool = %ExpandButton.is_pressed()
 
 func _ready() -> void:
