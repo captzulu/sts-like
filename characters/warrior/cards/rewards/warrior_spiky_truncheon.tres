@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dpiwyasqxrucb"]
+
+[ext_resource type="Texture2D" uid="uid://bcfblytx14w81" path="res://art/spiky_truncheon.png" id="1_2gdw0"]
+[ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_spiky_truncheon.gd" id="1_gluk1"]
+[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_53y8i"]
+
+[resource]
+script = ExtResource("1_gluk1")
+effects = {
+"damage": 6
+}
+identifier = "warrior_spiky_truncheon"
+type = 0
+target = 1
+cost = 1
+icon = ExtResource("1_2gdw0")
+tooltip_text_template = "Deals [color=\"ebc807\"]{damage}[/color] plus 2 times your spike stacks."
+sound = ExtResource("3_53y8i")
