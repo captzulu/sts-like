@@ -14,5 +14,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_b8erw")
-tooltip_text_template = "Executes a target for up to [color=\"ebc807\"]{damage}[/color] damage. Deals the exact amount of damage required to kill."
+tooltip_text_template = "Deals damage equal to the current health of an enemy up to [color=\"ebc807\"]{damage}[/color] damage."
 sound = ExtResource("3_bkbl6")
