@@ -141,9 +141,9 @@ func _on_mouse_exited() -> void:
 	Events.hide_tooltip_requested.emit()
 
 func get_spikes() -> int:
-	if not stats.statuses_dict.has(Spike.identifier):
-		return 0
-	else:
-		return stats.statuses_dict[Spike.identifier].stacks
+	return get_status(Spike)
+
+func get_status(status) -> int:
+	return stats.get_status_count(status)
 
 
