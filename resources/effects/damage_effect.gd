@@ -12,7 +12,7 @@ func _init(amount_in : int, sound_in : AudioStream, originator_in : Node) -> voi
 	originator = originator_in
 	calculate_damage()
 
-func execute(targets : Array[Node]) -> void:
+func execute(targets : Array) -> void:
 	for target in targets:
 		if not target is Enemy and not target is Player:
 			continue

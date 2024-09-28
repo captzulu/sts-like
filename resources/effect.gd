@@ -5,7 +5,7 @@ var sound : AudioStream
 var originator : Node
 var difficulty : int
 
-func execute(_targets: Array[Node]) -> void:
+func execute(_targets: Array) -> void:
 	pass
 
 func pick_icon_for_intent() -> Texture:
