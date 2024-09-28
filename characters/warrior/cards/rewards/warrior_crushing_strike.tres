@@ -14,5 +14,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_5wplx")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage + 2 times their block to the target."
+tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage + [color=\"ebc807\"]2[/color] times their block to the target."
 sound = ExtResource("3_bm0f7")
