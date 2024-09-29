@@ -43,8 +43,7 @@ func delete_save() -> void:
 	Globals.LOCATION_CYCLOP.completed_level = 0
 	Globals.LOCATION_UNDEAD.unlocked_level = 0
 	Globals.LOCATION_UNDEAD.completed_level = 0
-	
-	var char_stats : Stats = load(Globals.CHARACTER_PATH)
+	var char_stats : CharacterStats = load(Globals.CHARACTER_PATH)
 	Globals.char_stats.starting_deck = char_stats.starting_deck.duplicate(true)
 
 func save_file_exists() -> bool:
