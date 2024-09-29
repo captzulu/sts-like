@@ -7,7 +7,7 @@ extends EnemyAction
 
 
 func is_performable() -> bool:
-	if not enemy or enemy.stats.health > get_effect_value(effects_export["hp_threshold"]):
+	if not enemy or enemy.stats.get_status_count(CyclopEnrage) == 0 or enemy.stats.health > CyclopEnrage.hp_threshold:
 		return false
 	
 	return true
