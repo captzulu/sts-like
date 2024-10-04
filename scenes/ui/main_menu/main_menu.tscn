@@ -30,27 +30,15 @@ offset_bottom = -9.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.5
-offset_top = 39.0
-offset_right = 37.5
-offset_bottom = 54.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NewRunButton" type="Button" parent="Panel/HBoxContainer2"]
+[node name="NewRunButton" type="Button" parent="Panel"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+offset_left = 122.5
+offset_top = 129.0
+offset_right = 196.5
+offset_bottom = 144.0
 size_flags_vertical = 3
-text = "Start new run
-"
+text = "Start new run"
 
 [node name="SeeDeckPileButton" type="Button" parent="Panel"]
 unique_name_in_owner = true
