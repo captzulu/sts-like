@@ -2,7 +2,7 @@ class_name DamageEffect
 extends Effect
 
 var amount : int = 0
-var damage : int = 0
+var final_damage : int = 0
 
 func _init(amount_in : int, sound_in : AudioStream, originator_in : Node) -> void:
 	if ! originator_in:
@@ -17,13 +17,14 @@ func execute(targets : Array) -> void:
 		if not target is Enemy and not target is Player:
 			continue
 
-		target.take_damage(self.damage)
+		target.take_damage(self.final_damage)
 		Events.damage_effect.emit(originator, target)
 	SfxPlayer.play(sound)
 
+#Can't be used in execute 
 func calculate_damage() -> void:
 	var damage_multiplier : float = originator.stats.current_damage_modifier()
-	self.damage = roundi(amount * damage_multiplier)
+	self.final_damage = roundi(amount * damage_multiplier)
 
 func pick_icon_for_intent() -> Texture:
 	var intent_icon : Texture = preload("res://art/original_art/tile_0103.png")
@@ -42,5 +43,5 @@ func generate_intent() -> Intent:
 	var intent : Intent = Intent.new()
 	intent.icon = pick_icon_for_intent()
 	calculate_damage()
-	intent.number = "[color=\"ebc807\"]%s[/color]" % str(self.damage)
+	intent.number = "[color=\"ebc807\"]%s[/color]" % str(self.final_damage)
 	return intent
