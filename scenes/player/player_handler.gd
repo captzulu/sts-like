@@ -51,17 +51,22 @@ func draw_cards(amount : int) -> void:
 	
 func discard_cards() -> void:
 	hand_being_discarded = true
+	var cards : Array = hand.get_children()
+	if cards.size() == 0:
+		end_discarding()
+		return
+
 	var tween := create_tween()
-	for card_ui in hand.get_children():
+	for card_ui in cards:
 		tween.tween_callback(player.stats.discard.add_card.bind(card_ui.card))
 		tween.tween_callback(hand.discard_card.bind(card_ui))
 		tween.tween_interval(HAND_DISCARD_INTERVAL)
 	
-	tween.finished.connect(
-		func() -> void: 
-			hand_being_discarded = false
-			Events.player_hand_discarded.emit()
-	)
+	tween.finished.connect(end_discarding)
+
+func end_discarding() -> void: 
+	hand_being_discarded = false
+	Events.player_hand_discarded.emit()
 
 func reshuffle_deck_from_discard() -> void:
 	if not player.stats.draw_pile.empty():
