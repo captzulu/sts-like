@@ -1,12 +1,12 @@
 extends EnemyAction
 
 @export var effects_export : Dictionary = {
-	"damage" : [25, 26, 27],
-	"hp_threshold" : [15, 15, 15]
+	"damage" : [25, 26, 27]
 }
 
 func is_performable() -> bool:
-	if not enemy or enemy.stats.health > get_effect_value(effects_export["hp_threshold"]):
+	var enrage_stacks : int = enemy.stats.get_status_count(CyclopEnrage)
+	if not enemy or enrage_stacks == 0 or enemy.stats.health > enrage_stacks:
 		return false
 	
 	return true

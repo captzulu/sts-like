@@ -1,7 +1,7 @@
 extends EnemyAction
 
 @export var effects_export : Dictionary = {
-	"hp_threshold" : [7, 9, 11]
+	"hp_threshold" : [15, 20, 25]
 }
 
 func setup_effects() -> void:
