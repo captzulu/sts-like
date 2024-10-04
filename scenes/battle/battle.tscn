@@ -144,8 +144,7 @@ offset_right = -30.0
 offset_bottom = 19.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
-text = "Menu
-"
+text = "Menu"
 
 [node name="WaveUi" type="Node" parent="BattleUi"]
 script = ExtResource("15_h1yqg")
