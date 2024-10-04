@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var main_menu : PackedScene = preload("res://scenes/ui/main_menu/main_menu.tscn")
 @onready var card_ui : PackedScene = preload("res://scenes/card_ui/card_as_reward.tscn")
 @onready var card_rewards_container : HBoxContainer = %CardRewards
+@onready var card_pile_display : CardPileDisplay = %CardPileDisplay as CardPileDisplay
+@onready var see_deck_button : Button = %SeeDeckPileButton
 
 func _ready():
 	%ConfirmButton.pressed.connect(get_reward)
@@ -10,6 +12,7 @@ func _ready():
 	%SkipButton.pressed.connect(back_to_main_menu)
 	setup_rewards()
 	Events.select_card_reward.connect(select_reward)
+	see_deck_button.pressed.connect(open_deck_display)
 	
 func setup_rewards() -> void:
 	var local_reward_cards : Dictionary = Globals.reward_cards.duplicate()
@@ -30,10 +33,13 @@ func select_reward(card_selected : CardAsReward) -> void:
 	%ConfirmButton.disabled = false
 	
 func get_reward() -> void:
-	var card_reward = %CardRewards.get_children().filter(func(card): return card.selected == true)
+	var card_reward : Array[Node] = %CardRewards.get_children().filter(func(card): return card.selected == true)
 	if card_reward.size() == 1:
 		Globals.char_stats.starting_deck.add_card(card_reward[0].card)
 	back_to_main_menu()
+
+func open_deck_display() -> void:
+	card_pile_display.open(Globals.char_stats.starting_deck, "Deck :")
 
 func back_to_main_menu() -> void:
 	for card in %CardRewards.get_children():
