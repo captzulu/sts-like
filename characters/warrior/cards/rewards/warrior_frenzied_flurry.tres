@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://dyb6l77e0tuq7"]
 
+[ext_resource type="Texture2D" uid="uid://b51dh5a8dbmjd" path="res://art/frenzied_flurry.png" id="1_jxkm8"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_frenzied_flurry.gd" id="1_qywun"]
-[ext_resource type="Texture2D" uid="uid://k00aseafrbss" path="res://art/original_art/triple_strike.png" id="1_r0qv4"]
 [ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_cansd"]
 
 [resource]
@@ -13,6 +13,6 @@ identifier = "warrior_frenzied_flurry"
 type = 0
 target = 2
 cost = 1
-icon = ExtResource("1_r0qv4")
+icon = ExtResource("1_jxkm8")
 tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage to a random enemy [color=\"ebc807\"]1 + enrage stacks[/color] times.[/center]"
 sound = ExtResource("3_cansd")

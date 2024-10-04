@@ -1,8 +1,8 @@
 extends EnemyAction
 
 @export var effects_export : Dictionary = {
-	"restrained" : 4,
-	"damage" : 4
+	"restrained" : [1, 1, 1],
+	"damage" : [4, 5, 6]
 }
 
 var restrained_effect : RestrainedEffect

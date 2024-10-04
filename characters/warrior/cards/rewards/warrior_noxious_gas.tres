@@ -12,5 +12,5 @@ type = 1
 target = 2
 cost = 2
 icon = ExtResource("1_iayg0")
-tooltip_text_template = "Spread the highest poison value to all enemies and trigger poison."
+tooltip_text_template = "Spread the highest poison value to all other enemies and trigger poison."
 sound = ExtResource("3_qf1bd")

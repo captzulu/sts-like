@@ -2,7 +2,7 @@ extends EnemyAction
 
 @export var effects_export : Dictionary = {
 	"block" : [8, 9, 10],
-	"damage" : [6, 8, 10]
+	"damage" : [6, 7, 8]
 }
 
 func setup_effects() -> void:
