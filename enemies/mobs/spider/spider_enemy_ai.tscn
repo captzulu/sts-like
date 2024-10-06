@@ -13,10 +13,14 @@ script = ExtResource("1_camtn")
 script = ExtResource("2_sg86i")
 sound = ExtResource("3_gnvxr")
 type = 1
-chance_weight = 1.0
+chance_weight = 3.0
 
 [node name="SpiderBlockAttackAction" type="Node" parent="."]
 script = ExtResource("4_12lrg")
+effects_export = {
+"block": [7, 8, 9],
+"damage": [6, 7, 8]
+}
 sound = ExtResource("5_ogq6q")
 type = 1
-chance_weight = 1.0
+chance_weight = 4.0

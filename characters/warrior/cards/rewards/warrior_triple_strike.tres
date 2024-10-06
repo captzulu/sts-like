@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_ye0ry")
 effects = {
-"damage": 6
+"damage": 7
 }
 identifier = "warrior_triple_strike"
 type = 0
