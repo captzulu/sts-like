@@ -19,4 +19,3 @@ func apply_effects(targets : Array[Node], player : Player) -> void:
 
 func not_null(value : Variant) -> bool:
 	return is_instance_valid(value)
-

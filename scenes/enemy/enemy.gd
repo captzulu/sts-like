@@ -145,5 +145,3 @@ func get_spikes() -> int:
 
 func get_status(status) -> int:
 	return stats.get_status_count(status)
-
-

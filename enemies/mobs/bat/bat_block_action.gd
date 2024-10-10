@@ -19,4 +19,3 @@ func perform_action() -> void:
 		func() -> void:
 			Events.enemy_action_completed.emit(enemy)
 	)
-

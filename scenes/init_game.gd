@@ -32,4 +32,3 @@ func calculate_wave_hp(enemy_names : Array, difficulty : int) -> float:
 
 func sum(accum, number):
 	return accum + number
-

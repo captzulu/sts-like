@@ -5,15 +5,15 @@ extends Node
 @export var current_location : Location = LOCATION_SPIDER
 @export var game_loaded : bool = false
 
-const CHARACTER_PATH : String = "res://characters/warrior/warrior.tres"
-const LOCATION_SPIDER : Location = preload("res://resources/locations/spider_cavern.tres")
-const LOCATION_CYCLOP : Location = preload("res://resources/locations/cyclop_halls.tres")
-const LOCATION_UNDEAD : Location = preload("res://resources/locations/undead_lair.tres")
-const MAP_ORDER : Array = [
+var LOCATION_SPIDER : Location = preload("res://resources/locations/spider_cavern.tres")
+var LOCATION_CYCLOP : Location = preload("res://resources/locations/cyclop_halls.tres")
+var LOCATION_UNDEAD : Location = preload("res://resources/locations/undead_lair.tres")
+var MAP_ORDER : Array = [
 	LOCATION_SPIDER,
 	LOCATION_CYCLOP,
 	LOCATION_UNDEAD
 ]
+const CHARACTER_PATH : String = "res://characters/warrior/warrior.tres"
 const TOOLTIP_HIGHLIGHT_TEXT_COLOR : String = "fcba03"
 const TOOLTIP_SPIKE_TEXT_COLOR : String = "3d4445"
 const TOOLTIP_POISON_TEXT_COLOR : String = "62c223"
