@@ -3,7 +3,7 @@ extends Card
 @export var effects : Dictionary = {}
 
 func apply_effects(targets : Array[Node], player : Player) -> void:
-	var enemy_most_poisoned : Enemy
+	var enemy_most_poisoned : Enemy = null
 	for enemy in targets:
 		if not enemy_most_poisoned or enemy_most_poisoned.stats.get_status_count(Poison) < enemy.stats.get_status_count(Poison):
 			enemy_most_poisoned = enemy
