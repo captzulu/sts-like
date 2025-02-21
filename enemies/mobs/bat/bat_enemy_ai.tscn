@@ -3,20 +3,20 @@
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_sfwd8"]
 [ext_resource type="Script" path="res://enemies/mobs/bat/bat_attack_action.gd" id="2_j17wy"]
 [ext_resource type="Script" path="res://enemies/mobs/bat/bat_block_action.gd" id="3_df1i4"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_t6e20"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="5_v4ott"]
+[ext_resource type="AudioStream" uid="uid://c3gy5wd3ix51i" path="res://art/musicAndSounds/Bow Blocked 1.wav" id="3_nudun"]
+[ext_resource type="AudioStream" uid="uid://lrswvnsalg6r" path="res://art/musicAndSounds/block.mp3" id="5_grn1m"]
 
 [node name="BatEnemyAi" type="Node"]
 script = ExtResource("1_sfwd8")
 
 [node name="BatAttackAction" type="Node" parent="."]
 script = ExtResource("2_j17wy")
-sound = ExtResource("3_t6e20")
+sound = ExtResource("3_nudun")
 type = 1
 chance_weight = 4.0
 
 [node name="BatBlockAction" type="Node" parent="."]
 script = ExtResource("3_df1i4")
-sound = ExtResource("5_v4ott")
+sound = ExtResource("5_grn1m")
 type = 1
 chance_weight = 2.0

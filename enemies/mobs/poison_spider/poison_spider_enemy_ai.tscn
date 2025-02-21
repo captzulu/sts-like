@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_f3p5x"]
 [ext_resource type="Script" path="res://enemies/mobs/spider/spider_web_attack_action.gd" id="2_8di7a"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="3_xbdpt"]
+[ext_resource type="AudioStream" uid="uid://0tcwff6hqkki" path="res://art/musicAndSounds/enemy_block.mp3" id="3_0liup"]
 [ext_resource type="Script" path="res://enemies/mobs/poison_spider/poison_spider_poison_attack_action.gd" id="4_pqct1"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="5_0dcw5"]
+[ext_resource type="AudioStream" uid="uid://cshlta38xmp0w" path="res://art/musicAndSounds/enemy_attack.mp3" id="5_vfr8s"]
 
 [node name="PoisonSpiderEnemyAi" type="Node"]
 script = ExtResource("1_f3p5x")
 
 [node name="PoisonSpiderWebAttackAction" type="Node" parent="."]
 script = ExtResource("2_8di7a")
-sound = ExtResource("3_xbdpt")
+sound = ExtResource("3_0liup")
 type = 1
 chance_weight = 1.0
 
 [node name="PoisonSpiderPoisonAttackAction" type="Node" parent="."]
 script = ExtResource("4_pqct1")
-sound = ExtResource("5_0dcw5")
+sound = ExtResource("5_vfr8s")
 identifier = "poison_spider_poison_attack_action"

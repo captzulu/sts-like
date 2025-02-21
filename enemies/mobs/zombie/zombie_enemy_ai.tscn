@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_i3tvi"]
 [ext_resource type="Script" path="res://enemies/mobs/zombie/zombie_attack_action.gd" id="2_yqumi"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="3_5h7kv"]
+[ext_resource type="AudioStream" uid="uid://cshlta38xmp0w" path="res://art/musicAndSounds/enemy_attack.mp3" id="3_c64gs"]
 [ext_resource type="Script" path="res://enemies/mobs/zombie/zombie_block_action.gd" id="4_v5blu"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="5_o18vf"]
+[ext_resource type="AudioStream" uid="uid://0tcwff6hqkki" path="res://art/musicAndSounds/enemy_block.mp3" id="5_w0s4h"]
 [ext_resource type="Script" path="res://enemies/mobs/zombie/zombie_init_action.gd" id="6_rrswo"]
 
 [node name="ZombieEnemyAi" type="Node"]
@@ -12,18 +12,17 @@ script = ExtResource("1_i3tvi")
 
 [node name="ZombieAttackAction" type="Node" parent="."]
 script = ExtResource("2_yqumi")
-sound = ExtResource("3_5h7kv")
+sound = ExtResource("3_c64gs")
 type = 1
 chance_weight = 1.0
 
 [node name="ZombieBlockAction" type="Node" parent="."]
 script = ExtResource("4_v5blu")
-sound = ExtResource("5_o18vf")
+sound = ExtResource("5_w0s4h")
 type = 1
 chance_weight = 1.0
 
 [node name="ZombieInitAction" type="Node" parent="."]
 script = ExtResource("6_rrswo")
-sound = ExtResource("5_o18vf")
 type = 2
 chance_weight = 1.0

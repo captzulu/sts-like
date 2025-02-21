@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_camtn"]
 [ext_resource type="Script" path="res://enemies/mobs/spider/spider_web_attack_action.gd" id="2_sg86i"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://art/original_art/enemy_block.ogg" id="3_gnvxr"]
+[ext_resource type="AudioStream" uid="uid://0tcwff6hqkki" path="res://art/musicAndSounds/enemy_block.mp3" id="3_f3a57"]
 [ext_resource type="Script" path="res://enemies/mobs/spider/spider_block_attack_action.gd" id="4_12lrg"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/original_art/enemy_attack.ogg" id="5_ogq6q"]
+[ext_resource type="AudioStream" uid="uid://cshlta38xmp0w" path="res://art/musicAndSounds/enemy_attack.mp3" id="5_eroeb"]
 
 [node name="SpiderEnemyAi" type="Node"]
 script = ExtResource("1_camtn")
 
 [node name="SpiderWebAttackAction" type="Node" parent="."]
 script = ExtResource("2_sg86i")
-sound = ExtResource("3_gnvxr")
+sound = ExtResource("3_f3a57")
 type = 1
 chance_weight = 3.0
 
@@ -21,6 +21,6 @@ effects_export = {
 "block": [7, 8, 9],
 "damage": [6, 7, 8]
 }
-sound = ExtResource("5_ogq6q")
+sound = ExtResource("5_eroeb")
 type = 1
 chance_weight = 4.0
