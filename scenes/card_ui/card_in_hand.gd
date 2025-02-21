@@ -7,7 +7,7 @@ const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_style_box.tre
 
 @export var player: Player : set = _set_player
 
-@onready var drop_point_detector: Area2D = $DropPointDetector
+@onready var drop_point_detector: Area2D = %DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets : Array[Node] = []
 

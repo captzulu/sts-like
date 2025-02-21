@@ -1,8 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6smt237ltqtp"]
+[gd_scene load_steps=11 format=3 uid="uid://c6smt237ltqtp"]
 
-[ext_resource type="Theme" uid="uid://c3vkkkcd77aua" path="res://scenes/main_theme.tres" id="1_ahmqt"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_in_hand.gd" id="2_fp3dl"]
-[ext_resource type="StyleBox" uid="uid://b5mk3udrax0mq" path="res://scenes/card_ui/card_base_style_box.tres" id="3_uhcuy"]
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/original_art/tile_0104.png" id="4_q6lch"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_sate_machine.gd" id="5_45un5"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="6_wquti"]
@@ -11,53 +9,62 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_released_state.gd" id="9_r6ged"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="10_p7psc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3lyv"]
+bg_color = Color(1, 0.282353, 0.254902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.545098, 0.235294, 0.0784314, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twj7j"]
 size = Vector2(50, 60)
 
 [node name="CardInHand" type="Control"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -590.0
-offset_bottom = -300.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-theme = ExtResource("1_ahmqt")
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 30.0
 script = ExtResource("2_fp3dl")
 
 [node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(25, 30)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -25.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_uhcuy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3lyv")
 
-[node name="Cost" type="Label" parent="."]
+[node name="Cost" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
 offset_right = 10.0
 offset_bottom = 10.0
-scale = Vector2(2, 2)
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -15.0
-offset_right = 16.0
-offset_bottom = 17.0
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 8.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -65,11 +72,13 @@ texture = ExtResource("4_q6lch")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="DropPointDetector" type="Area2D" parent="."]
+[node name="DropPointDetector" type="Area2D" parent="Panel"]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/DropPointDetector"]
 position = Vector2(25, 30)
 shape = SubResource("RectangleShape2D_twj7j")
 
@@ -99,5 +108,5 @@ state = 3
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
-[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
+[connection signal="area_entered" from="Panel/DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="Panel/DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
