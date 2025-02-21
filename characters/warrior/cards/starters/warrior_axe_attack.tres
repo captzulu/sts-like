@@ -1,8 +1,8 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://bn74xy3q1asaa"]
 
-[ext_resource type="Texture2D" uid="uid://ryghtovn6e07" path="res://art/original_art/tile_0119.png" id="1_ntx6l"]
+[ext_resource type="Texture2D" uid="uid://ck1t4hdip6xrl" path="res://art/original_art/tile_0119.png" id="1_ntx6l"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_axe_attack.gd" id="2_8h22d"]
-[ext_resource type="AudioStream" uid="uid://b5m0lwcy47slo" path="res://art/original_art/axe.ogg" id="3_co2lg"]
+[ext_resource type="AudioStream" uid="uid://ct44ytxqavlqg" path="res://art/musicAndSounds/axe.mp3" id="3_o5p40"]
 
 [resource]
 script = ExtResource("2_8h22d")
@@ -14,5 +14,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_ntx6l")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage to target."
-sound = ExtResource("3_co2lg")
+tooltip_text_template = "Damage target enemy for [color=\"ebc807\"]{damage}[/color]."
+sound = ExtResource("3_o5p40")

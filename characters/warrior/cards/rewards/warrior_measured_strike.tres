@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_measured_strike.gd" id="1_k815q"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/original_art/tile_0118.png" id="1_r0fv7"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_k3qvf"]
+[ext_resource type="AudioStream" uid="uid://c7h3fxahbmdd8" path="res://art/musicAndSounds/slash.mp3" id="3_nm8tx"]
 
 [resource]
 script = ExtResource("1_k815q")
 effects = {
-"damage": 20
+"damage": 21
 }
 identifier = "warrior_measured_strike"
 type = 0
 target = 2
 cost = 2
 icon = ExtResource("1_r0fv7")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage divided between all enemies.[/center]"
-sound = ExtResource("3_k3qvf")
+tooltip_text_template = "Damage all enemies for [color=\"ebc807\"]{damage}[/color] divided equally between all targets."
+sound = ExtResource("3_nm8tx")

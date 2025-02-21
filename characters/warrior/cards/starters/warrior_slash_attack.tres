@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnp25sjv5dwwp" path="res://art/slash.png" id="1_l8qu8"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_slash_attack.gd" id="2_trtc6"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_7rbd8"]
+[ext_resource type="AudioStream" uid="uid://bo24ugwpdyevp" path="res://art/musicAndSounds/Sword Attack 2.wav" id="3_ssf6e"]
 
 [resource]
 script = ExtResource("2_trtc6")
@@ -14,5 +14,5 @@ type = 0
 target = 2
 cost = 2
 icon = ExtResource("1_l8qu8")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage to all enemies.[/center]"
-sound = ExtResource("3_7rbd8")
+tooltip_text_template = "Damage all enemies for [color=\"ebc807\"]{damage}[/color]."
+sound = ExtResource("3_ssf6e")

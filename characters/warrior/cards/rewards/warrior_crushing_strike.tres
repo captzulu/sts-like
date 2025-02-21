@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://art/original_art/tile_0117.png" id="1_5wplx"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_crushing_strike.gd" id="1_r5osy"]
-[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_bm0f7"]
+[ext_resource type="AudioStream" uid="uid://ct44ytxqavlqg" path="res://art/musicAndSounds/axe.mp3" id="3_geq40"]
 
 [resource]
 script = ExtResource("1_r5osy")
@@ -14,5 +14,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_5wplx")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage + [color=\"ebc807\"]2[/color] times their block to the target."
-sound = ExtResource("3_bm0f7")
+tooltip_text_template = "Damage the target for [color=\"ebc807\"]{damage}[/color] + [color=\"ebc807\"]2[/color] times it's block."
+sound = ExtResource("3_geq40")

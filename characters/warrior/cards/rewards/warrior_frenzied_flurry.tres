@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b51dh5a8dbmjd" path="res://art/frenzied_flurry.png" id="1_jxkm8"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_frenzied_flurry.gd" id="1_qywun"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_cansd"]
+[ext_resource type="AudioStream" uid="uid://c7h3fxahbmdd8" path="res://art/musicAndSounds/slash.mp3" id="3_sy4vv"]
 
 [resource]
 script = ExtResource("1_qywun")
@@ -14,5 +14,5 @@ type = 0
 target = 2
 cost = 1
 icon = ExtResource("1_jxkm8")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage to a random enemy [color=\"ebc807\"]1 + enrage stacks[/color] times.[/center]"
-sound = ExtResource("3_cansd")
+tooltip_text_template = "Damage a random enemy for [color=\"ebc807\"]{damage}[/color]. Repeat 1 time for each enrage stacks you have + 1."
+sound = ExtResource("3_sy4vv")

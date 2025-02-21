@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bk46vtk0uw1yp" path="res://art/original_art/poison_dagger.png" id="1_7wxcy"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_poison_strike.gd" id="2_gmsg0"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_cevbj"]
+[ext_resource type="AudioStream" uid="uid://c7h3fxahbmdd8" path="res://art/musicAndSounds/slash.mp3" id="3_3krb8"]
 
 [resource]
 script = ExtResource("2_gmsg0")
@@ -15,5 +15,5 @@ type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_7wxcy")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage to target and inflict [color=\"62c223\"]{poison}[/color] poison."
-sound = ExtResource("3_cevbj")
+tooltip_text_template = "Damage target enemy for [color=\"ebc807\"]{damage}[/color] and inflict [color=\"62c223\"]{poison}[/color] poison."
+sound = ExtResource("3_3krb8")

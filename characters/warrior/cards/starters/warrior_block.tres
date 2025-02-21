@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/original_art/tile_0102.png" id="1_u8fu8"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_block.gd" id="2_o2ny3"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="3_kfgxf"]
+[ext_resource type="AudioStream" uid="uid://lrswvnsalg6r" path="res://art/musicAndSounds/block.mp3" id="3_d5nko"]
 
 [resource]
 script = ExtResource("2_o2ny3")
@@ -15,4 +15,4 @@ target = 0
 cost = 1
 icon = ExtResource("1_u8fu8")
 tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block."
-sound = ExtResource("3_kfgxf")
+sound = ExtResource("3_d5nko")

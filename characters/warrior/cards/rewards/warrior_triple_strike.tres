@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://k00aseafrbss" path="res://art/original_art/triple_strike.png" id="1_jq3kb"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_triple_strike.gd" id="2_ye0ry"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_xh5mu"]
+[ext_resource type="AudioStream" uid="uid://ddsu1wwnbqw7e" path="res://art/musicAndSounds/Sword Attack 1.wav" id="3_4u2fu"]
 
 [resource]
 script = ExtResource("2_ye0ry")
@@ -14,5 +14,5 @@ type = 0
 target = 2
 cost = 2
 icon = ExtResource("1_jq3kb")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] damage to a random enemy [color=\"ebc807\"]3[/color] times.[/center]"
-sound = ExtResource("3_xh5mu")
+tooltip_text_template = "Damage a random enemy for [color=\"ebc807\"]{damage}[/color]. Repeat [color=\"ebc807\"]3[/color] times."
+sound = ExtResource("3_4u2fu")

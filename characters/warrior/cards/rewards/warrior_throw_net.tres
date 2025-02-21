@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/original_art/tile_0130.png" id="1_jlcic"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_throw_net.gd" id="2_txe0b"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://art/original_art/slash.ogg" id="3_1cgfn"]
+[ext_resource type="AudioStream" uid="uid://c7h3fxahbmdd8" path="res://art/musicAndSounds/slash.mp3" id="3_agr5a"]
 
 [resource]
 script = ExtResource("2_txe0b")
@@ -15,5 +15,5 @@ type = 0
 target = 2
 cost = 1
 icon = ExtResource("1_jlcic")
-tooltip_text_template = "[center]Deal [color=\"ebc807\"]{damage}[/color] and restrain all ennemies for [color=\"fcba03\"]{restrained}[/color].[/center]"
-sound = ExtResource("3_1cgfn")
+tooltip_text_template = "Damage all ennemies [color=\"ebc807\"]{damage}[/color] and inflict [color=\"fcba03\"]{restrained}[/color] restrained."
+sound = ExtResource("3_agr5a")

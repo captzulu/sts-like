@@ -2,17 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/original_art/tile_0103.png" id="1_r82d8"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_axe_attack.gd" id="2_cdwoh"]
-[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_5lenp"]
+[ext_resource type="AudioStream" uid="uid://ct44ytxqavlqg" path="res://art/musicAndSounds/axe.mp3" id="3_2kkjo"]
 
 [resource]
 script = ExtResource("2_cdwoh")
 effects = {
 "damage": 3
 }
-identifier = ""
+identifier = "warrior_dagger_attack"
 type = 0
 target = 1
 cost = 0
 icon = ExtResource("1_r82d8")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage to target."
-sound = ExtResource("3_5lenp")
+tooltip_text_template = "Damage target enemy for [color=\"ebc807\"]{damage}[/color]."
+sound = ExtResource("3_2kkjo")

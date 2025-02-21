@@ -2,17 +2,19 @@
 
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_ram_through.gd" id="1_1yudc"]
 [ext_resource type="Texture2D" uid="uid://c1gvqgvgs3xc8" path="res://art/original_art/tile_0131.png" id="1_8kaka"]
-[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_35neq"]
+[ext_resource type="AudioStream" uid="uid://ct44ytxqavlqg" path="res://art/musicAndSounds/axe.mp3" id="3_1cxm0"]
 
 [resource]
 script = ExtResource("1_1yudc")
 effects = {
 "damage": 5
 }
-identifier = "warrior_crushing_strike"
+identifier = "warrior_ram_through"
 type = 0
 target = 1
 cost = 1
 icon = ExtResource("1_8kaka")
-tooltip_text_template = "Deal [color=\"ebc807\"]{damage}[/color] damage. If target is restrained, deal [color=\"ebc807\"]x2[/color] damage and gain [color=\"ebc807\"]1[/color] mana."
-sound = ExtResource("3_35neq")
+tooltip_text_template = "Damage target enemy for [color=\"ebc807\"]{damage}[/color]. 
+
+If target is restrained, [color=\"ebc807\"]double[/color] that damage instead and gain [color=\"7ccff2\"]1[/color] energy."
+sound = ExtResource("3_1cxm0")

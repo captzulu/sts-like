@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5aqbs4juj2na" path="res://art/original_art/spike.png" id="1_h1irr"]
 [ext_resource type="Script" path="res://characters/warrior/cards/scripts/warrior_spike_armor.gd" id="2_csqg7"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://art/original_art/block.ogg" id="3_nanhk"]
+[ext_resource type="AudioStream" uid="uid://lrswvnsalg6r" path="res://art/musicAndSounds/block.mp3" id="3_g1kt2"]
 
 [resource]
 script = ExtResource("2_csqg7")
@@ -15,5 +15,5 @@ type = 1
 target = 0
 cost = 1
 icon = ExtResource("1_h1irr")
-tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block and [color=\"3d4445\"]{spikes}[/color] spikes."
-sound = ExtResource("3_nanhk")
+tooltip_text_template = "Gain [color=\"0044ff\"]{block}[/color] block and [color=\"3d4445\"]{spikes}[/color] spike stacks."
+sound = ExtResource("3_g1kt2")
