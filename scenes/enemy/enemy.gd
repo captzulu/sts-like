@@ -128,8 +128,9 @@ func death(initial_health : int, initial_block : int, damage_received : int) -> 
 		Events.enemy_death_before_turn.emit(self)
 	queue_free()
 
-func _on_area_entered(_area: Area2D) -> void:
-	arrow.show()
+func _on_area_entered(area: Area2D) -> void:
+	if area is not Player:
+		arrow.show()
 
 func _on_area_exited(_area: Area2D) -> void:
 	arrow.hide()
@@ -144,4 +145,4 @@ func get_spikes() -> int:
 	return get_status(Spike)
 
 func get_status(status) -> int:
-	return stats.get_status_count(status)
+	return stats.get_status_stacks(status)

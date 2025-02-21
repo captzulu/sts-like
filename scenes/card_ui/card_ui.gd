@@ -7,8 +7,8 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_style_box.tres"
 @export var card: Card : set = _set_card
 
 @onready var panel: Panel = $Panel
-@onready var cost: Label = $Cost
-@onready var icon: TextureRect = $Icon
+@onready var cost: Label = %Cost
+@onready var icon: TextureRect = %Icon
 
 var effects : Dictionary
 var text_tooltip : String = ""

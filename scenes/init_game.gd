@@ -35,5 +35,5 @@ func calculate_wave_hp(enemy_names : Array, difficulty : int) -> float:
 		enemy_hp.append(enemy_stats.max_health_difficulty[difficulty])
 	return enemy_hp.reduce(sum)
 
-func sum(accum, number):
+func sum(accum : int, number : int) -> int:
 	return accum + number
