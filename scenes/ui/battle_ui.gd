@@ -44,7 +44,7 @@ func _on_card_animation_finished(_card: Card) -> void:
 	end_turn_button.disabled = false
 
 func display_draw_pile() -> void:
-	card_pile_display.open(char_stats.draw_pile, "Draw pile :")
+	card_pile_display.open(char_stats.draw_pile, "Draw pile (not in order) :")
 	
 func display_discard_pile() -> void:
 	card_pile_display.open(char_stats.discard, "Discard pile :")
