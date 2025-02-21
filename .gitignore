@@ -12,5 +12,13 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 
+addons/
+!addons/*.gd
+!addons/*.tscn
+!addons/*.tres
+!addons/*.cfg
+!addons/*.json
+addons/**/.import/  # Ignore Godot import data
+addons/**/.godot/    # Ignore editor metadata
 art/assets_librairies/
 *.import
