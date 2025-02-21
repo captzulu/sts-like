@@ -3,16 +3,21 @@ extends Node
 func _init() -> void:
 	var new_char : CharacterStats = load(Globals.CHARACTER_PATH)
 	Globals.char_stats = new_char.create_instance()
-	Globals.reward_cards.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict("res://characters/warrior/cards/rewards"))
+	Globals.reward_cards.merge(DataModule.load_directory_resources_to_dict("res://characters/warrior/cards/rewards"))
+	load_config()
 
+func load_config() -> void:
+	Globals.CONFIG = ConfigFile.new()
+	Globals.CONFIG.load(Globals.CONFIG_PATH)
+	
 func _ready() -> void:
 	return
-	for location in DataModule.data:
+	for location in Globals.DATA:
 		print(location + " :")
-		for wave in DataModule.data[location]:
+		for wave in Globals.DATA[location]:
 			var line = str(wave) + " : "
 			for difficulty in [0,1,2]:
-				line += str(calculate_wave_hp(DataModule.data[location][wave].values(), difficulty)) + " | "
+				line += str(calculate_wave_hp(Globals.DATA[location][wave].values(), difficulty)) + " | "
 			print(line)
 		print()
 
@@ -20,8 +25,8 @@ func calculate_wave_hp(enemy_names : Array, difficulty : int) -> float:
 	var mobs_directory : String = "res://enemies/mobs"
 	var boss_directory : String = "res://enemies/bosses"
 	var enemies : Dictionary = {}
-	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(mobs_directory))
-	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(boss_directory))
+	enemies.merge(DataModule.load_directory_resources_to_dict(mobs_directory))
+	enemies.merge(DataModule.load_directory_resources_to_dict(boss_directory))
 	var enemy_hp : Array[int] = []
 	for enemy in enemy_names:
 		if enemy is int or enemy.length() < 1:

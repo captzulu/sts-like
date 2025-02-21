@@ -7,15 +7,15 @@ var mobs_directory : String = "res://enemies/mobs"
 var boss_directory : String = "res://enemies/bosses"
 var enemies : Dictionary = {}
 var wave_index : int = 0
-var wave_max : int
+var waves_data : Dictionary
 
 @onready var enemy_handler : EnemyHandler = %EnemyHandler
 
 func _ready() -> void:
 	load_mobs_to_dict()
 	load_bosses_to_dict()
-	wave_max = DataModule.data[Globals.current_location.identifier].size()
-	#wave_max = 2
+	var test_limit = 0
+	waves_data = Globals.current_location.getWavesData(test_limit)
 
 func spawn_wave() -> void:
 	var spawn_nodes : Array[Node] = get_children()
@@ -23,7 +23,6 @@ func spawn_wave() -> void:
 	wave_index += 1
 	var i : int = 0
 	for enemy in get_wave_enemies():
-		
 		enemy_node = (boss_enemy_scene if enemy.is_boss else enemy_scene).instantiate() as Enemy
 		enemy_node.stats = enemy
 		enemy_handler.add_child(enemy_node)
@@ -35,18 +34,18 @@ func spawn_wave() -> void:
 
 func get_wave_enemies() -> Array[EnemyStats]:
 	var wave_enemies : Array[EnemyStats] = []
-	var wave_data : Dictionary = DataModule.data[Globals.current_location.identifier][wave_index - 1]
-	for field in wave_data:
-		var val : String = str(wave_data[field])
-		if val != "id" and val.length() > 1 and val in enemies.keys():
-			wave_enemies.append(enemies[val])
+	var wave_data : Array = waves_data[wave_index - 1]
+	for enemy in wave_data:
+		if enemy in enemies.keys():
+			wave_enemies.append(enemies[enemy])
 	return wave_enemies
 	
 func is_on_last_wave() -> bool:
-	return wave_index == wave_max
+	#return wave_index == 2
+	return wave_index == waves_data.size()
 	
 func load_mobs_to_dict() -> void:
-	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(mobs_directory))
+	enemies.merge(DataModule.load_directory_resources_to_dict(mobs_directory))
 
 func load_bosses_to_dict() -> void:
-	enemies.merge(DataModule.FILE_MANAGER.load_directory_resources_to_dict(boss_directory))
+	enemies.merge(DataModule.load_directory_resources_to_dict(boss_directory))

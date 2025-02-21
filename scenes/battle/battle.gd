@@ -19,7 +19,7 @@ func _ready() -> void:
 	player.stats = new_stats
 	player_handler.player = player
 	battle_ui.char_stats = player.stats
-	$BattleUi/WaveUi/WaveProgressBar.max_value = enemy_spawner.wave_max
+	$BattleUi/WaveUi/WaveProgressBar.max_value = enemy_spawner.waves_data.size()
 	
 	Events.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	Events.enemy_death.connect(_on_enemy_death)

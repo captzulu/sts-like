@@ -13,6 +13,11 @@ var MAP_ORDER : Array = [
 	LOCATION_CYCLOP,
 	LOCATION_UNDEAD
 ]
+var DATA : Dictionary = {
+	"spider_cavern" = {},
+	"cyclop_halls" = {},
+	"undead_lair" = {}
+}
 const CHARACTER_PATH : String = "res://characters/warrior/warrior.tres"
 const TOOLTIP_HIGHLIGHT_TEXT_COLOR : String = "fcba03"
 const TOOLTIP_SPIKE_TEXT_COLOR : String = "3d4445"
