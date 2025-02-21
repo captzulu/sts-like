@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_lalsm"]
 [ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_attack_action.gd" id="2_0n3rq"]
-[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://art/original_art/axe.ogg" id="3_hwav1"]
+[ext_resource type="AudioStream" uid="uid://ct44ytxqavlqg" path="res://art/musicAndSounds/axe.mp3" id="3_iol34"]
 [ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_mega_attack_action.gd" id="4_i7b8f"]
 [ext_resource type="Script" path="res://enemies/mobs/cyclop/cyclop_init_action.gd" id="5_pk1nu"]
 
@@ -11,15 +11,21 @@ script = ExtResource("1_lalsm")
 
 [node name="CyclopAttackAction" type="Node" parent="."]
 script = ExtResource("2_0n3rq")
-sound = ExtResource("3_hwav1")
+effects_export = {
+"damage": [5, 6, 7]
+}
+sound = ExtResource("3_iol34")
 type = 1
 chance_weight = 1.0
 
 [node name="CyclopMegaAttackAction" type="Node" parent="."]
 script = ExtResource("4_i7b8f")
-sound = ExtResource("3_hwav1")
+sound = ExtResource("3_iol34")
 
 [node name="CyclopInitAction" type="Node" parent="."]
 script = ExtResource("5_pk1nu")
+effects_export = {
+"hp_threshold": [9, 11, 13]
+}
 type = 2
 chance_weight = 1.0

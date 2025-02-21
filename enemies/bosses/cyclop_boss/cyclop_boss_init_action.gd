@@ -10,5 +10,5 @@ func setup_effects() -> void:
 func perform_action() -> void:
 	if not enemy:
 		return
-	var status = CyclopEnrage.new(get_effect_value(effects_export["hp_threshold"]))
+	var status : Status = CyclopEnrage.new(get_effect_value(effects_export["hp_threshold"]))
 	enemy.add_status(status)
