@@ -43,7 +43,7 @@ export/convert_text_resources_to_binary=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/safe_resource_loader/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [file_customization]
 
