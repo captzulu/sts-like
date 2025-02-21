@@ -5,7 +5,7 @@ extends EnemyAction
 }
 
 func is_performable() -> bool:
-	var enrage_stacks : int = enemy.stats.get_status_count(CyclopEnrage)
+	var enrage_stacks : int = enemy.stats.get_status_stacks(CyclopEnrage)
 	if not enemy or enrage_stacks == 0 or enemy.stats.health > enrage_stacks:
 		return false
 	

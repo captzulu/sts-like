@@ -16,7 +16,7 @@ func execute(targets : Array) -> void:
 	SfxPlayer.play(sound)
 	
 func pick_icon_for_intent() -> Texture:
-	var charge_stacks : int = originator.stats.get_status_count(Charge)
+	var charge_stacks : int = originator.stats.get_status_stacks(Charge)
 	var intent_icon : Texture = preload("res://art/charge_up_0_3.png")
 	if charge_stacks >= 0:
 		intent_icon = preload("res://art/charge_up_1_3.png")

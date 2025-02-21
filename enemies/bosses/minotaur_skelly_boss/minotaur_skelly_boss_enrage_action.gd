@@ -9,7 +9,7 @@ func setup_effects() -> void:
 	effects.append(enrage_effect)
 
 func is_performable() -> bool:
-	if not enemy or enemy.stats.get_status_count(Enrage) > 0:
+	if not enemy or enemy.stats.get_status_stacks(Enrage) > 0:
 		return false
 	
 	return true
