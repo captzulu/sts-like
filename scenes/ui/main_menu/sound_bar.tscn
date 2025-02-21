@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://btubdcrv6yvss"]
+
+[ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="1_auk1e"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu/sound_bar.gd" id="1_bybt8"]
+
+[node name="Container" type="VBoxContainer"]
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_constants/separation = 0
+script = ExtResource("1_bybt8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SoundBar" type="HSlider" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("1_auk1e")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[connection signal="drag_ended" from="SoundBar" to="." method="_on_sound_bar_drag_ended"]

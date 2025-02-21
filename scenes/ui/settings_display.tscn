@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://crojvnao1onf7"]
+
+[ext_resource type="Theme" uid="uid://kwjdqgscw3n" path="res://scenes/main_menu_theme.tres" id="1_fvjbn"]
+[ext_resource type="Script" path="res://scenes/ui/settings_display.gd" id="1_puq6q"]
+[ext_resource type="PackedScene" uid="uid://btubdcrv6yvss" path="res://scenes/ui/main_menu/sound_bar.tscn" id="2_gdmod"]
+
+[node name="SettingsDisplay" type="CanvasLayer"]
+script = ExtResource("1_puq6q")
+
+[node name="CardPileDisplay" type="Panel" parent="."]
+z_index = 4
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(2, 2)
+theme = ExtResource("1_fvjbn")
+
+[node name="TitleLabel" type="Label" parent="CardPileDisplay"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 6.0
+offset_bottom = 12.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardPileDisplay"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 34.0
+offset_right = 193.0
+offset_bottom = 167.0
+
+[node name="SoundBar" parent="CardPileDisplay/VBoxContainer" instance=ExtResource("2_gdmod")]
+unique_name_in_owner = true
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Label" parent="CardPileDisplay/VBoxContainer/SoundBar" index="0"]
+text = "Sound"
+
+[node name="MusicBar" parent="CardPileDisplay/VBoxContainer" instance=ExtResource("2_gdmod")]
+unique_name_in_owner = true
+layout_mode = 2
+bus_name = "Music"
+
+[node name="CloseButton" type="Button" parent="CardPileDisplay/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[editable path="CardPileDisplay/VBoxContainer/SoundBar"]
