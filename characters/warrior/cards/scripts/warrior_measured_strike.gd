@@ -1,7 +1,7 @@
 extends Card
 
 @export var effects : Dictionary = {
-	"damage" : 20
+	"damage" : 21
 }
 
 func apply_effects(targets : Array[Node], player : Player) -> void:
