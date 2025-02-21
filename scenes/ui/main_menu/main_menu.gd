@@ -1,6 +1,8 @@
 class_name MainMenu
 extends CanvasLayer
 
+@export var music : AudioStream
+
 @onready var saver_loader : SaverLoader = %SaverLoader
 @onready var card_pile_display : CardPileDisplay = %CardPileDisplay as CardPileDisplay
 @onready var see_deck_button : Button = %SeeDeckPileButton
@@ -15,6 +17,7 @@ func _ready() -> void:
 		Globals.game_loaded = true
 	saver_loader.save_game()
 	reload_locations()
+	MusicPlayer.play(music, true, true)
 	%NewRunButton.pressed.connect(abandon_run)
 	see_deck_button.pressed.connect(open_deck_display)
 	

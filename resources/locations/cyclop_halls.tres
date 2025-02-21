@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://djgg1x3o81iu5"]
+[gd_resource type="Resource" script_class="Location" load_steps=4 format=3 uid="uid://djgg1x3o81iu5"]
 
 [ext_resource type="Script" path="res://resources/location.gd" id="1_8ckju"]
+[ext_resource type="AudioStream" uid="uid://d4hfm4bitulm7" path="res://art/musicAndSounds/ItTakesADungeonToRaiseAHero.wav" id="1_jx1cp"]
 [ext_resource type="PackedScene" uid="uid://d2y6ahlmtvw5o" path="res://scenes/maps/tilemaps/cyclop_halls_map.tscn" id="2_tycxw"]
 
 [resource]
@@ -10,3 +11,4 @@ display_name = "Cyclop Halls"
 tilemap = ExtResource("2_tycxw")
 completed_level = 0
 unlocked_level = 0
+music = ExtResource("1_jx1cp")

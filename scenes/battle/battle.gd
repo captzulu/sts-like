@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var char_stats : CharacterStats
-@export var music : AudioStream
 
 @onready var battle_ui : BattleUi = $BattleUi as BattleUi
 @onready var player_handler : PlayerHandler = $PlayerHandler as PlayerHandler
@@ -33,7 +32,7 @@ func _ready() -> void:
 	
 func start_battle() -> void:
 	get_tree().paused = false
-	MusicPlayer.play(music, true)
+	MusicPlayer.play(Globals.current_location.music, true, true)
 	spawn_wave()
 	player_handler.start_battle()
 
@@ -50,7 +49,8 @@ func spawn_wave() -> void:
 	enemy_handler.reset_enemy_actions()
 	
 func _on_enemy_turn_ended() -> void:
-	player_handler.start_turn()
+	if player:
+		player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 		
 func _on_player_died() -> void:

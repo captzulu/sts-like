@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://c6f7xj65oj27g"]
+[gd_resource type="Resource" script_class="Location" load_steps=4 format=3 uid="uid://c6f7xj65oj27g"]
 
+[ext_resource type="AudioStream" uid="uid://d4hfm4bitulm7" path="res://art/musicAndSounds/ItTakesADungeonToRaiseAHero.wav" id="1_hepkx"]
 [ext_resource type="Script" path="res://resources/location.gd" id="1_ytk5p"]
 [ext_resource type="PackedScene" uid="uid://dxpg1ee2sim27" path="res://scenes/maps/tilemaps/spider_cavern_map.tscn" id="2_b753g"]
 
@@ -10,3 +11,4 @@ display_name = "Spider Cavern"
 tilemap = ExtResource("2_b753g")
 completed_level = 0
 unlocked_level = 1
+music = ExtResource("1_hepkx")

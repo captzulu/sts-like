@@ -5,6 +5,10 @@ enum Type{WIN, LOSE}
 var card_reward : PackedScene = preload("res://scenes/ui/card_reward_ui.tscn")
 var main_menu : PackedScene = preload("res://scenes/ui/main_menu/main_menu.tscn")
 var saver_loaded : SaverLoader
+var lose_sound : AudioStream = preload("res://art/musicAndSounds/Failure.wav")
+var lose_music : AudioStream = preload("res://art/musicAndSounds/Campfire.wav")
+var win_sound : AudioStream = preload("res://art/musicAndSounds/Success2A.wav")
+var win_music : AudioStream = preload("res://art/musicAndSounds/ARoguesEndeavor.wav")
 
 @onready var label : Label = %Label
 @onready var continue_button : Button = %ContinueButton
@@ -22,8 +26,26 @@ func show_screen(text : String, type: Type) -> void:
 	continue_button.visible = type == Type.WIN
 	restart_button.visible = type == Type.LOSE
 	exit_button.visible = type == Type.LOSE
+
+	if type == Type.LOSE:
+		delete_save()
+	
+	play_music(type)
 	show()
 	get_tree().paused = true
+
+func play_music(type) -> void:
+	MusicPlayer.stop()
+	if SfxPlayer.sound_finished.is_connected(MusicPlayer.play):
+		SfxPlayer.sound_finished.disconnect(MusicPlayer.play)
+	if type == Type.LOSE:
+		SfxPlayer.play(lose_sound, true)
+		await get_tree().create_timer(1, true).timeout
+		MusicPlayer.play(lose_music, true, true)
+	else:
+		SfxPlayer.play(win_sound, true)
+		await get_tree().create_timer(1, true).timeout
+		MusicPlayer.play(win_music, true, true)
 
 func _on_continue_button_pressed() -> void:
 	get_tree().paused = false
@@ -31,11 +53,9 @@ func _on_continue_button_pressed() -> void:
 	
 func _restart_button_pressed() -> void:
 	get_tree().paused = false
-	delete_save()
 	get_tree().change_scene_to_packed(main_menu)
 	
 func _exit_button_pressed() -> void:
-	delete_save()
 	get_tree().quit()
 	
 func delete_save() -> void:
