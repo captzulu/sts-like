@@ -1,7 +1,0 @@
-id;mob_1;mob_2;mob_3;mob_4;mob_5
-0;skeleton;bat;;;
-1;skeleton;skeleton;bat;;
-2;skeleton;zombie ;bat;;
-3;skeleton;spider;zombie;bat;
-4;skeleton;zombie ;zombie;bat;spider
-5;minotaur_skelly_boss;;;;

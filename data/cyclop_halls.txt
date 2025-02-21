@@ -1,7 +1,0 @@
-id;mob_1;mob_2;mob_3;mob_4;mob_5
-0;spider;crab;;;
-1;spider;cyclop;bat;;
-2;cyclop_magi;bat;cyclop;;
-3;cyclop_magi;cyclop;cyclop;spider;
-4;cyclop;cyclop_magi;cyclop;cyclop_magi;cyclop
-5;cyclop_boss;cyclop_magi;cyclop_magi;;
