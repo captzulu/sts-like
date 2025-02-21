@@ -14,4 +14,3 @@ func _init(amount : int) -> void:
 
 func generate_tooltip() -> String:
 	return "When Cyclop has [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]" +  str(stacks) + "[/color] HP or less his attack becomes much stronger."
-

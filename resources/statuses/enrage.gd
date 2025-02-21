@@ -24,7 +24,7 @@ func get_damage_multiplier() -> int:
 	return damage_multiplier * stacks
 
 func generate_tooltip() -> String:
-	return "Increases damage by [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]10%[/color] per stack. Lose on turn start [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]unless[/color] you have taken a hit or cleared a wave last turn."
+	return "Increases damage by [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]10%[/color] per stack. Gain a stack everytime you lose HP. Lose on turn start [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]unless[/color] damage was taken [color=\"" + Globals.TOOLTIP_HIGHLIGHT_TEXT_COLOR + "\"]or[/color] a wave was cleared last turn."
 
 func _on_player_turn_started() -> void:
 	if hit_this_turn == false:
