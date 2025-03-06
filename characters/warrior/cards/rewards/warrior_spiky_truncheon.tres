@@ -8,6 +8,7 @@
 script = ExtResource("1_gluk1")
 effects = {
 "damage": 5,
+"damage_spike": 2,
 "spikes": 1
 }
 identifier = "warrior_spiky_truncheon"
@@ -16,5 +17,5 @@ target = 1
 cost = 1
 icon = ExtResource("1_2gdw0")
 tooltip_text_template = "Gain [color=\"3d4445\"]{spikes}[/color] spike stack.
-Damage target enemy for [color=\"ebc807\"]{damage}[/color] + 2 times your spike stacks."
+Damage target enemy for [color=\"ebc807\"]{damage}[/color] + {damage_spike} ( times your spike stacks."
 sound = ExtResource("3_pcn42")
