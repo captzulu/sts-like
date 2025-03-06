@@ -43,16 +43,6 @@ func generate_intents() -> Array[Intent]:
 		intents.append(intent)
 	return intents
 	
-func has_damage_effect() -> bool:
-	for effect in effects:
-		if is_instance_of(effect, DamageEffect):
-			return true
-
-	return false
-
-func makes_contact() -> bool:
-	return has_damage_effect()
-	
 func calculate_health_percent(stats : Stats) -> int:
 	return floor((stats.health / stats.max_health) * 100)
 		
