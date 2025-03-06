@@ -122,8 +122,11 @@ func add_status(status : Status) -> void:
 
 func death(initial_health : int, initial_block : int, damage_received : int) -> void:
 	Events.enemy_death.emit(self)
-	if initial_health + initial_block == damage_received:
+	var enemy_effective_hp : int = initial_health + initial_block
+	if enemy_effective_hp == damage_received:
 		Events.enemy_death_exact_hp.emit(self)
+	elif enemy_effective_hp < damage_received:
+		Events.enemy_death_overkill.emit(damage_received - enemy_effective_hp)
 	if turn_alive == 0:
 		Events.enemy_death_before_turn.emit(self)
 	queue_free()

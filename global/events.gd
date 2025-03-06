@@ -30,6 +30,7 @@ signal player_died
 signal enemy_action_completed(enemy : Enemy)
 signal enemy_death(enemy : Enemy)
 signal enemy_death_exact_hp(enemy : Enemy)
+signal enemy_death_overkill(overkill_amount : int)
 signal enemy_turn_ended
 signal enemy_death_before_turn(enemy : Enemy)
 #endregion

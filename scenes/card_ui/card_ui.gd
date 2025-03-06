@@ -23,7 +23,7 @@ func _set_card(value: Card) -> void:
 	icon.texture = card.icon
 
 func compute_tooltip() -> void:
-	text_tooltip = card.tooltip_text_template.format(self.effects)
+	pass
 
 func show_tooltip() -> void:
 	change_style_box(HOVER_STYLEBOX)

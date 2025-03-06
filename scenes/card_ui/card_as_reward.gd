@@ -18,8 +18,11 @@ func _on_mouse_exited() -> void:
 func show_tooltip() -> void:
 	if ! self.selected:
 		change_style_box(HOVER_STYLEBOX)
-	compute_tooltip()
+	self.compute_tooltip()
 	Events.card_tooltip_requested.emit(card.icon, text_tooltip)
+
+func compute_tooltip() -> void:
+	text_tooltip = card.tooltip_text_template.format(self.effects)
 
 func hide_tooltip() -> void:
 	if ! self.selected:

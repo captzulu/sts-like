@@ -78,3 +78,22 @@ func _on_card_drag_or_aiming_ended(_used_card: CardInHand) -> void:
 	
 func _on_char_stats_changed() -> void:
 	self.playable = player.stats.can_play_card(card)
+
+func compute_tooltip() -> void:
+	var total_damage : int
+	var tooltip_copy : String = card.tooltip_text_template
+	var damage_multiplier : float = self.player.stats.current_damage_modifier()
+	if card.effects.has("damage"):
+		self.effects["damage"] = roundi(card.effects["damage"] * damage_multiplier)
+
+	if card.effects.has("damage_spike"):
+		var spike_stacks : int = self.player.stats.get_status_stacks(Spike)
+		if card.effects.has("spikes"):
+			spike_stacks = spike_stacks + self.effects["spikes"]
+		var damage_spike : int = card.effects["damage_spike"] * spike_stacks
+		total_damage = roundi((damage_spike + card.effects["damage"]) * damage_multiplier)
+	
+	if total_damage:
+		tooltip_copy = card.tooltip_text_template + "[p][b]Total Damage: " + str(total_damage) + "[/b][/p]"
+
+	text_tooltip = tooltip_copy.format(self.effects)
