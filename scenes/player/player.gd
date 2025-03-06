@@ -14,6 +14,7 @@ var combat_log : CombatLog
 
 func _ready() -> void:
 	Events.enemy_death_exact_hp.connect(_on_enemy_death_exact_hp)
+	Events.enemy_death_overkill.connect(_on_enemy_death_overkill)
 	Events.enemy_death_before_turn.connect(_on_enemy_death_first_turn)
 	self.mouse_entered.connect(_on_mouse_entered)
 	self.mouse_exited.connect(_on_mouse_exited)
@@ -71,7 +72,7 @@ func heal(amount : int) -> bool:
 	return true
 
 func heal_from_combos(combo_number : int) -> void:
-	var healing_amount : int = combo_number + 1
+	var healing_amount : int = floor(pow(combo_number, 1.4) + 0.5)
 	if heal(healing_amount):
 		var reason : String = "Kill Combo %s" % combo_number
 		combat_log.log_heal(healing_amount, reason)
@@ -82,6 +83,14 @@ func _on_enemy_death_exact_hp(_enemy : Enemy) -> void:
 	var amount : int = 2
 	if heal(amount):
 		var reason : String = "Exact Kill!"
+		combat_log.log_heal(amount, reason)
+		var floating_text : String = reason + "\n + " + str(amount) + " HP"
+		overhead_floating_text.create_label(floating_text)
+
+func _on_enemy_death_overkill(overkill : int) -> void:
+	var amount : int = round(pow((overkill / 2), 1.25) - 1.25)
+	if heal(amount):
+		var reason : String = "Overkilled by " + str(overkill) + "!"
 		combat_log.log_heal(amount, reason)
 		var floating_text : String = reason + "\n + " + str(amount) + " HP"
 		overhead_floating_text.create_label(floating_text)
