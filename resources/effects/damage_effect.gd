@@ -21,7 +21,7 @@ func execute(targets : Array) -> void:
 		Events.damage_effect.emit(originator, target)
 	SfxPlayer.play(sound)
 
-#Can't be used in execute 
+#Can't be used in execute so we can show final damage in tooltips
 func calculate_damage() -> void:
 	var damage_multiplier : float = originator.stats.current_damage_modifier()
 	self.final_damage = roundi(amount * damage_multiplier)
