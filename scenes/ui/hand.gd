@@ -13,7 +13,6 @@ func add_card(card : Card) -> void:
 	new_card_ui.card = card
 	new_card_ui.parent = self
 	new_card_ui.player = player
-	apply_status_modifiers_to_card_effects(new_card_ui)
 	
 func discard_card(card : CardUi) -> void:
 	card.queue_free()
@@ -28,11 +27,3 @@ func _on_card_ui_reparent_requested(child: CardUi) -> void:
 	var new_index : int = clampi(child.original_index, 0, get_child_count())
 	move_child.call_deferred(child, new_index)
 	child.set_deferred('disabled', false)
-	
-func apply_status_modifiers_to_card_effects(card_ui : CardUi) -> void:
-	var card : Card = card_ui.card
-	if not card.effects.has("damage"):
-		return
-
-	var damage_multiplier : float = player.stats.current_damage_modifier()
-	card_ui.effects["damage"] = roundi(card.effects["damage"] * damage_multiplier)
