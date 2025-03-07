@@ -12,8 +12,6 @@ extends Node2D
 @onready var player : Player = $Player as Player
 
 func _ready() -> void:
-	# Normally, we would do this on a 'Run' level so we keep our health,
-	#  gold and deck between battles.
 	var new_stats : CharacterStats = Globals.char_stats.create_instance()
 	player.stats = new_stats
 	player_handler.player = player
