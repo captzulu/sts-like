@@ -9,6 +9,10 @@ func _init() -> void:
 func load_config() -> void:
 	Globals.CONFIG = ConfigFile.new()
 	Globals.CONFIG.load(Globals.CONFIG_PATH)
+	var SFX_volume = Globals.CONFIG.get_value('audio', 'SFX', 0.75)
+	var music_volume = Globals.CONFIG.get_value('audio', 'Music', 0.75)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('SFX'), linear_to_db(SFX_volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('Music'), linear_to_db(music_volume))
 	
 func _ready() -> void:
 	return
