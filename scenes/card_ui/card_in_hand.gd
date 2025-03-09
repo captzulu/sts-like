@@ -71,6 +71,9 @@ func _on_card_drag_or_aiming_started(used_card: CardInHand) -> void:
 	if used_card == self:
 		return
 	disabled = true
+	if card.target == card.Target.ALL_ENEMIES:
+		self.targets = card._get_targets([])
+		self.show_tooltip_with_targets()
 
 func _on_card_drag_or_aiming_ended(_used_card: CardInHand) -> void:
 	disabled = false
@@ -97,3 +100,9 @@ func compute_tooltip() -> void:
 		tooltip_copy = card.tooltip_text_template + "[p][b]Total Damage: " + str(total_damage) + "[/b][/p]"
 
 	text_tooltip = tooltip_copy.format(self.effects)
+
+func show_tooltip_with_targets() -> void:
+	change_style_box(HOVER_STYLEBOX)
+	if card.has_method("on_target_tooltip"):
+		text_tooltip = card.on_target_tooltip(targets)
+	Events.card_tooltip_requested.emit(card.icon, text_tooltip)
