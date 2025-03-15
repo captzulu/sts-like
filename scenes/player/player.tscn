@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://djhsxq1phowkp"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_efk67"]
-[ext_resource type="Texture2D" uid="uid://58ecbvadmtbl" path="res://art/original_art/tile_0087.png" id="1_qqupy"]
 [ext_resource type="PackedScene" uid="uid://02381nc0lj5f" path="res://scenes/ui/stats_ui.tscn" id="2_fr555"]
-[ext_resource type="FontFile" uid="uid://51auwrw3babw" path="res://art/original_art/pixel_rpg.ttf" id="4_d6b2d"]
+[ext_resource type="Texture2D" uid="uid://3ctgbtt5lmau" path="res://art/viking.png" id="4_15art"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/original_art/pixel_rpg.ttf" id="4_d6b2d"]
 [ext_resource type="Script" path="res://scenes/player/floating_text_ui.gd" id="5_x6w81"]
 [ext_resource type="PackedScene" uid="uid://b1xgrhkvg5e67" path="res://scenes/ui/StatusesBar.tscn" id="6_6p7h8"]
 
@@ -22,7 +22,7 @@ Label/fonts/font = ExtResource("4_d6b2d")
 Label/styles/normal = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftin7"]
-size = Vector2(45, 41)
+size = Vector2(45, 52)
 
 [node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_efk67")
@@ -45,14 +45,16 @@ offset_right = 35.5
 offset_bottom = 31.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qqupy")
+position = Vector2(0, -6)
+texture = ExtResource("4_15art")
 
 [node name="OverheadFloatingText" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
 offset_left = -30.0
-offset_top = -27.0
+offset_top = -39.0
 offset_right = 30.0
+offset_bottom = -12.0
 theme = SubResource("Theme_ljyvw")
 text = "test long text"
 horizontal_alignment = 1
@@ -61,5 +63,5 @@ autowrap_mode = 3
 script = ExtResource("5_x6w81")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 11.5)
+position = Vector2(-0.5, 6)
 shape = SubResource("RectangleShape2D_ftin7")
