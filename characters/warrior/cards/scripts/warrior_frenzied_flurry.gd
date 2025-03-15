@@ -21,3 +21,8 @@ func apply_effects(targets : Array[Node], player : Player) -> void:
 
 func not_null(value : Variant) -> bool:
 	return is_instance_valid(value)
+
+func get_total_damage(player : Player) -> int:
+	var enrage_stacks : int = player.get_status_stacks(Enrage.get_identifier())
+	var number_of_strikes : int = 1 + (enrage_stacks / 2)
+	return DamageEffect.new(effects["damage"] * number_of_strikes, sound, player).final_damage

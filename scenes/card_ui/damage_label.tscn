@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://nf025oh2w6lv"]
+
+[ext_resource type="Texture2D" uid="uid://6qdyxw6cw6mw" path="res://art/card_damage_label.png" id="1_16qcr"]
+[ext_resource type="Script" path="res://scenes/card_ui/damage_label.gd" id="1_jsptp"]
+
+[node name="DamageLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jsptp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 18.0
+offset_bottom = 16.0
+texture = ExtResource("1_16qcr")
+
+[node name="DamageNumber" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 1.0
+offset_right = 12.0
+offset_bottom = 7.0
+text = "38
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 7.0
+offset_right = 13.0
+offset_bottom = 13.0
+text = "DMG
+"
+horizontal_alignment = 1

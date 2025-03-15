@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6smt237ltqtp"]
+[gd_scene load_steps=12 format=3 uid="uid://c6smt237ltqtp"]
 
 [ext_resource type="Script" path="res://scenes/card_ui/card_in_hand.gd" id="2_fp3dl"]
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/original_art/tile_0104.png" id="4_q6lch"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="6_wquti"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="7_3eti8"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="8_ysnyo"]
+[ext_resource type="PackedScene" uid="uid://nf025oh2w6lv" path="res://scenes/card_ui/damage_label.tscn" id="9_i11vf"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_released_state.gd" id="9_r6ged"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="10_p7psc"]
 
@@ -18,14 +19,14 @@ border_width_bottom = 2
 border_color = Color(0.545098, 0.235294, 0.0784314, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twj7j"]
-size = Vector2(50, 60)
+size = Vector2(50, 64)
 
 [node name="CardInHand" type="Control"]
 custom_minimum_size = Vector2(50, 60)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 25.0
-offset_bottom = 30.0
+offset_right = 50.0
+offset_bottom = 64.0
 script = ExtResource("2_fp3dl")
 
 [node name="Panel" type="Panel" parent="."]
@@ -35,7 +36,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -25.0
-offset_bottom = -30.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -45,10 +46,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_f3lyv")
 [node name="Cost" type="Label" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 10.0
-offset_bottom = 10.0
+offset_left = 1.5
+offset_top = 1.5
+offset_right = 9.5
+offset_bottom = 9.5
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,9 +63,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -8.0
-offset_top = -6.0
+offset_top = -6.5
 offset_right = 8.0
-offset_bottom = 10.0
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -79,7 +80,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/DropPointDetector"]
-position = Vector2(25, 30)
+position = Vector2(25, 32)
 shape = SubResource("RectangleShape2D_twj7j")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -104,6 +105,13 @@ state = 4
 [node name="CardAimingState" type="Node" parent="CardStateMachine"]
 script = ExtResource("10_p7psc")
 state = 3
+
+[node name="DamageLabel" parent="." instance=ExtResource("9_i11vf")]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 53.0
+offset_right = 20.0
+offset_bottom = 53.0
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

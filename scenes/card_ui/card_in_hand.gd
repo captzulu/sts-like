@@ -9,6 +9,7 @@ const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_style_box.tre
 
 @onready var drop_point_detector: Area2D = %DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
+@onready var damage_label: DamageLabel = %DamageLabel as DamageLabel
 @onready var targets : Array[Node] = []
 
 var original_index : int = 0
@@ -58,6 +59,7 @@ func _set_playable(value: bool) -> void:
 
 func _set_player(value : Player) -> void:
 	player = value as Player
+	compute_tooltip()
 	player.stats.stats_changed.connect(_on_char_stats_changed)
 
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
@@ -68,12 +70,13 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 	
 func _on_card_drag_or_aiming_started(used_card: CardInHand) -> void:
-	if used_card == self:
+	if used_card != self:
+		disabled = true
 		return
-	disabled = true
-	if card.target == card.Target.ALL_ENEMIES:
-		self.targets = card._get_targets([])
-		self.show_tooltip_with_targets()
+	
+	if used_card.card.target == used_card.card.Target.ALL_ENEMIES:
+		used_card.targets = used_card.card._get_targets(used_card.get_tree().get_nodes_in_group("enemies"))
+		used_card.show_tooltip_with_targets()
 
 func _on_card_drag_or_aiming_ended(_used_card: CardInHand) -> void:
 	disabled = false
@@ -83,26 +86,23 @@ func _on_char_stats_changed() -> void:
 	self.playable = player.stats.can_play_card(card)
 
 func compute_tooltip() -> void:
-	var total_damage : int
-	var tooltip_copy : String = card.tooltip_text_template
 	var damage_multiplier : float = self.player.stats.current_damage_modifier()
 	if card.effects.has("damage"):
 		self.effects["damage"] = roundi(card.effects["damage"] * damage_multiplier)
-
-	if card.effects.has("damage_spike"):
-		var spike_stacks : int = self.player.stats.get_status_stacks(Spike)
-		if card.effects.has("spikes"):
-			spike_stacks = spike_stacks + self.effects["spikes"]
-		var damage_spike : int = card.effects["damage_spike"] * spike_stacks
-		total_damage = roundi((damage_spike + card.effects["damage"]) * damage_multiplier)
+		damage_label.update_damage_number(self.effects["damage"])
+	else:
+		damage_label.hide()
 	
-	if total_damage:
-		tooltip_copy = card.tooltip_text_template + "[p][b]Total Damage: " + str(total_damage) + "[/b][/p]"
+	if card.has_method("get_total_damage"):
+		damage_label.update_damage_number(card.get_total_damage(player))
 
-	text_tooltip = tooltip_copy.format(self.effects)
+	text_tooltip = card.tooltip_text_template.format(self.effects)
 
 func show_tooltip_with_targets() -> void:
 	change_style_box(HOVER_STYLEBOX)
-	if card.has_method("on_target_tooltip"):
-		text_tooltip = card.on_target_tooltip(targets)
+	if card.has_method("get_targeting_tooltip"):
+		text_tooltip = card.get_targeting_tooltip(targets)
 	Events.card_tooltip_requested.emit(card.icon, text_tooltip)
+
+	if card.has_method("get_total_damage_on_targets"):
+		damage_label.update_damage_number(card.get_total_damage_on_targets(targets, player))

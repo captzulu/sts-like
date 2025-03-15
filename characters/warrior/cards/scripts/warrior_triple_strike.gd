@@ -17,5 +17,9 @@ func apply_effects(targets : Array[Node], player : Player) -> void:
 			await tree.create_timer(0.35, false).timeout
 	Events.card_play_animation_finished.emit(self)
 
+func get_total_damage(player : Player):
+	var damage : int = effects["damage"] 
+	return DamageEffect.new(damage, sound, player).final_damage * 3
+
 func not_null(value : Variant) -> bool:
 	return is_instance_valid(value)
